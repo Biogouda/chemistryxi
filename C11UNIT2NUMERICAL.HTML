@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Numerical MCQ Quiz: Structure of Atom & Periodic Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .instructions {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .option {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #d0d0d0;
+        }
+        .correct {
+            background-color: #4CAF50 !important;
+            color: white;
+        }
+        .incorrect {
+            background-color: #f44336 !important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chemistry Numerical MCQ Quiz: Structure of Atom & Periodic Table</h1>
+    <div class="instructions">
+        <p>Welcome to the Chemistry Numerical MCQ Quiz! This quiz contains 40 multiple-choice questions based on numerical problems from Structure of Atom and Classification of Elements. Select an option for each question, and the correct answer will be highlighted in green.</p>
+    </div>
+    <div id="quiz-container"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "An atom has 17 protons and 18 neutrons. What is its mass number?",
+                options: ["17", "18", "35", "34"],
+                correct: 2
+            },
+            {
+                question: "An isotope of carbon has 6 protons and 8 neutrons. What is its atomic number?",
+                options: ["6", "8", "14", "12"],
+                correct: 0
+            },
+            {
+                question: "How many neutrons are in an atom of chlorine-37 with atomic number 17?",
+                options: ["17", "20", "37", "54"],
+                correct: 1
+            },
+            {
+                question: "Two atoms have mass number 40. One has 20 protons, the other 18. They are:",
+                options: ["Isotopes", "Isobars", "Isotones", "Identical"],
+                correct: 1
+            },
+            {
+                question: "How many electrons are in a neutral atom with atomic number 12?",
+                options: ["12", "24", "6", "18"],
+                correct: 0
+            },
+            {
+                question: "What is the maximum number of electrons in the n=3 energy level?",
+                options: ["6", "8", "18", "32"],
+                correct: 2
+            },
+            {
+                question: "The subshell 3p can hold a maximum of how many electrons?",
+                options: ["2", "6", "10", "14"],
+                correct: 1
+            },
+            {
+                question: "For an electron in a 4d orbital, what is the azimuthal quantum number (l)?",
+                options: ["0", "1", "2", "3"],
+                correct: 2
+            },
+            {
+                question: "How many orbitals are in the n=2 energy level?",
+                options: ["1", "2", "4", "9"],
+                correct: 2
+            },
+            {
+                question: "Calculate the de Broglie wavelength of an electron (mass = 9.11 × 10⁻³¹ kg) moving at 2 × 10⁶ m/s. (h = 6.626 × 10⁻³⁴ J·s)",
+                options: ["3.64 × 10⁻¹⁰ m", "7.28 × 10⁻¹⁰ m", "1.82 × 10⁻¹⁰ m", "5.46 × 10⁻¹⁰ m"],
+                correct: 0
+            },
+            {
+                question: "If the uncertainty in position of an electron is 1 × 10⁻¹⁰ m, what is the minimum uncertainty in its velocity? (h = 6.626 × 10⁻³⁴ J·s, m = 9.11 × 10⁻³¹ kg)",
+                options: ["5.79 × 10⁵ m/s", "2.89 × 10⁵ m/s", "1.16 × 10⁶ m/s", "8.68 × 10⁵ m/s"],
+                correct: 0
+            },
+            {
+                question: "How many unpaired electrons are in the ground state of nitrogen (atomic number 7)?",
+                options: ["1", "2", "3", "4"],
+                correct: 2
+            },
+            {
+                question: "What is the total number of electrons in a neutral atom of phosphorus (atomic number 15)?",
+                options: ["15", "30", "31", "16"],
+                correct: 0
+            },
+            {
+                question: "The magnetic quantum number (mₗ) for a 3p orbital can have how many values?",
+                options: ["1", "3", "5", "7"],
+                correct: 1
+            },
+            {
+                question: "How many electrons can the 4f subshell hold?",
+                options: ["2", "6", "10", "14"],
+                correct: 3
+            },
+            {
+                question: "An atom has the electron configuration 1s² 2s² 2p⁶ 3s². What is its atomic number?",
+                options: ["10", "12", "14", "16"],
+                correct: 1
+            },
+            {
+                question: "Calculate the number of orbitals in the 4d subshell.",
+                options: ["1", "3", "5", "7"],
+                correct: 2
+            },
+            {
+                question: "What is the spin quantum number (mₛ) for an electron?",
+                options: ["0 or 1", "+1/2 or -1/2", "1 or 2", "+1 or -1"],
+                correct: 1
+            },
+            {
+                question: "How many electrons are in the valence shell of sulfur (atomic number 16)?",
+                options: ["2", "4", "6", "8"],
+                correct: 2
+            },
+            {
+                question: "The de Broglie wavelength of a particle with mass 1 × 10⁻²⁷ kg and velocity 1 × 10³ m/s is: (h = 6.626 × 10⁻³⁴ J·s)",
+                options: ["6.626 × 10⁻¹⁰ m", "6.626 × 10⁻⁷ m", "3.313 × 10⁻¹⁰ m", "1.325 × 10⁻⁹ m"],
+                correct: 1
+            },
+            {
+                question: "How many protons are in an atom of calcium-40?",
+                options: ["20", "40", "60", "80"],
+                correct: 0
+            },
+            {
+                question: "What is the mass number of an atom with 26 protons and 30 neutrons?",
+                options: ["26", "30", "56", "86"],
+                correct: 2
+            },
+            {
+                question: "How many neutrons are in an isotope of oxygen with mass number 18?",
+                options: ["8", "10", "18", "26"],
+                correct: 1
+            },
+            {
+                question: "The electron configuration of an element ends with 3p³. How many valence electrons does it have?",
+                options: ["3", "5", "8", "15"],
+                correct: 0
+            },
+            {
+                question: "What is the maximum number of electrons in the n=4 shell?",
+                options: ["8", "16", "32", "64"],
+                correct: 2
+            },
+            {
+                question: "How many orbitals are in the 3p subshell?",
+                options: ["1", "3", "5", "7"],
+                correct: 1
+            },
+            {
+                question: "The ionization energy of an element is 1312 kJ/mol. If 1 mole of atoms is ionized, how much energy is required?",
+                options: ["1312 kJ", "656 kJ", "2624 kJ", "328 kJ"],
+                correct: 0
+            },
+            {
+                question: "An electron in a 2s orbital has a principal quantum number (n) of:",
+                options: ["1", "2", "3", "4"],
+                correct: 1
+            },
+            {
+                question: "How many unpaired electrons are in the ground state of oxygen (atomic number 8)?",
+                options: ["0", "1", "2", "3"],
+                correct: 2
+            },
+            {
+                question: "The atomic radius of sodium is 186 pm. If it forms a cation (Na⁺), what is the approximate ionic radius?",
+                options: ["95 pm", "186 pm", "227 pm", "152 pm"],
+                correct: 0
+            },
+            {
+                question: "Calculate the number of electrons in a neutral atom with electron configuration 1s² 2s² 2p⁶ 3s² 3p⁵.",
+                options: ["15", "17", "19", "21"],
+                correct: 1
+            },
+            {
+                question: "What is the atomic number of an element with 11 protons and 12 neutrons?",
+                options: ["11", "12", "23", "34"],
+                correct: 0
+            },
+            {
+                question: "How many valence electrons does an element with electron configuration 1s² 2s² 2p⁶ 3s² 3p² have?",
+                options: ["2", "4", "6", "8"],
+                correct: 1
+            },
+            {
+                question: "The de Broglie wavelength of a proton (mass = 1.67 × 10⁻²⁷ kg) moving at 1 × 10⁵ m/s is: (h = 6.626 × 10⁻³⁴ J·s)",
+                options: ["3.97 × 10⁻¹² m", "7.94 × 10⁻¹² m", "1.99 × 10⁻¹² m", "5.96 × 10⁻¹² m"],
+                correct: 0
+            },
+            {
+                question: "If the uncertainty in velocity of an electron is 1 × 10⁵ m/s, what is the minimum uncertainty in its position? (h = 6.626 × 10⁻³⁴ J·s, m = 9.11 × 10⁻³¹ kg)",
+                options: ["5.79 × 10⁻¹⁰ m", "2.89 × 10⁻¹⁰ m", "1.16 × 10⁻⁹ m", "8.68 × 10⁻¹⁰ m"],
+                correct: 0
+            },
+            {
+                question: "How many electrons are in the 3d subshell of a neutral iron atom (atomic number 26)?",
+                options: ["2", "4", "6", "8"],
+                correct: 2
+            },
+            {
+                question: "What is the valency of an element with electron configuration 1s² 2s² 2p³?",
+                options: ["3", "5", "2", "8"],
+                correct: 0
+            },
+            {
+                question: "The element with atomic number 107 is named using numerical roots. What is its name?",
+                options: ["Bohrium", "Hassium", "Meitnerium", "Nobelium"],
+                correct: 0
+            },
+            {
+                question: "How many protons are in an isotope of uranium with mass number 238 and 146 neutrons?",
+                options: ["92", "146", "238", "330"],
+                correct: 0
+            },
+            {
+                question: "The electronegativity difference between two elements is 1.7. If one has electronegativity 3.5, what is the other’s?",
+                options: ["1.8", "2.0", "3.2", "5.2"],
+                correct: 0
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz-container');
+
+        questions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.classList.add('question');
+            questionDiv.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+            
+            q.options.forEach((option, i) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.classList.add('option');
+                optionDiv.textContent = option;
+                optionDiv.addEventListener('click', () => {
+                    const options = questionDiv.querySelectorAll('.option');
+                    options.forEach((opt, j) => {
+                        if (j === q.correct) {
+                            opt.classList.add('correct');
+                        } else if (j === i && i !== q.correct) {
+                            opt.classList.add('incorrect');
+                        }
+                    });
+                });
+                questionDiv.appendChild(optionDiv);
+            });
+
+            quizContainer.appendChild(questionDiv);
+        });
+    </script>
+</body>
+</html>

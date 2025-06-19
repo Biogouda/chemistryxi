@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Chemistry MCQ Quiz (Set 2)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+        .option {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #e0e0e0;
+        }
+        .correct {
+            background-color: #28a745;
+            color: white;
+        }
+        .incorrect {
+            background-color: #dc3545;
+            color: white;
+        }
+        #score {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Organic Chemistry MCQ Quiz (Set 2)</h1>
+    <div class="quiz-container" id="quiz">
+        <!-- Questions will be dynamically inserted here -->
+    </div>
+    <div id="score"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "Organic chemistry primarily deals with compounds of:",
+                options: ["Nitrogen", "Carbon", "Oxygen", "Sulfur"],
+                correct: 1
+            },
+            {
+                question: "Which purification method is suitable for separating volatile liquids?",
+                options: ["Crystallization", "Distillation", "Sublimation", "Chromatography"],
+                correct: 1
+            },
+            {
+                question: "Differential extraction is used to separate organic compounds based on:",
+                options: ["Solubility", "Boiling point", "Melting point", "Density"],
+                correct: 0
+            },
+            {
+                question: "The presence of halogens in an organic compound is detected by:",
+                options: ["Kjeldahl’s method", "Lassaigne’s test", "Dumas method", "Carius method"],
+                correct: 1
+            },
+            {
+                question: "Quantitative estimation of carbon and hydrogen is done by:",
+                options: ["Liebig’s method", "Lassaigne’s test", "Kjeldahl’s method", "Sublimation"],
+                correct: 0
+            },
+            {
+                question: "Organic compounds are classified as open chain or:",
+                options: ["Cyclic", "Linear", "Branched", "Ionic"],
+                correct: 0
+            },
+            {
+                question: "The IUPAC name of CH₃CH₂CH₂OH is:",
+                options: ["Propan-1-ol", "Propan-2-ol", "Ethanol", "Butan-1-ol"],
+                correct: 0
+            },
+            {
+                question: "The functional group in ketones is:",
+                options: ["-CHO", "-CO-", "-COOH", "-OH"],
+                correct: 1
+            },
+            {
+                question: "The inductive effect operates through:",
+                options: ["Pi bonds", "Sigma bonds", "Lone pairs", "Delocalized electrons"],
+                correct: 1
+            },
+            {
+                question: "The electromeric effect is observed in compounds with:",
+                options: ["Single bonds", "Multiple bonds", "Ionic bonds", "Metallic bonds"],
+                correct: 1
+            },
+            {
+                question: "Resonance occurs in molecules with:",
+                options: ["Single bonds only", "Conjugated systems", "Saturated carbons", "No pi electrons"],
+                correct: 1
+            },
+            {
+                question: "Hyperconjugation stabilizes:",
+                options: ["Carbocations", "Carbanions", "Free radicals", "All of the above"],
+                correct: 0
+            },
+            {
+                question: "Homolytic bond cleavage produces species with:",
+                options: ["Positive charge", "Negative charge", "Unpaired electrons", "Lone pairs"],
+                correct: 2
+            },
+            {
+                question: "Heterolytic fission forms:",
+                options: ["Free radicals", "Carbocations and carbanions", "Neutral molecules", "Radical ions"],
+                correct: 1
+            },
+            {
+                question: "A free radical is stabilized by:",
+                options: ["Electron-withdrawing groups", "Alkyl groups", "Electronegative atoms", "Ionic bonds"],
+                correct: 1
+            },
+            {
+                question: "A tertiary carbocation is more stable than a primary carbocation due to:",
+                options: ["Inductive effect", "Hyperconjugation", "Resonance", "Both inductive effect and hyperconjugation"],
+                correct: 3
+            },
+            {
+                question: "A carbanion is most stable when attached to:",
+                options: ["Alkyl groups", "Electronegative atoms", "Aromatic rings", "Hydrogen atoms"],
+                correct: 1
+            },
+            {
+                question: "An electrophile seeks:",
+                options: ["Electrons", "Protons", "Neutrons", "Radicals"],
+                correct: 0
+            },
+            {
+                question: "A nucleophile donates:",
+                options: ["Protons", "Electrons", "Neutrons", "Radicals"],
+                correct: 1
+            },
+            {
+                question: "Nucleophilic substitution reactions are common in:",
+                options: ["Alkenes", "Alkynes", "Alkyl halides", "Aromatics"],
+                correct: 2
+            },
+            {
+                question: "Electrophilic addition reactions are typical of:",
+                options: ["Alkanes", "Alkenes", "Alkyl halides", "Alcohols"],
+                correct: 1
+            },
+            {
+                question: "Elimination reactions produce:",
+                options: ["Saturated compounds", "Unsaturated compounds", "Substituted compounds", "Rearranged compounds"],
+                correct: 1
+            },
+            {
+                question: "Paper chromatography separates compounds based on:",
+                options: ["Boiling point", "Solubility", "Partition coefficient", "Density"],
+                correct: 2
+            },
+            {
+                question: "Dumas method is used to estimate:",
+                options: ["Nitrogen", "Carbon", "Hydrogen", "Halogens"],
+                correct: 0
+            },
+            {
+                question: "The IUPAC name of CH₃CH=CH₂ is:",
+                options: ["Propene", "Propyne", "Ethene", "Butene"],
+                correct: 0
+            },
+            {
+                question: "The +I effect increases electron density by:",
+                options: ["Withdrawing electrons", "Donating electrons", "Delocalizing electrons", "Breaking bonds"],
+                correct: 1
+            },
+            {
+                question: "The -I effect is shown by groups like:",
+                options: ["-CH₃", "-NH₂", "-CN", "-OH"],
+                correct: 2
+            },
+            {
+                question: "Resonance lowers the energy of a molecule by:",
+                options: ["Breaking bonds", "Delocalizing electrons", "Increasing polarity", "Adding substituents"],
+                correct: 1
+            },
+            {
+                question: "Hyperconjugation is also known as:",
+                options: ["No-bond resonance", "Inductive effect", "Electromeric effect", "Mesomeric effect"],
+                correct: 0
+            },
+            {
+                question: "The stability of free radicals follows the order:",
+                options: ["Primary > Secondary > Tertiary", "Tertiary > Secondary > Primary", "Secondary > Primary > Tertiary", "Primary > Tertiary > Secondary"],
+                correct: 1
+            },
+            {
+                question: "Carbocations are stabilized by:",
+                options: ["Electron-withdrawing groups", "Electron-donating groups", "Neutral groups", "Ionic groups"],
+                correct: 1
+            },
+            {
+                question: "An example of a nucleophile is:",
+                options: ["H⁺", "Cl⁻", "BF₃", "CH₃⁺"],
+                correct: 1
+            },
+            {
+                question: "An example of an electrophile is:",
+                options: ["OH⁻", "NO₂⁺", "NH₃", "CN⁻"],
+                correct: 1
+            },
+            {
+                question: "Rearrangement reactions often occur in:",
+                options: ["Carbocation intermediates", "Free radicals", "Carbanions", "Neutral molecules"],
+                correct: 0
+            },
+            {
+                question: "Carius method is used to estimate:",
+                options: ["Nitrogen", "Sulfur", "Carbon", "Oxygen"],
+                correct: 1
+            },
+            {
+                question: "The functional group in ethers is:",
+                options: ["-OH", "-O-", "-CHO", "-COOH"],
+                correct: 1
+            },
+            {
+                question: "Thin-layer chromatography (TLC) is used for:",
+                options: ["Purifying solids", "Analyzing mixtures", "Measuring boiling points", "Estimating carbon"],
+                correct: 1
+            },
+            {
+                question: "The IUPAC name of CH₃CH₂COOH is:",
+                options: ["Ethanoic acid", "Propanoic acid", "Methanoic acid", "Butanoic acid"],
+                correct: 1
+            },
+            {
+                question: "Homolytic fission is favored in:",
+                options: ["Polar solvents", "Non-polar solvents", "Aqueous solutions", "Ionic solvents"],
+                correct: 1
+            },
+            {
+                question: "The electromeric effect is a temporary shift of:",
+                options: ["Sigma electrons", "Pi electrons", "Lone pairs", "Protons"],
+                correct: 1
+            }
+        ];
+
+        let score = 0;
+
+        function loadQuiz() {
+            const quizContainer = document.getElementById('quiz');
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                questionDiv.innerHTML = `
+                    <p>${index + 1}. ${q.question}</p>
+                    <div class="options">
+                        ${q.options.map((option, i) => `
+                            <div class="option" onclick="checkAnswer(${index}, ${i}, this)">${option}</div>
+                        `).join('')}
+                    </div>
+                `;
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function checkAnswer(questionIndex, selectedIndex, element) {
+            const correctIndex = questions[questionIndex].correct;
+            const options = element.parentElement.querySelectorAll('.option');
+            options.forEach((opt, i) => {
+                opt.style.pointerEvents = 'none'; // Disable further clicks
+                if (i === correctIndex) {
+                    opt.classList.add('correct');
+                } else if (i === selectedIndex && i !== correctIndex) {
+                    opt.classList.add('incorrect');
+                }
+            });
+            if (selectedIndex === correctIndex) {
+                score++;
+                document.getElementById('score').innerText = `Score: ${score} / ${questions.length}`;
+            }
+        }
+
+        window.onload = loadQuiz;
+    </script>
+</body>
+</html>

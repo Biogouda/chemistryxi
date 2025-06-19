@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Numerical MCQ Quiz: Chemical Thermodynamics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .instructions {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .option {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #d0d0d0;
+        }
+        .correct {
+            background-color: #4CAF50 !important;
+            color: white;
+        }
+        .incorrect {
+            background-color: #f44336 !important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chemistry Numerical MCQ Quiz: Chemical Thermodynamics</h1>
+    <div class="instructions">
+        <p>Welcome to the Chemistry Numerical MCQ Quiz! This quiz contains 40 multiple-choice questions based on numerical problems from Chemical Thermodynamics. Select an option for each question, and the correct answer will be highlighted in green.</p>
+    </div>
+    <div id="quiz-container"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "A system absorbs 800 J of heat and performs 300 J of work. What is the change in internal energy (ΔU)?",
+                options: ["500 J", "1100 J", "-500 J", "300 J"],
+                correct: 0
+            },
+            {
+                question: "A gas expands at 3 atm from 2 L to 6 L. Calculate the work done. (1 L·atm = 101.3 J)",
+                options: ["-1215.6 J", "-607.8 J", "1215.6 J", "607.8 J"],
+                correct: 0
+            },
+            {
+                question: "What is the heat required to raise 200 g of water from 20°C to 60°C? (C_water = 4.18 J/g·K)",
+                options: ["33440 J", "66880 J", "16720 J", "8360 J"],
+                correct: 0
+            },
+            {
+                question: "Calculate ΔH for a reaction where ΔU = 1500 J and volume increases by 3 L at 2 atm. (1 L·atm = 101.3 J)",
+                options: ["2107.8 J", "1500 J", "897.2 J", "2704.4 J"],
+                correct: 0
+            },
+            {
+                question: "What is the molar heat capacity if 3 mol of a gas absorb 2494.2 J to raise T by 20 K?",
+                options: ["41.57 J/(mol·K)", "83.14 J/(mol·K)", "20.79 J/(mol·K)", "124.71 J/(mol·K)"],
+                correct: 0
+            },
+            {
+                question: "Using Hess’s law, if ΔH₁ = -300 kJ, ΔH₂ = 100 kJ, ΔH₃ = -200 kJ, what is ΔH for the net reaction?",
+                options: ["-400 kJ", "-100 kJ", "200 kJ", "-600 kJ"],
+                correct: 0
+            },
+            {
+                question: "Calculate the enthalpy change for breaking 1 mol of N–H bonds if bond energy is 391 kJ/mol.",
+                options: ["391 kJ", "782 kJ", "195.5 kJ", "1564 kJ"],
+                correct: 0
+            },
+            {
+                question: "What is the enthalpy of combustion of C₂H₆ if ΔH_f(CO₂) = -393.5 kJ/mol, ΔH_f(H₂O) = -285.8 kJ/mol, ΔH_f(C₂H₆) = -84.7 kJ/mol?",
+                options: ["-1559.7 kJ/mol", "-779.8 kJ/mol", "-2339.5 kJ/mol", "-519.9 kJ/mol"],
+                correct: 0
+            },
+            {
+                question: "What is the enthalpy of formation of CO if its formation reaction releases 110.5 kJ/mol?",
+                options: ["-110.5 kJ/mol", "110.5 kJ/mol", "-221 kJ/mol", "221 kJ/mol"],
+                correct: 0
+            },
+            {
+                question: "Calculate the enthalpy of atomization of 1 mol of O₂ if O=O bond energy is 498 kJ/mol.",
+                options: ["498 kJ", "249 kJ", "996 kJ", "124.5 kJ"],
+                correct: 0
+            },
+            {
+                question: "What is the enthalpy of sublimation if ΔH_fusion = 7.1 kJ/mol and ΔH_vaporization = 31.9 kJ/mol?",
+                options: ["39 kJ/mol", "24.8 kJ/mol", "46.1 kJ/mol", "31.9 kJ/mol"],
+                correct: 0
+            },
+            {
+                question: "Calculate the work done when 2 mol of gas expands from 5 L to 15 L at 1 atm. (1 L·atm = 101.3 J)",
+                options: ["-2026 J", "-1013 J", "2026 J", "1013 J"],
+                correct: 0
+            },
+            {
+                question: "What is ΔU if a system releases 400 J of heat and has 600 J of work done on it?",
+                options: ["200 J", "-200 J", "1000 J", "-1000 J"],
+                correct: 0
+            },
+            {
+                question: "What is the heat absorbed by 100 g of copper (C = 0.39 J/g·K) heated from 25°C to 75°C?",
+                options: ["1950 J", "3900 J", "975 J", "5850 J"],
+                correct: 0
+            },
+            {
+                question: "Calculate ΔH for N₂(g) → 2N(g) if N≡N bond energy is 945 kJ/mol.",
+                options: ["945 kJ/mol", "472.5 kJ/mol", "1890 kJ/mol", "236.25 kJ/mol"],
+                correct: 0
+            },
+            {
+                question: "What is the entropy change when 1 mol of ice melts at 0°C (273 K)? (ΔH_fusion = 6 kJ/mol)",
+                options: ["22.0 J/K", "12.0 J/K", "44.0 J/K", "6.0 J/K"],
+                correct: 0
+            },
+            {
+                question: "Calculate ΔG for a reaction with ΔH = -80 kJ and ΔS = -150 J/K at 298 K.",
+                options: ["-35.3 kJ", "-80 kJ", "-124.7 kJ", "44.7 kJ"],
+                correct: 0
+            },
+            {
+                question: "What is the heat capacity of a system if 1500 J raises the temperature of 1 mol by 25 K?",
+                options: ["60 J/(mol·K)", "37.5 J/(mol·K)", "120 J/(mol·K)", "15 J/(mol·K)"],
+                correct: 0
+            },
+            {
+                question: "Calculate the enthalpy of solution if 1 mol of KCl dissolves, absorbing 17 kJ.",
+                options: ["17 kJ/mol", "-17 kJ/mol", "34 kJ/mol", "-34 kJ/mol"],
+                correct: 0
+            },
+            {
+                question: "What is the work done when 1 mol of gas expands isothermally from 8 L to 12 L at 2 atm? (1 L·atm = 101.3 J)",
+                options: ["-810.4 J", "-405.2 J", "810.4 J", "405.2 J"],
+                correct: 0
+            },
+            {
+                question: "What is ΔH for C + O₂ → CO₂ if ΔH_f(CO₂) = -393.5 kJ/mol?",
+                options: ["-393.5 kJ", "-196.75 kJ", "-787 kJ", "393.5 kJ"],
+                correct: 0
+            },
+            {
+                question: "Calculate the entropy change when 1 mol of water vaporizes at 100°C (373 K). (ΔH_vap = 40.7 kJ/mol)",
+                options: ["109.1 J/K", "81.8 J/K", "218.2 J/K", "54.6 J/K"],
+                correct: 0
+            },
+            {
+                question: "What is ΔG for a reaction with ΔH = 30 kJ and ΔS = 100 J/K at 300 K?",
+                options: ["0 kJ", "30 kJ", "-30 kJ", "15 kJ"],
+                correct: 0
+            },
+            {
+                question: "What is the enthalpy of ionization of F(g) → F⁺(g) if it requires 1681 kJ/mol?",
+                options: ["1681 kJ/mol", "840.5 kJ/mol", "3362 kJ/mol", "420.25 kJ/mol"],
+                correct: 0
+            },
+            {
+                question: "Calculate the heat absorbed by 150 g of water heated from 15°C to 85°C. (C_water = 4.18 J/g·K)",
+                options: ["43890 J", "87780 J", "21945 J", "62700 J"],
+                correct: 0
+            },
+            {
+                question: "What is the enthalpy of dilution if diluting 1 mol of NaOH absorbs 3 kJ?",
+                options: ["3 kJ/mol", "-3 kJ/mol", "6 kJ/mol", "-6 kJ/mol"],
+                correct: 0
+            },
+            {
+                question: "What is the work done when 1 mol of gas expands from 6 L to 10 L at 4 atm? (1 L·atm = 101.3 J)",
+                options: ["-1620.8 J", "-810.4 J", "1620.8 J", "810.4 J"],
+                correct: 0
+            },
+            {
+                question: "What is ΔU if a system absorbs 700 J of heat and does 400 J of work?",
+                options: ["300 J", "1100 J", "-300 J", "700 J"],
+                correct: 0
+            },
+            {
+                question: "Calculate ΔH for C₃H₈ + 5O₂ → 3CO₂ + 4H₂O if ΔH_f(C₃H₈) = -103.8 kJ/mol, ΔH_f(CO₂) = -393.5 kJ/mol, ΔH_f(H₂O) = -285.8 kJ/mol.",
+                options: ["-2219.9 kJ", "-1109.9 kJ", "-3329.8 kJ", "-554.9 kJ"],
+                correct: 0
+            },
+            {
+                question: "What is the entropy change for a process with q_rev = 1800 J at 300 K?",
+                options: ["6 J/K", "3 J/K", "12 J/K", "1.5 J/K"],
+                correct: 0
+            },
+            {
+                question: "What is ΔG at equilibrium for any reaction?",
+                options: ["0 kJ", "Positive", "Negative", "Infinite"],
+                correct: 0
+            },
+            {
+                question: "Calculate the heat capacity of 2 mol of gas if 1662.8 J raises T by 10 K.",
+                options: ["83.14 J/(mol·K)", "41.57 J/(mol·K)", "166.28 J/(mol·K)", "20.79 J/(mol·K)"],
+                correct: 0
+            },
+            {
+                question: "What is the enthalpy of bond dissociation for 1 mol of C=C if bond energy is 614 kJ/mol?",
+                options: ["614 kJ", "307 kJ", "1228 kJ", "153.5 kJ"],
+                correct: 0
+            },
+            {
+                question: "What is the work done when 4 mol of gas expands from 3 L to 7 L at 2 atm? (1 L·atm = 101.3 J)",
+                options: ["-1620.8 J", "-810.4 J", "1620.8 J", "810.4 J"],
+                correct: 0
+            },
+            {
+                question: "What is ΔU if a system releases 500 J of heat and has 700 J of work done on it?",
+                options: ["200 J", "-200 J", "1200 J", "-1200 J"],
+                correct: 0
+            },
+            {
+                question: "Calculate the entropy change when 3 mol of gas expands isothermally at 298 K, with q_rev = 3600 J.",
+                options: ["12.08 J/K", "6.04 J/K", "24.16 J/K", "3.02 J/K"],
+                correct: 0
+            },
+            {
+                question: "What is ΔG for a reaction with ΔH = -120 kJ and ΔS = 250 J/K at 298 K?",
+                options: ["-194.5 kJ", "-120 kJ", "-45.5 kJ", "74.5 kJ"],
+                correct: 0
+            },
+            {
+                question: "What is the heat required to raise 75 g of aluminum from 30°C to 90°C? (C_aluminum = 0.90 J/g·K)",
+                options: ["4050 J", "2025 J", "8100 J", "1012.5 J"],
+                correct: 0
+            },
+            {
+                question: "What is the enthalpy of combustion of C₂H₄ if ΔH_f(C₂H₄) = 52.3 kJ/mol, ΔH_f(CO₂) = -393.5 kJ/mol, ΔH_f(H₂O) = -285.8 kJ/mol?",
+                options: ["-1411.1 kJ/mol", "-705.5 kJ/mol", "-2116.6 kJ/mol", "-352.8 kJ/mol"],
+                correct: 0
+            },
+            {
+                question: "What is the entropy change when 1 mol of ethanol vaporizes at 78°C (351 K)? (ΔH_vap = 38.6 kJ/mol)",
+                options: ["110.0 J/K", "55.0 J/K", "220.0 J/K", "27.5 J/K"],
+                correct: 0
+            },
+            {
+                question: "What is the absolute entropy of a perfect crystal at 0 K according to the third law?",
+                options: ["0 J/K", "Positive", "Negative", "Infinite"],
+                correct: 0
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz-container');
+
+        questions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.classList.add('question');
+            questionDiv.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+            
+            q.options.forEach((option, i) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.classList.add('option');
+                optionDiv.textContent = option;
+                optionDiv.addEventListener('click', () => {
+                    const options = questionDiv.querySelectorAll('.option');
+                    options.forEach((opt, j) => {
+                        if (j === q.correct) {
+                            opt.classList.add('correct');
+                        } else if (j === i && i !== q.correct) {
+                            opt.classList.add('incorrect');
+                        }
+                    });
+                });
+                questionDiv.appendChild(optionDiv);
+            });
+
+            quizContainer.appendChild(questionDiv);
+        });
+    </script>
+</body>
+</html>

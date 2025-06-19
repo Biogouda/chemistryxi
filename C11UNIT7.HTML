@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Numerical MCQ Quiz: Equilibrium</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .instructions {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .option {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #d0d0d0;
+        }
+        .correct {
+            background-color: #4CAF50 !important;
+            color: white;
+        }
+        .incorrect {
+            background-color: #f44336 !important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chemistry Numerical MCQ Quiz: Equilibrium</h1>
+    <div class="instructions">
+        <p>Welcome to the Chemistry Numerical MCQ Quiz! This quiz contains 40 multiple-choice questions based on numerical problems from Equilibrium. Select an option for each question, and the correct answer will be highlighted in green.</p>
+    </div>
+    <div id="quiz-container"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "For the reaction N₂(g) + 3H₂(g) ⇌ 2NH₃(g), [N₂] = 0.1 M, [H₂] = 0.3 M, [NH₃] = 0.2 M. Calculate Kc.",
+                options: ["2.22", "0.45", "4.44", "0.22"],
+                correct: 0
+            },
+            {
+                question: "For 2SO₂(g) + O₂(g) ⇌ 2SO₃(g), Kp = 16 at 298 K. What is Kc? (R = 0.0821 L·atm/(mol·K))",
+                options: ["0.65", "16", "392", "0.04"],
+                correct: 0
+            },
+            {
+                question: "For PCl₅(g) ⇌ PCl₃(g) + Cl₂(g), Kc = 0.04. If [PCl₅] = 0.1 M, what is [PCl₃] at equilibrium?",
+                options: ["0.02 M", "0.04 M", "0.06 M", "0.08 M"],
+                correct: 0
+            },
+            {
+                question: "A 0.1 M HA solution has [H⁺] = 0.01 M. Calculate Ka for the acid.",
+                options: ["1 × 10⁻³", "1 × 10⁻²", "2 × 10⁻³", "5 × 10⁻⁴"],
+                correct: 0
+            },
+            {
+                question: "What is the pH of a 0.01 M HCl solution?",
+                options: ["1", "2", "3", "4"],
+                correct: 1
+            },
+            {
+                question: "Calculate the degree of ionization of 0.1 M acetic acid (Ka = 1.8 × 10⁻⁵).",
+                options: ["0.0134", "0.0268", "0.0067", "0.0536"],
+                correct: 0
+            },
+            {
+                question: "What is the pH of a 0.1 M solution of NH₃? (Kb = 1.8 × 10⁻⁵)",
+                options: ["11.13", "9.13", "7.00", "5.13"],
+                correct: 0
+            },
+            {
+                question: "For a buffer with [CH₃COOH] = 0.1 M, [CH₃COO⁻] = 0.2 M, and pKa = 4.74, calculate pH.",
+                options: ["5.04", "4.44", "4.74", "5.34"],
+                correct: 0
+            },
+            {
+                question: "The Ksp of AgCl is 1.8 × 10⁻¹⁰. What is the molar solubility of AgCl?",
+                options: ["1.34 × 10⁻⁵ M", "1.8 × 10⁻¹⁰ M", "3.6 × 10⁻⁵ M", "9.0 × 10⁻¹¹ M"],
+                correct: 0
+            },
+            {
+                question: "In a 0.01 M NaCl solution, what is the solubility of AgCl? (Ksp = 1.8 × 10⁻¹⁰)",
+                options: ["1.8 × 10⁻⁸ M", "1.34 × 10⁻⁵ M", "3.6 × 10⁻⁸ M", "9.0 × 10⁻⁹ M"],
+                correct: 0
+            },
+            {
+                question: "For CO(g) + 2H₂(g) ⇌ CH₃OH(g), Kp = 0.01 at 298 K. Calculate Kc. (R = 0.0821 L·atm/(mol·K))",
+                options: ["0.00041", "0.01", "0.244", "24.4"],
+                correct: 0
+            },
+            {
+                question: "For N₂O₄(g) ⇌ 2NO₂(g), Kc = 0.36. If [N₂O₄] = 0.2 M, what is [NO₂] at equilibrium?",
+                options: ["0.12 M", "0.24 M", "0.06 M", "0.36 M"],
+                correct: 0
+            },
+            {
+                question: "What is the pH of a 0.05 M H₂SO₄ solution? (Assume complete ionization of first H⁺)",
+                options: ["1.30", "1.00", "2.00", "0.70"],
+                correct: 0
+            },
+            {
+                question: "Calculate the hydrolysis constant (Kh) for NH₄Cl. (Kb of NH₃ = 1.8 × 10⁻⁵, Kw = 10⁻¹⁴)",
+                options: ["5.56 × 10⁻¹⁰", "1.8 × 10⁻⁵", "2.78 × 10⁻¹⁰", "10⁻¹⁴"],
+                correct: 0
+            },
+            {
+                question: "What is the pH of a 0.1 M NH₄Cl solution? (Kh = 5.56 × 10⁻¹⁰)",
+                options: ["5.13", "7.00", "9.13", "4.87"],
+                correct: 0
+            },
+            {
+                question: "For a buffer with [HCOOH] = 0.2 M, [HCOO⁻] = 0.1 M, and pKa = 3.74, calculate pH.",
+                options: ["3.44", "3.74", "4.04", "3.14"],
+                correct: 0
+            },
+            {
+                question: "The Ksp of CaF₂ is 3.9 × 10⁻¹¹. What is the molar solubility of CaF₂?",
+                options: ["2.14 × 10⁻⁴ M", "3.9 × 10⁻¹¹ M", "1.07 × 10⁻⁴ M", "4.28 × 10⁻⁴ M"],
+                correct: 0
+            },
+            {
+                question: "In a 0.01 M NaF solution, what is the solubility of CaF₂? (Ksp = 3.9 × 10⁻¹¹)",
+                options: ["3.9 × 10⁻⁷ M", "2.14 × 10⁻⁴ M", "1.95 × 10⁻⁷ M", "7.8 × 10⁻⁷ M"],
+                correct: 0
+            },
+            {
+                question: "For 2A(g) ⇌ B(g), Kc = 4. If [A] = 0.2 M, what is [B] at equilibrium?",
+                options: ["0.16 M", "0.32 M", "0.08 M", "0.64 M"],
+                correct: 0
+            },
+            {
+                question: "What is the degree of ionization of 0.01 M HF? (Ka = 6.8 × 10⁻⁴)",
+                options: ["0.082", "0.164", "0.041", "0.328"],
+                correct: 0
+            },
+            {
+                question: "What is the pH of a 0.1 M NaOH solution?",
+                options: ["13", "12", "14", "11"],
+                correct: 0
+            },
+            {
+                question: "Calculate Ka for a weak acid with pH = 3 in a 0.1 M solution.",
+                options: ["1 × 10⁻⁴", "1 × 10⁻⁵", "2 × 10⁻⁴", "5 × 10⁻⁵"],
+                correct: 0
+            },
+            {
+                question: "What is the pH of a buffer with [NH₃] = 0.1 M, [NH₄⁺] = 0.2 M, and pKb = 4.74?",
+                options: ["9.04", "9.34", "8.74", "9.74"],
+                correct: 0
+            },
+            {
+                question: "The Ksp of PbSO₄ is 1.6 × 10⁻⁸. What is the molar solubility of PbSO₄?",
+                options: ["1.26 × 10⁻⁴ M", "1.6 × 10⁻⁸ M", "2.52 × 10⁻⁴ M", "8.0 × 10⁻⁹ M"],
+                correct: 0
+            },
+            {
+                question: "In a 0.01 M Na₂SO₄ solution, what is the solubility of PbSO₄? (Ksp = 1.6 × 10⁻⁸)",
+                options: ["1.6 × 10⁻⁶ M", "1.26 × 10⁻⁴ M", "8.0 × 10⁻⁷ M", "3.2 × 10⁻⁶ M"],
+                correct: 0
+            },
+            {
+                question: "For H₂(g) + I₂(g) ⇌ 2HI(g), Kc = 50. If [H₂] = [I₂] = 0.1 M, what is [HI] at equilibrium?",
+                options: ["0.67 M", "0.33 M", "1.34 M", "0.17 M"],
+                correct: 0
+            },
+            {
+                question: "What is the pH of a 0.001 M HNO₃ solution?",
+                options: ["2", "3", "4", "1"],
+                correct: 1
+            },
+            {
+                question: "Calculate the hydrolysis constant (Kh) for NaCN. (Ka of HCN = 4.9 × 10⁻¹⁰, Kw = 10⁻¹⁴)",
+                options: ["2.04 × 10⁻⁵", "4.9 × 10⁻¹⁰", "1.02 × 10⁻⁵", "10⁻¹⁴"],
+                correct: 0
+            },
+            {
+                question: "What is the pH of a 0.1 M NaCN solution? (Kh = 2.04 × 10⁻⁵)",
+                options: ["11.14", "7.00", "9.14", "5.14"],
+                correct: 0
+            },
+            {
+                question: "For a dibasic acid H₂A, Ka₁ = 1 × 10⁻³, [H₂A] = 0.1 M. What is [H⁺]?",
+                options: ["0.01 M", "0.02 M", "0.005 M", "0.04 M"],
+                correct: 0
+            },
+            {
+                question: "What is the degree of ionization of 0.01 M NH₃? (Kb = 1.8 × 10⁻⁵)",
+                options: ["0.042", "0.084", "0.021", "0.168"],
+                correct: 0
+            },
+            {
+                question: "The Ksp of BaSO₄ is 1.1 × 10⁻¹⁰. What is the molar solubility of BaSO₄?",
+                options: ["1.05 × 10⁻⁵ M", "1.1 × 10⁻¹⁰ M", "2.1 × 10⁻⁵ M", "5.5 × 10⁻¹¹ M"],
+                correct: 0
+            },
+            {
+                question: "In a 0.01 M BaCl₂ solution, what is the solubility of BaSO₄? (Ksp = 1.1 × 10⁻¹⁰)",
+                options: ["1.1 × 10⁻⁸ M", "1.05 × 10⁻⁵ M", "5.5 × 10⁻⁹ M", "2.2 × 10⁻⁸ M"],
+                correct: 0
+            },
+            {
+                question: "For A(g) ⇌ 2B(g), Kc = 9. If [A] = 0.1 M, what is [B] at equilibrium?",
+                options: ["0.3 M", "0.6 M", "0.15 M", "0.9 M"],
+                correct: 0
+            },
+            {
+                question: "What is the pH of a 0.01 M CH₃COOH solution? (Ka = 1.8 × 10⁻⁵)",
+                options: ["3.37", "2.87", "4.37", "5.37"],
+                correct: 0
+            },
+            {
+                question: "Calculate Kb for a weak base with pOH = 3 in a 0.1 M solution.",
+                options: ["1 × 10⁻⁴", "1 × 10⁻³", "2 × 10⁻⁴", "5 × 10⁻⁵"],
+                correct: 0
+            },
+            {
+                question: "What is the pH of a buffer with [HPO₄²⁻] = 0.1 M, [H₂PO₄⁻] = 0.2 M, and pKa = 7.21?",
+                options: ["6.91", "7.21", "7.51", "6.61"],
+                correct: 0
+            },
+            {
+                question: "The Ksp of Ag₂CrO₄ is 1.1 × 10⁻¹². What is the molar solubility of Ag₂CrO₄?",
+                options: ["6.5 × 10⁻⁵ M", "1.1 × 10⁻¹² M", "3.3 × 10⁻⁵ M", "1.3 × 10⁻⁴ M"],
+                correct: 0
+            },
+            {
+                question: "In a 0.01 M AgNO₃ solution, what is the solubility of Ag₂CrO₄? (Ksp = 1.1 × 10⁻¹²)",
+                options: ["1.1 × 10⁻⁸ M", "6.5 × 10⁻⁵ M", "5.5 × 10⁻⁹ M", "2.2 × 10⁻⁸ M"],
+                correct: 0
+            },
+            {
+                question: "For 2NO(g) ⇌ N₂(g) + O₂(g), Kc = 25. If [NO] = 0.2 M, what is [N₂] at equilibrium?",
+                options: ["0.05 M", "0.1 M", "0.025 M", "0.2 M"],
+                correct: 0
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz-container');
+
+        questions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.classList.add('question');
+            questionDiv.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+            
+            q.options.forEach((option, i) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.classList.add('option');
+                optionDiv.textContent = option;
+                optionDiv.addEventListener('click', () => {
+                    const options = questionDiv.querySelectorAll('.option');
+                    options.forEach((opt, j) => {
+                        if (j === q.correct) {
+                            opt.classList.add('correct');
+                        } else if (j === i && i !== q.correct) {
+                            opt.classList.add('incorrect');
+                        }
+                    });
+                });
+                questionDiv.appendChild(optionDiv);
+            });
+
+            quizContainer.appendChild(questionDiv);
+        });
+    </script>
+</body>
+</html>

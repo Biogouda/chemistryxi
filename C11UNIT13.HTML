@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydrocarbons MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+        .option {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #e0e0e0;
+        }
+        .correct {
+            background-color: #28a745;
+            color: white;
+        }
+        .incorrect {
+            background-color: #dc3545;
+            color: white;
+        }
+        #score {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hydrocarbons MCQ Quiz</h1>
+    <div class="quiz-container" id="quiz">
+        <!-- Questions will be dynamically inserted here -->
+    </div>
+    <div id="score"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "Hydrocarbons are compounds composed of:",
+                options: ["Carbon and hydrogen", "Carbon and oxygen", "Carbon and nitrogen", "Carbon and sulfur"],
+                correct: 0
+            },
+            {
+                question: "Aliphatic hydrocarbons include:",
+                options: ["Alkanes only", "Alkenes only", "Alkynes only", "Alkanes, alkenes, and alkynes"],
+                correct: 3
+            },
+            {
+                question: "The general formula of alkanes is:",
+                options: ["CnH2n+2", "CnH2n", "CnH2n-2", "CnHn"],
+                correct: 0
+            },
+            {
+                question: "The IUPAC name of CH3CH2CH3 is:",
+                options: ["Propane", "Ethane", "Butane", "Methane"],
+                correct: 0
+            },
+            {
+                question: "Isomerism in alkanes is due to:",
+                options: ["Functional groups", "Chain branching", "Double bonds", "Ring structures"],
+                correct: 1
+            },
+            {
+                question: "The most stable conformation of ethane is:",
+                options: ["Eclipsed", "Staggered", "Gauche", "Skew"],
+                correct: 1
+            },
+            {
+                question: "Alkanes are generally:",
+                options: ["Highly reactive", "Non-polar", "Highly polar", "Acidic"],
+                correct: 1
+            },
+            {
+                question: "Alkanes are prepared by the hydrogenation of:",
+                options: ["Alkenes", "Alkynes", "Alkenes or alkynes", "Aromatics"],
+                correct: 2
+            },
+            {
+                question: "The free radical mechanism is involved in:",
+                options: ["Halogenation of alkanes", "Addition to alkenes", "Nitration of benzene", "Ozonolysis"],
+                correct: 0
+            },
+            {
+                question: "Combustion of alkanes produces:",
+                options: ["CO2 and H2O", "CO and H2", "H2 and O2", "CO2 only"],
+                correct: 0
+            },
+            {
+                question: "Pyrolysis of alkanes results in:",
+                options: ["Smaller hydrocarbons", "Carbon dioxide", "Water", "Nitrogen gas"],
+                correct: 0
+            },
+            {
+                question: "The general formula of alkenes is:",
+                options: ["CnH2n+2", "CnH2n", "CnH2n-2", "CnHn"],
+                correct: 1
+            },
+            {
+                question: "The IUPAC name of CH2=CH2 is:",
+                options: ["Ethene", "Ethyne", "Ethane", "Propene"],
+                correct: 0
+            },
+            {
+                question: "Geometrical isomerism in alkenes is due to:",
+                options: ["Free rotation", "Restricted rotation around double bond", "Chain branching", "Functional groups"],
+                correct: 1
+            },
+            {
+                question: "Alkenes are more reactive than alkanes due to:",
+                options: ["Single bonds", "Pi bonds", "Sigma bonds", "Ionic bonds"],
+                correct: 1
+            },
+            {
+                question: "Alkenes are prepared by the dehydration of:",
+                options: ["Alcohols", "Aldehydes", "Ketones", "Carboxylic acids"],
+                correct: 0
+            },
+            {
+                question: "Markownikoff’s rule applies to the addition of:",
+                options: ["H2", "HX", "H2O", "O3"],
+                correct: 1
+            },
+            {
+                question: "The peroxide effect is observed in the addition of:",
+                options: ["HBr", "HCl", "HI", "H2"],
+                correct: 0
+            },
+            {
+                question: "Ozonolysis of alkenes produces:",
+                options: ["Alcohols", "Aldehydes or ketones", "Carboxylic acids", "Esters"],
+                correct: 1
+            },
+            {
+                question: "Oxidation of alkenes with KMnO4 yields:",
+                options: ["Alkanes", "Diols", "Aldehydes", "Acids"],
+                correct: 1
+            },
+            {
+                question: "The mechanism of electrophilic addition to alkenes involves:",
+                options: ["Free radicals", "Carbocation intermediates", "Carbanions", "Nucleophiles"],
+                correct: 1
+            },
+            {
+                question: "The general formula of alkynes is:",
+                options: ["CnH2n+2", "CnH2n", "CnH2n-2", "CnHn"],
+                correct: 2
+            },
+            {
+                question: "The IUPAC name of HC≡CH is:",
+                options: ["Ethyne", "Ethene", "Ethane", "Propyne"],
+                correct: 0
+            },
+            {
+                question: "The structure of ethyne contains:",
+                options: ["One sigma and one pi bond", "One sigma and two pi bonds", "Two sigma and one pi bond", "Three sigma bonds"],
+                correct: 1
+            },
+            {
+                question: "Alkynes exhibit acidic character due to:",
+                options: ["sp3 hybridization", "sp hybridization", "sp2 hybridization", "No hybridization"],
+                correct: 1
+            },
+            {
+                question: "Alkynes are prepared by the dehydrohalogenation of:",
+                options: ["Alkyl halides", "Vicinal dihalides", "Monohalides", "Aryl halides"],
+                correct: 1
+            },
+            {
+                question: "Addition of water to alkynes produces:",
+                options: ["Alcohols", "Ketones or aldehydes", "Carboxylic acids", "Esters"],
+                correct: 1
+            },
+            {
+                question: "Aromatic hydrocarbons are characterized by:",
+                options: ["Open chains", "Conjugated pi systems", "Single bonds only", "No rings"],
+                correct: 1
+            },
+            {
+                question: "The IUPAC name of C6H6 is:",
+                options: ["Benzene", "Toluene", "Phenol", "Aniline"],
+                correct: 0
+            },
+            {
+                question: "Resonance in benzene stabilizes the molecule by:",
+                options: ["Breaking bonds", "Delocalizing pi electrons", "Adding substituents", "Increasing polarity"],
+                correct: 1
+            },
+            {
+                question: "Aromaticity in benzene follows:",
+                options: ["Huckel’s rule", "Markownikoff’s rule", "Saytzeff’s rule", "Peroxide effect"],
+                correct: 0
+            },
+            {
+                question: "The mechanism of nitration of benzene involves:",
+                options: ["Electrophilic substitution", "Nucleophilic substitution", "Free radical substitution", "Electrophilic addition"],
+                correct: 0
+            },
+            {
+                question: "Sulphonation of benzene produces:",
+                options: ["Benzenesulphonic acid", "Nitrobenzene", "Chlorobenzene", "Toluene"],
+                correct: 0
+            },
+            {
+                question: "Friedel-Crafts alkylation of benzene requires:",
+                options: ["AlCl3", "H2SO4", "KMnO4", "NaOH"],
+                correct: 0
+            },
+            {
+                question: "The directive influence of -CH3 in monosubstituted benzene is:",
+                options: ["Ortho-para directing", "Meta directing", "No effect", "Deactivating"],
+                correct: 0
+            },
+            {
+                question: "The directive influence of -NO2 in monosubstituted benzene is:",
+                options: ["Ortho-para directing", "Meta directing", "Activating", "No effect"],
+                correct: 1
+            },
+            {
+                question: "Benzene’s carcinogenicity is due to its:",
+                options: ["Reactivity", "Aromaticity", "Metabolism to reactive intermediates", "Solubility"],
+                correct: 2
+            },
+            {
+                question: "The boiling points of alkanes increase with:",
+                options: ["Decreasing chain length", "Increasing chain length", "More branching", "Fewer carbons"],
+                correct: 1
+            },
+            {
+                question: "Alkanes are insoluble in water due to:",
+                options: ["Polarity", "Non-polarity", "High reactivity", "Low density"],
+                correct: 1
+            },
+            {
+                question: "Wurtz reaction is used to prepare:",
+                options: ["Alkenes", "Alkynes", "Alkanes", "Aromatics"],
+                correct: 2
+            },
+            {
+                question: "The intermediate in free radical halogenation of alkanes is:",
+                options: ["Carbocation", "Carbanion", "Free radical", "Nucleophile"],
+                correct: 2
+            },
+            {
+                question: "Alkenes undergo addition reactions because of:",
+                options: ["Saturated nature", "Unsaturated nature", "Aromaticity", "Ionic bonds"],
+                correct: 1
+            },
+            {
+                question: "The product of hydrogenation of ethene is:",
+                options: ["Ethane", "Ethyne", "Ethanol", "Ethanal"],
+                correct: 0
+            },
+            {
+                question: "Addition of halogens to alkenes forms:",
+                options: ["Alkyl halides", "Dihalides", "Monohalides", "Trihalides"],
+                correct: 1
+            },
+            {
+                question: "Markownikoff’s addition of HBr to propene forms:",
+                options: ["1-Bromopropane", "2-Bromopropane", "Propane", "Propyne"],
+                correct: 1
+            },
+            {
+                question: "The peroxide effect reverses the addition of:",
+                options: ["HCl", "HBr", "HI", "H2O"],
+                correct: 1
+            },
+            {
+                question: "Ozonolysis of ethene produces:",
+                options: ["Formaldehyde", "Acetaldehyde", "Formic acid", "Acetic acid"],
+                correct: 0
+            },
+            {
+                question: "Baeyer’s test for unsaturation uses:",
+                options: ["KMnO4", "Br2", "O3", "H2SO4"],
+                correct: 0
+            },
+            {
+                question: "The hybridization of carbon in ethyne is:",
+                options: ["sp3", "sp2", "sp", "dsp2"],
+                correct: 2
+            },
+            {
+                question: "Alkynes react with ammoniacal AgNO3 to form:",
+                options: ["White precipitate", "Yellow precipitate", "No precipitate", "Red precipitate"],
+                correct: 0
+            },
+            {
+                question: "Addition of HX to alkynes produces:",
+                options: ["Gem-dihalides", "Vic-dihalides", "Monohalides", "Trihalides"],
+                correct: 0
+            },
+            {
+                question: "Benzene undergoes electrophilic substitution due to:",
+                options: ["Saturated nature", "Delocalized pi electrons", "Single bonds", "High polarity"],
+                correct: 1
+            },
+            {
+                question: "Friedel-Crafts acylation introduces a:",
+                options: ["Ketone group", "Alkyl group", "Nitro group", "Sulphonic group"],
+                correct: 0
+            },
+            {
+                question: "The -OH group in phenol is:",
+                options: ["Meta directing", "Ortho-para directing", "Deactivating", "No effect"],
+                correct: 1
+            },
+            {
+                question: "Benzene’s toxicity is primarily due to its effect on:",
+                options: ["Liver", "Bone marrow", "Kidneys", "Lungs"],
+                correct: 1
+            },
+            {
+                question: "The number of sigma bonds in ethane is:",
+                options: ["5", "6", "7", "8"],
+                correct: 2
+            },
+            {
+                question: "Alkanes are also called:",
+                options: ["Olefins", "Paraffins", "Acetylenes", "Aromatics"],
+                correct: 1
+            },
+            {
+                question: "The product of complete combustion of methane is:",
+                options: ["CO and H2O", "CO2 and H2O", "CO2 only", "H2O only"],
+                correct: 1
+            },
+            {
+                question: "Kolbe’s electrolysis prepares alkanes from:",
+                options: ["Alcohols", "Carboxylic acid salts", "Aldehydes", "Ketones"],
+                correct: 1
+            },
+            {
+                question: "The geometry around the double bond in ethene is:",
+                options: ["Linear", "Trigonal planar", "Tetrahedral", "Bent"],
+                correct: 1
+            },
+            {
+                question: "Alkenes decolorize bromine water due to:",
+                options: ["Substitution", "Addition", "Elimination", "Oxidation"],
+                correct: 1
+            },
+            {
+                question: "The product of hydration of ethyne is:",
+                options: ["Ethanol", "Acetaldehyde", "Acetic acid", "Ethane"],
+                correct: 1
+            },
+            {
+                question: "Benzene has how many delocalized pi electrons?",
+                options: ["2", "4", "6", "8"],
+                correct: 2
+            },
+            {
+                question: "The electrophile in nitration of benzene is:",
+                options: ["NO2+", "NO3-", "HNO3", "NO"],
+                correct: 0
+            },
+            {
+                question: "The catalyst in Friedel-Crafts alkylation is:",
+                options: ["H2SO4", "AlCl3", "NaOH", "KMnO4"],
+                correct: 1
+            },
+            {
+                question: "The -Cl group in chlorobenzene is:",
+                options: ["Ortho-para directing", "Meta directing", "Activating", "No effect"],
+                correct: 0
+            },
+            {
+                question: "Alkanes undergo substitution reactions with:",
+                options: ["Halogens", "Water", "Alcohols", "Acids"],
+                correct: 0
+            },
+            {
+                question: "The boiling point of branched alkanes is _____ than unbranched alkanes.",
+                options: ["Higher", "Lower", "Same", "Unpredictable"],
+                correct: 1
+            },
+            {
+                question: "Alkenes are prepared by dehydrohalogenation of:",
+                options: ["Alkyl halides", "Alcohols", "Aldehydes", "Ketones"],
+                correct: 0
+            },
+            {
+                question: "The electrophile in sulphonation of benzene is:",
+                options: ["SO3", "H2SO4", "SO2", "HSO4-"],
+                correct: 0
+            },
+            {
+                question: "The product of ozonolysis of propyne is:",
+                options: ["Glyoxal", "Methylglyoxal", "Formaldehyde", "Acetaldehyde"],
+                correct: 1
+            },
+            {
+                question: "Alkynes form precipitates with ammoniacal CuCl due to:",
+                options: ["Acidic hydrogen", "Double bonds", "Triple bonds", "Non-polarity"],
+                correct: 0
+            },
+            {
+                question: "Benzene resists addition reactions due to:",
+                options: ["High polarity", "Aromatic stability", "Single bonds", "Low reactivity"],
+                correct: 1
+            },
+            {
+                question: "The -COOH group in benzoic acid is:",
+                options: ["Ortho-para directing", "Meta directing", "Activating", "No effect"],
+                correct: 1
+            },
+            {
+                question: "The number of pi bonds in ethene is:",
+                options: ["1", "2", "3", "0"],
+                correct: 0
+            },
+            {
+                question: "Alkanes are used as:",
+                options: ["Fuels", "Antiseptics", "Catalysts", "Fertilizers"],
+                correct: 0
+            },
+            {
+                question: "The hybridization of carbon in ethene is:",
+                options: ["sp3", "sp2", "sp", "dsp2"],
+                correct: 1
+            },
+            {
+                question: "The product of halogenation of benzene is:",
+                options: ["Chlorobenzene", "Cyclohexane", "Hexachlorobenzene", "Dichlorobenzene"],
+                correct: 0
+            },
+            {
+                question: "The directive influence of -NH2 in aniline is:",
+                options: ["Ortho-para directing", "Meta directing", "Deactivating", "No effect"],
+                correct: 0
+            },
+            {
+                question: "The intermediate in electrophilic substitution of benzene is:",
+                options: ["Carbocation", "Carbanion", "Free radical", "Sigma complex"],
+                correct: 3
+            },
+            {
+                question: "Alkenes are used in the production of:",
+                options: ["Plastics", "Fertilizers", "Batteries", "Cement"],
+                correct: 0
+            },
+            {
+                question: "The product of addition of Cl2 to ethyne is:",
+                options: ["1,1-Dichloroethane", "1,2-Dichloroethene", "Tetrachloroethane", "Dichloroethane"],
+                correct: 2
+            },
+            {
+                question: "Benzene’s aromaticity requires:",
+                options: ["4 pi electrons", "6 pi electrons", "8 pi electrons", "10 pi electrons"],
+                correct: 1
+            },
+            {
+                question: "The -CHO group in benzaldehyde is:",
+                options: ["Ortho-para directing", "Meta directing", "Activating", "No effect"],
+                correct: 1
+            },
+            {
+                question: "The product of Friedel-Crafts acylation of benzene is a:",
+                options: ["Ketone", "Alkylbenzene", "Nitrobenzene", "Sulphonic acid"],
+                correct: 0
+            },
+            {
+                question: "Alkanes undergo chlorination in the presence of:",
+                options: ["UV light", "H2SO4", "AlCl3", "NaOH"],
+                correct: 0
+            },
+            {
+                question: "The solubility of alkenes in water is:",
+                options: ["High", "Low", "Moderate", "Variable"],
+                correct: 1
+            },
+            {
+                question: "The product of hydration of propyne is:",
+                options: ["Propanol", "Acetone", "Propanal", "Propanone"],
+                correct: 1
+            },
+            {
+                question: "Benzene’s exposure may lead to:",
+                options: ["Diabetes", "Leukemia", "Asthma", "Hypertension"],
+                correct: 1
+            },
+            {
+                question: "The number of sigma bonds in ethyne is:",
+                options: ["3", "4", "5", "6"],
+                correct: 0
+            }
+        ];
+
+        let score = 0;
+
+        function loadQuiz() {
+            const quizContainer = document.getElementById('quiz');
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                questionDiv.innerHTML = `
+                    <p>${index + 1}. ${q.question}</p>
+                    <div class="options">
+                        ${q.options.map((option, i) => `
+                            <div class="option" onclick="checkAnswer(${index}, ${i}, this)">${option}</div>
+                        `).join('')}
+                    </div>
+                `;
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function checkAnswer(questionIndex, selectedIndex, element) {
+            const correctIndex = questions[questionIndex].correct;
+            const options = element.parentElement.querySelectorAll('.option');
+            options.forEach((opt, i) => {
+                opt.style.pointerEvents = 'none'; // Disable further clicks
+                if (i === correctIndex) {
+                    opt.classList.add('correct');
+                } else if (i === selectedIndex && i !== correctIndex) {
+                    opt.classList.add('incorrect');
+                }
+            });
+            if (selectedIndex === correctIndex) {
+                score++;
+                document.getElementById('score').innerText = `Score: ${score} / ${questions.length}`;
+            }
+        }
+
+        window.onload = loadQuiz;
+    </script>
+</body>
+</html>

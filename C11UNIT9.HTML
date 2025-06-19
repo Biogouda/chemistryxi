@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydrogen MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+        .option {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #e0e0e0;
+        }
+        .correct {
+            background-color: #28a745;
+            color: white;
+        }
+        .incorrect {
+            background-color: #dc3545;
+            color: white;
+        }
+        #score {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hydrogen MCQ Quiz</h1>
+    <div class="quiz-container" id="quiz">
+        <!-- Questions will be dynamically inserted here -->
+    </div>
+    <div id="score"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is the position of hydrogen in the periodic table?",
+                options: ["Group 1, Period 1", "Group 17, Period 1", "Group 1, Period 2", "Group 18, Period 1"],
+                correct: 0
+            },
+            {
+                question: "Hydrogen is primarily found in nature as:",
+                options: ["Free element", "Diatomic gas", "Combined in compounds", "Liquid"],
+                correct: 2
+            },
+            {
+                question: "How many isotopes does hydrogen have?",
+                options: ["One", "Two", "Three", "Four"],
+                correct: 2
+            },
+            {
+                question: "Which isotope of hydrogen is also called deuterium?",
+                options: ["¹H", "²H", "³H", "⁴H"],
+                correct: 1
+            },
+            {
+                question: "Tritium, an isotope of hydrogen, is:",
+                options: ["Stable", "Radioactive", "Non-existent", "Chemically inert"],
+                correct: 1
+            },
+            {
+                question: "Hydrogen is prepared industrially by:",
+                options: ["Electrolysis of water", "Burning methane", "Distillation of air", "Neutralization"],
+                correct: 0
+            },
+            {
+                question: "The laboratory preparation of hydrogen involves:",
+                options: ["Zn + HCl", "Na + H₂O", "Cu + H₂SO₄", "Mg + HNO₃"],
+                correct: 0
+            },
+            {
+                question: "Hydrogen gas is:",
+                options: ["Denser than air", "Colorless and odorless", "Highly soluble in water", "Magnetic"],
+                correct: 1
+            },
+            {
+                question: "The chemical property of hydrogen includes its ability to:",
+                options: ["Act as an oxidizing agent only", "Act as a reducing agent", "Be unreactive", "Form precipitates"],
+                correct: 1
+            },
+            {
+                question: "Hydrogen is used in:",
+                options: ["Making ammonia", "Water purification", "Glass manufacturing", "Sugar refining"],
+                correct: 0
+            },
+            {
+                question: "Ionic hydrides are formed by:",
+                options: ["Transition metals", "Group 1 and 2 metals", "Non-metals", "Noble gases"],
+                correct: 1
+            },
+            {
+                question: "Covalent hydrides are typically formed by:",
+                options: ["Alkali metals", "p-block elements", "d-block elements", "Actinides"],
+                correct: 1
+            },
+            {
+                question: "Interstitial hydrides are also known as:",
+                options: ["Metallic hydrides", "Ionic hydrides", "Covalent hydrides", "Complex hydrides"],
+                correct: 0
+            },
+            {
+                question: "The boiling point of water is high due to:",
+                options: ["Covalent bonding", "Hydrogen bonding", "Ionic bonding", "Metallic bonding"],
+                correct: 1
+            },
+            {
+                question: "Water is a universal solvent because it:",
+                options: ["Is non-polar", "Has a high dielectric constant", "Is highly viscous", "Has low surface tension"],
+                correct: 1
+            },
+            {
+                question: "Heavy water is chemically known as:",
+                options: ["H₂O", "D₂O", "T₂O", "HDO"],
+                correct: 1
+            },
+            {
+                question: "Heavy water is used in:",
+                options: ["Nuclear reactors", "Food preservation", "Battery production", "Textile dyeing"],
+                correct: 0
+            },
+            {
+                question: "Hydrogen peroxide (H₂O₂) is prepared commercially by:",
+                options: ["Electrolysis of water", "Oxidation of 2-ethylanthraquinone", "Burning hydrogen", "Neutralizing acids"],
+                correct: 1
+            },
+            {
+                question: "Hydrogen peroxide acts as:",
+                options: ["Oxidizing agent only", "Reducing agent only", "Both oxidizing and reducing agent", "Neither"],
+                correct: 2
+            },
+            {
+                question: "The structure of hydrogen peroxide includes:",
+                options: ["A linear O-O bond", "A bent O-O bond", "A triple bond", "No O-O bond"],
+                correct: 0
+            },
+            {
+                question: "Hydrogen peroxide is used as:",
+                options: ["A bleaching agent", "A fuel", "A fertilizer", "A catalyst"],
+                correct: 0
+            },
+            {
+                question: "Hydrogen as a fuel is advantageous because it:",
+                options: ["Produces CO₂", "Is non-renewable", "Produces water on combustion", "Is highly toxic"],
+                correct: 2
+            },
+            {
+                question: "The most abundant isotope of hydrogen is:",
+                options: ["Protium", "Deuterium", "Tritium", "All are equally abundant"],
+                correct: 0
+            },
+            {
+                question: "Hydrogen reacts with halogens to form:",
+                options: ["Ionic hydrides", "Covalent hydrides", "Interstitial hydrides", "No hydrides"],
+                correct: 1
+            },
+            {
+                question: "The density of hydrogen gas is:",
+                options: ["Higher than air", "Equal to air", "Lower than air", "Variable"],
+                correct: 2
+            },
+            {
+                question: "Water’s high surface tension is due to:",
+                options: ["Covalent bonds", "Hydrogen bonds", "Ionic bonds", "Van der Waals forces"],
+                correct: 1
+            },
+            {
+                question: "Heavy water differs from normal water due to:",
+                options: ["Presence of deuterium", "Higher pH", "Lower density", "Different color"],
+                correct: 0
+            },
+            {
+                question: "Hydrogen peroxide decomposes to form:",
+                options: ["H₂ and O₂", "H₂O and O₂", "H₂ and H₂O", "O₂ only"],
+                correct: 1
+            },
+            {
+                question: "The oxidation state of oxygen in H₂O₂ is:",
+                options: ["-2", "-1", "0", "+1"],
+                correct: 1
+            },
+            {
+                question: "Hydrogen is stored for fuel cells as:",
+                options: ["Liquid hydrogen", "Solid hydrogen", "Gaseous hydrogen", "Both liquid and gaseous"],
+                correct: 3
+            },
+            {
+                question: "Which hydride is used as a reducing agent?",
+                options: ["NaH", "CH₄", "NH₃", "H₂O"],
+                correct: 0
+            },
+            {
+                question: "The bond angle in water molecule is approximately:",
+                options: ["180°", "120°", "104.5°", "90°"],
+                correct: 2
+            },
+            {
+                question: "Hydrogen is used in the Haber process to produce:",
+                options: ["Nitrogen", "Ammonia", "Oxygen", "Sulfur"],
+                correct: 1
+            },
+            {
+                question: "Which property makes hydrogen a good fuel?",
+                options: ["Low energy content", "High flammability", "High density", "Low reactivity"],
+                correct: 1
+            },
+            {
+                question: "The molecular formula of water is:",
+                options: ["HO", "H₂O", "H₂O₂", "HO₂"],
+                correct: 1
+            },
+            {
+                question: "Hydrogen peroxide is stored in dark bottles to:",
+                options: ["Prevent decomposition", "Enhance reactivity", "Increase concentration", "Change color"],
+                correct: 0
+            },
+            {
+                question: "Which element does hydrogen resemble in its chemical properties?",
+                options: ["Helium", "Sodium", "Fluorine", "Both alkali metals and halogens"],
+                correct: 3
+            },
+            {
+                question: "Interstitial hydrides are formed by:",
+                options: ["Alkali metals", "Transition metals", "Non-metals", "Noble gases"],
+                correct: 1
+            },
+            {
+                question: "The primary source of hydrogen in the universe is:",
+                options: ["Stars", "Oceans", "Atmosphere", "Minerals"],
+                correct: 0
+            },
+            {
+                question: "Hydrogen fuel cells generate electricity by combining hydrogen with:",
+                options: ["Nitrogen", "Oxygen", "Carbon", "Sulfur"],
+                correct: 1
+            }
+        ];
+
+        let score = 0;
+
+        function loadQuiz() {
+            const quizContainer = document.getElementById('quiz');
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                questionDiv.innerHTML = `
+                    <p>${index + 1}. ${q.question}</p>
+                    <div class="options">
+                        ${q.options.map((option, i) => `
+                            <div class="option" onclick="checkAnswer(${index}, ${i}, this)">${option}</div>
+                        `).join('')}
+                    </div>
+                `;
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function checkAnswer(questionIndex, selectedIndex, element) {
+            const correctIndex = questions[questionIndex].correct;
+            const options = element.parentElement.querySelectorAll('.option');
+            options.forEach((opt, i) => {
+                opt.style.pointerEvents = 'none'; // Disable further clicks
+                if (i === correctIndex) {
+                    opt.classList.add('correct');
+                } else if (i === selectedIndex && i !== correctIndex) {
+                    opt.classList.add('incorrect');
+                }
+            });
+            if (selectedIndex === correctIndex) {
+                score++;
+                document.getElementById('score').innerText = `Score: ${score} / ${questions.length}`;
+            }
+        }
+
+        window.onload = loadQuiz;
+    </script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redox Reactions MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+        .option {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #e0e0e0;
+        }
+        .correct {
+            background-color: #28a745;
+            color: white;
+        }
+        .incorrect {
+            background-color: #dc3545;
+            color: white;
+        }
+        #score {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Redox Reactions MCQ Quiz</h1>
+    <div class="quiz-container" id="quiz">
+        <!-- Questions will be dynamically inserted here -->
+    </div>
+    <div id="score"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is oxidation in terms of electron transfer?",
+                options: ["Gain of electrons", "Loss of electrons", "No change in electrons", "Transfer of protons"],
+                correct: 1
+            },
+            {
+                question: "Reduction involves:",
+                options: ["Loss of electrons", "Gain of electrons", "Increase in oxidation number", "Loss of protons"],
+                correct: 1
+            },
+            {
+                question: "In a redox reaction, the substance that undergoes oxidation is called:",
+                options: ["Oxidizing agent", "Reducing agent", "Catalyst", "Electrolyte"],
+                correct: 1
+            },
+            {
+                question: "The oxidation number of oxygen in most compounds is:",
+                options: ["+1", "-1", "-2", "+2"],
+                correct: 2
+            },
+            {
+                question: "What is the oxidation number of hydrogen in metal hydrides?",
+                options: ["+1", "-1", "0", "+2"],
+                correct: 1
+            },
+            {
+                question: "In the reaction Zn + CuSO₄ → ZnSO₄ + Cu, which species is reduced?",
+                options: ["Zn", "Cu²⁺", "SO₄²⁻", "Zn²⁺"],
+                correct: 1
+            },
+            {
+                question: "The process of balancing redox reactions involves:",
+                options: ["Balancing atoms only", "Balancing electrons only", "Balancing both atoms and electrons", "Balancing protons only"],
+                correct: 2
+            },
+            {
+                question: "In the reaction 2Fe³⁺ + Sn²⁺ → 2Fe²⁺ + Sn⁴⁺, what is the oxidizing agent?",
+                options: ["Fe³⁺", "Sn²⁺", "Fe²⁺", "Sn⁴⁺"],
+                correct: 0
+            },
+            {
+                question: "The oxidation number of chlorine in Cl₂ is:",
+                options: ["-1", "0", "+1", "+2"],
+                correct: 1
+            },
+            {
+                question: "Which of the following is a redox reaction?",
+                options: ["NaCl + AgNO₃ → AgCl + NaNO₃", "H₂ + Cl₂ → 2HCl", "CaCO₃ → CaO + CO₂", "NH₃ + HCl → NH₄Cl"],
+                correct: 1
+            },
+            {
+                question: "In the reaction 2H₂O₂ → 2H₂O + O₂, H₂O₂ acts as:",
+                options: ["Oxidizing agent only", "Reducing agent only", "Both oxidizing and reducing agent", "Neither oxidizing nor reducing agent"],
+                correct: 2
+            },
+            {
+                question: "The oxidation number of sulfur in SO₄²⁻ is:",
+                options: ["+2", "+4", "+6", "-2"],
+                correct: 2
+            },
+            {
+                question: "Which element is oxidized in the reaction 2Mg + O₂ → 2MgO?",
+                options: ["Mg", "O", "Both Mg and O", "Neither Mg nor O"],
+                correct: 0
+            },
+            {
+                question: "In balancing redox reactions by the half-reaction method, what is balanced first?",
+                options: ["Electrons", "Atoms", "Charge", "Protons"],
+                correct: 1
+            },
+            {
+                question: "The application of redox reactions is found in:",
+                options: ["Electrolysis", "Neutralization", "Precipitation", "Distillation"],
+                correct: 0
+            },
+            {
+                question: "In the reaction Cu + 2AgNO₃ → Cu(NO₃)₂ + 2Ag, what is reduced?",
+                options: ["Cu", "Ag⁺", "NO₃⁻", "Cu²⁺"],
+                correct: 1
+            },
+            {
+                question: "The oxidation number of carbon in CO₂ is:",
+                options: ["+2", "+4", "-2", "-4"],
+                correct: 1
+            },
+            {
+                question: "Which of the following is NOT a redox reaction?",
+                options: ["2Na + Cl₂ → 2NaCl", "H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O", "2H₂ + O₂ → 2H₂O", "Fe + CuSO₄ → FeSO₄ + Cu"],
+                correct: 1
+            },
+            {
+                question: "In a galvanic cell, the anode is the site of:",
+                options: ["Reduction", "Oxidation", "Both oxidation and reduction", "No reaction"],
+                correct: 1
+            },
+            {
+                question: "The oxidation number of nitrogen in NH₃ is:",
+                options: ["-3", "-1", "+3", "+1"],
+                correct: 0
+            },
+            {
+                question: "In the reaction 2KI + Cl₂ → 2KCl + I₂, what is the reducing agent?",
+                options: ["KI", "Cl₂", "KCl", "I₂"],
+                correct: 0
+            },
+            {
+                question: "The sum of oxidation numbers in a neutral compound is:",
+                options: ["+1", "-1", "0", "Depends on the compound"],
+                correct: 2
+            },
+            {
+                question: "Which of the following is an application of redox reactions?",
+                options: ["Battery operation", "Acid-base titration", "Filtration", "Crystallization"],
+                correct: 0
+            },
+            {
+                question: "In the reaction MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O, what is oxidized?",
+                options: ["MnO₄⁻", "Fe²⁺", "H⁺", "Mn²⁺"],
+                correct: 1
+            },
+            {
+                question: "The oxidation number of phosphorus in P₄ is:",
+                options: ["+4", "0", "-4", "+1"],
+                correct: 1
+            },
+            {
+                question: "In the reaction 2H₂S + SO₂ → 3S + 2H₂O, what acts as the oxidizing agent?",
+                options: ["H₂S", "SO₂", "S", "H₂O"],
+                correct: 1
+            },
+            {
+                question: "The oxidation number of chromium in Cr₂O₇²⁻ is:",
+                options: ["+3", "+6", "+2", "-6"],
+                correct: 1
+            },
+            {
+                question: "Which process involves both oxidation and reduction?",
+                options: ["Neutralization", "Redox reaction", "Precipitation", "Ionization"],
+                correct: 1
+            },
+            {
+                question: "In the reaction 4Fe + 3O₂ → 2Fe₂O₃, the oxidation number of Fe changes from:",
+                options: ["0 to +3", "0 to +2", "+2 to +3", "+3 to 0"],
+                correct: 0
+            },
+            {
+                question: "The reducing agent in a redox reaction:",
+                options: ["Gains electrons", "Loses electrons", "Does not change electrons", "Loses protons"],
+                correct: 1
+            },
+            {
+                question: "The oxidation number of iodine in I₂ is:",
+                options: ["-1", "0", "+1", "+2"],
+                correct: 1
+            },
+            {
+                question: "In corrosion, iron undergoes:",
+                options: ["Reduction", "Oxidation", "Neutralization", "Precipitation"],
+                correct: 1
+            },
+            {
+                question: "The oxidation number of sulfur in H₂SO₄ is:",
+                options: ["+2", "+4", "+6", "-2"],
+                correct: 2
+            },
+            {
+                question: "In the reaction Pb + PbO₂ + 2H₂SO₄ → 2PbSO₄ + 2H₂O, PbO₂ is:",
+                options: ["Oxidized", "Reduced", "Both oxidized and reduced", "Neither oxidized nor reduced"],
+                correct: 1
+            },
+            {
+                question: "The oxidation number of chlorine in HClO₄ is:",
+                options: ["+1", "+5", "+7", "-1"],
+                correct: 2
+            },
+            {
+                question: "Which of the following is a redox reaction used in everyday life?",
+                options: ["Burning of fuel", "Dissolving sugar in water", "Boiling water", "Mixing sand and water"],
+                correct: 0
+            },
+            {
+                question: "In the reaction 2Cr + 3CuSO₄ → Cr₂(SO₄)₃ + 3Cu, what is oxidized?",
+                options: ["Cr", "Cu²⁺", "SO₄²⁻", "Cr³⁺"],
+                correct: 0
+            },
+            {
+                question: "The oxidation number of manganese in MnO₂ is:",
+                options: ["+2", "+4", "+7", "-2"],
+                correct: 1
+            },
+            {
+                question: "In the electrolysis of water, the reaction at the cathode is:",
+                options: ["Oxidation", "Reduction", "Neutralization", "Precipitation"],
+                correct: 1
+            },
+            {
+                question: "The oxidation number of nitrogen in N₂ is:",
+                options: ["-3", "0", "+3", "+5"],
+                correct: 1
+            }
+        ];
+
+        let score = 0;
+
+        function loadQuiz() {
+            const quizContainer = document.getElementById('quiz');
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                questionDiv.innerHTML = `
+                    <p>${index + 1}. ${q.question}</p>
+                    <div class="options">
+                        ${q.options.map((option, i) => `
+                            <div class="option" onclick="checkAnswer(${index}, ${i}, this)">${option}</div>
+                        `).join('')}
+                    </div>
+                `;
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function checkAnswer(questionIndex, selectedIndex, element) {
+            const correctIndex = questions[questionIndex].correct;
+            const options = element.parentElement.querySelectorAll('.option');
+            options.forEach((opt, i) => {
+                opt.style.pointerEvents = 'none'; // Disable further clicks
+                if (i === correctIndex) {
+                    opt.classList.add('correct');
+                } else if (i === selectedIndex && i !== correctIndex) {
+                    opt.classList.add('incorrect');
+                }
+            });
+            if (selectedIndex === correctIndex) {
+                score++;
+                document.getElementById('score').innerText = `Score: ${score} / ${questions.length}`;
+            }
+        }
+
+        window.onload = loadQuiz;
+    </script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p-Block Elements MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+        .option {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #e0e0e0;
+        }
+        .correct {
+            background-color: #28a745;
+            color: white;
+        }
+        .incorrect {
+            background-color: #dc3545;
+            color: white;
+        }
+        #score {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>p-Block Elements MCQ Quiz</h1>
+    <div class="quiz-container" id="quiz">
+        <!-- Questions will be dynamically inserted here -->
+    </div>
+    <div id="score"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "Which groups in the periodic table are classified as p-block elements?",
+                options: ["Groups 1-2", "Groups 3-12", "Groups 13-18", "Groups 17-18 only"],
+                correct: 2
+            },
+            {
+                question: "The general electronic configuration of p-block elements is:",
+                options: ["ns¹", "ns²", "ns²np¹⁻⁶", "ns²np⁶"],
+                correct: 2
+            },
+            {
+                question: "The electronic configuration of Group 13 elements ends in:",
+                options: ["ns²np¹", "ns²np²", "ns²np³", "ns²np⁴"],
+                correct: 0
+            },
+            {
+                question: "Group 13 elements are primarily found in nature as:",
+                options: ["Free elements", "Oxides or halides", "Sulfides", "Nitrides"],
+                correct: 1
+            },
+            {
+                question: "The first element of Group 13, boron, shows anomalous behavior due to its:",
+                options: ["Large size", "Small size and high ionization energy", "Low electronegativity", "Metallic nature"],
+                correct: 1
+            },
+            {
+                question: "The most common oxidation state of Group 13 elements is:",
+                options: ["+1", "+2", "+3", "+4"],
+                correct: 2
+            },
+            {
+                question: "The ionization enthalpy of Group 13 elements _____ down the group.",
+                options: ["Increases", "Decreases", "Remains constant", "Varies irregularly"],
+                correct: 1
+            },
+            {
+                question: "Boron is a:",
+                options: ["Metal", "Non-metal", "Metalloid", "Noble gas"],
+                correct: 2
+            },
+            {
+                question: "Boron reacts with oxygen to form:",
+                options: ["B₂O₃", "BO₂", "B₂O", "BO"],
+                correct: 0
+            },
+            {
+                question: "Borax is chemically known as:",
+                options: ["Na₂B₄O₇·10H₂O", "H₃BO₃", "B₂H₆", "Al₂O₃"],
+                correct: 0
+            },
+            {
+                question: "Boric acid is used as:",
+                options: ["A fertilizer", "An antiseptic", "A fuel", "A catalyst"],
+                correct: 1
+            },
+            {
+                question: "Boron hydrides are also known as:",
+                options: ["Boranes", "Borates", "Borides", "Borax"],
+                correct: 0
+            },
+            {
+                question: "Aluminum reacts with dilute acids to produce:",
+                options: ["Hydrogen gas", "Oxygen gas", "Nitrogen gas", "Carbon dioxide"],
+                correct: 0
+            },
+            {
+                question: "Aluminum reacts with alkalies to form:",
+                options: ["Al₂O₃", "Al(OH)₃", "NaAlO₂", "AlCl₃"],
+                correct: 2
+            },
+            {
+                question: "Aluminum is used in:",
+                options: ["Making utensils", "Fertilizer production", "Glass manufacturing", "Sugar refining"],
+                correct: 0
+            },
+            {
+                question: "The electronic configuration of Group 14 elements ends in:",
+                options: ["ns²np¹", "ns²np²", "ns²np³", "ns²np⁴"],
+                correct: 1
+            },
+            {
+                question: "The first element of Group 14, carbon, is unique due to its ability to:",
+                options: ["Form ionic bonds", "Exhibit catenation", "Be a metal", "Form single bonds only"],
+                correct: 1
+            },
+            {
+                question: "Which of the following is an allotropic form of carbon?",
+                options: ["Graphite", "Boron", "Silicon", "Aluminum"],
+                correct: 0
+            },
+            {
+                question: "The oxidation states of Group 14 elements are typically:",
+                options: ["+1 and +2", "+2 and +4", "+3 and +5", "+1 and +3"],
+                correct: 1
+            },
+            {
+                question: "The chemical reactivity of Group 14 elements _____ down the group.",
+                options: ["Increases", "Decreases", "Remains constant", "Varies irregularly"],
+                correct: 1
+            },
+            {
+                question: "Graphite is used as a:",
+                options: ["Fuel", "Lubricant", "Catalyst", "Fertilizer"],
+                correct: 1
+            },
+            {
+                question: "Diamond is known for its:",
+                options: ["High electrical conductivity", "Softness", "High hardness", "Solubility in water"],
+                correct: 2
+            },
+            {
+                question: "Carbon monoxide (CO) is:",
+                options: ["A neutral oxide", "An acidic oxide", "A basic oxide", "An amphoteric oxide"],
+                correct: 0
+            },
+            {
+                question: "Carbon dioxide (CO₂) reacts with water to form:",
+                options: ["Carbonic acid", "Hydrochloric acid", "Sulfuric acid", "Nitric acid"],
+                correct: 0
+            },
+            {
+                question: "Silicon is a:",
+                options: ["Metal", "Non-metal", "Metalloid", "Noble gas"],
+                correct: 2
+            },
+            {
+                question: "Silicon tetrachloride (SiCl₄) is used in the production of:",
+                options: ["Silicones", "Fertilizers", "Glass", "Cement"],
+                correct: 0
+            },
+            {
+                question: "Silicones are known for their:",
+                options: ["High reactivity", "Water repellency", "Brittleness", "High conductivity"],
+                correct: 1
+            },
+            {
+                question: "Silicates are compounds containing:",
+                options: ["SiO₄⁴⁻ units", "CO₃²⁻ units", "SO₄²⁻ units", "NO₃⁻ units"],
+                correct: 0
+            },
+            {
+                question: "Zeolites are used as:",
+                options: ["Catalysts", "Fuels", "Antiseptics", "Fertilizers"],
+                correct: 0
+            },
+            {
+                question: "The atomic radii of Group 14 elements _____ down the group.",
+                options: ["Increase", "Decrease", "Remain constant", "Vary irregularly"],
+                correct: 0
+            },
+            {
+                question: "Boron’s inability to form B³⁺ ions is due to its:",
+                options: ["Low ionization energy", "High ionization energy", "Large size", "Metallic character"],
+                correct: 1
+            },
+            {
+                question: "Aluminum oxide (Al₂O₃) is:",
+                options: ["Acidic", "Basic", "Amphoteric", "Neutral"],
+                correct: 2
+            },
+            {
+                question: "The formula of boric acid is:",
+                options: ["H₃BO₃", "H₂BO₂", "HBO₂", "H₄BO₄"],
+                correct: 0
+            },
+            {
+                question: "Diborane (B₂H₆) is known for its:",
+                options: ["Ionic bonding", "Electron-deficient bonding", "Metallic bonding", "Single covalent bonding"],
+                correct: 1
+            },
+            {
+                question: "Carbon’s catenation property allows it to form:",
+                options: ["Short chains only", "Long chains and rings", "Ionic compounds", "Metallic lattices"],
+                correct: 1
+            },
+            {
+                question: "Silicon is used in:",
+                options: ["Solar cells", "Fertilizers", "Paper production", "Soap manufacturing"],
+                correct: 0
+            },
+            {
+                question: "The melting point of Group 14 elements _____ down the group.",
+                options: ["Increases", "Decreases", "Remains constant", "Varies irregularly"],
+                correct: 1
+            },
+            {
+                question: "Borax is used in:",
+                options: ["Welding", "Fertilizer production", "Battery manufacturing", "Sugar refining"],
+                correct: 0
+            },
+            {
+                question: "The structure of graphite includes:",
+                options: ["Tetrahedral layers", "Planar layers with delocalized electrons", "Linear chains", "Ionic lattices"],
+                correct: 1
+            },
+            {
+                question: "Zeolites are commonly used in:",
+                options: ["Water softening", "Food preservation", "Battery production", "Textile dyeing"],
+                correct: 0
+            }
+        ];
+
+        let score = 0;
+
+        function loadQuiz() {
+            const quizContainer = document.getElementById('quiz');
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                questionDiv.innerHTML = `
+                    <p>${index + 1}. ${q.question}</p>
+                    <div class="options">
+                        ${q.options.map((option, i) => `
+                            <div class="option" onclick="checkAnswer(${index}, ${i}, this)">${option}</div>
+                        `).join('')}
+                    </div>
+                `;
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function checkAnswer(questionIndex, selectedIndex, element) {
+            const correctIndex = questions[questionIndex].correct;
+            const options = element.parentElement.querySelectorAll('.option');
+            options.forEach((opt, i) => {
+                opt.style.pointerEvents = 'none'; // Disable further clicks
+                if (i === correctIndex) {
+                    opt.classList.add('correct');
+                } else if (i === selectedIndex && i !== correctIndex) {
+                    opt.classList.add('incorrect');
+                }
+            });
+            if (selectedIndex === correctIndex) {
+                score++;
+                document.getElementById('score').innerText = `Score: ${score} / ${questions.length}`;
+            }
+        }
+
+        window.onload = loadQuiz;
+    </script>
+</body>
+</html>

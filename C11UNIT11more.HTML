@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p-Block Elements MCQ Quiz (Set 2)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+        .option {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #e0e0e0;
+        }
+        .correct {
+            background-color: #28a745;
+            color: white;
+        }
+        .incorrect {
+            background-color: #dc3545;
+            color: white;
+        }
+        #score {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>p-Block Elements MCQ Quiz (Set 2)</h1>
+    <div class="quiz-container" id="quiz">
+        <!-- Questions will be dynamically inserted here -->
+    </div>
+    <div id="score"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "The p-block elements are located in which part of the periodic table?",
+                options: ["Left side", "Middle", "Right side", "Bottom"],
+                correct: 2
+            },
+            {
+                question: "The valence electron configuration of Group 13 elements is:",
+                options: ["ns²np¹", "ns²np²", "ns²np³", "ns²np⁴"],
+                correct: 0
+            },
+            {
+                question: "Which Group 13 element is most abundant in the Earth’s crust?",
+                options: ["Boron", "Aluminum", "Gallium", "Indium"],
+                correct: 1
+            },
+            {
+                question: "Boron’s anomalous behavior is primarily due to its:",
+                options: ["High electronegativity", "Large atomic radius", "Low ionization energy", "Metallic nature"],
+                correct: 0
+            },
+            {
+                question: "The atomic radii of Group 13 elements _____ down the group.",
+                options: ["Increase", "Decrease", "Remain constant", "Vary irregularly"],
+                correct: 0
+            },
+            {
+                question: "The common oxidation state of aluminum is:",
+                options: ["+1", "+2", "+3", "+4"],
+                correct: 2
+            },
+            {
+                question: "Boron trioxide (B₂O₃) is:",
+                options: ["Acidic", "Basic", "Amphoteric", "Neutral"],
+                correct: 0
+            },
+            {
+                question: "Borax is used in the manufacture of:",
+                options: ["Glass", "Fertilizers", "Batteries", "Cement"],
+                correct: 0
+            },
+            {
+                question: "The chemical formula of boric acid is:",
+                options: ["HBO₂", "H₂BO₂", "H₃BO₃", "H₄BO₄"],
+                correct: 2
+            },
+            {
+                question: "Diborane (B₂H₆) is used as a:",
+                options: ["Fuel", "Reducing agent", "Antiseptic", "Catalyst"],
+                correct: 1
+            },
+            {
+                question: "Aluminum’s protective oxide layer makes it resistant to:",
+                options: ["Corrosion", "High temperatures", "Acids only", "Alkalies only"],
+                correct: 0
+            },
+            {
+                question: "Aluminum is used in the production of:",
+                options: ["Aircraft", "Fertilizers", "Paper", "Soap"],
+                correct: 0
+            },
+            {
+                question: "The valence electron configuration of Group 14 elements is:",
+                options: ["ns²np¹", "ns²np²", "ns²np³", "ns²np⁴"],
+                correct: 1
+            },
+            {
+                question: "Carbon’s ability to form long chains is called:",
+                options: ["Catenation", "Polymerization", "Isomerism", "Hybridization"],
+                correct: 0
+            },
+            {
+                question: "Which allotropic form of carbon conducts electricity?",
+                options: ["Diamond", "Graphite", "Fullerene", "Amorphous carbon"],
+                correct: 1
+            },
+            {
+                question: "The ionization enthalpy of Group 14 elements _____ down the group.",
+                options: ["Increases", "Decreases", "Remains constant", "Varies irregularly"],
+                correct: 1
+            },
+            {
+                question: "Carbon dioxide (CO₂) is used in:",
+                options: ["Fire extinguishers", "Battery production", "Glass manufacturing", "Fertilizer production"],
+                correct: 0
+            },
+            {
+                question: "Silicon’s most common oxidation state is:",
+                options: ["+2", "+3", "+4", "+5"],
+                correct: 2
+            },
+            {
+                question: "Silicon tetrachloride (SiCl₄) reacts with water to form:",
+                options: ["Silicon dioxide", "Hydrochloric acid", "Silicic acid", "Silicon metal"],
+                correct: 2
+            },
+            {
+                question: "Silicones are used in:",
+                options: ["Waterproofing", "Fertilizers", "Cement production", "Sugar refining"],
+                correct: 0
+            },
+            {
+                question: "Silicates are the main constituents of:",
+                options: ["Glass and cement", "Fertilizers", "Batteries", "Plastics"],
+                correct: 0
+            },
+            {
+                question: "Zeolites are used in:",
+                options: ["Ion exchange", "Food preservation", "Battery production", "Textile dyeing"],
+                correct: 0
+            },
+            {
+                question: "The density of Group 14 elements _____ down the group.",
+                options: ["Increases", "Decreases", "Remains constant", "Varies irregularly"],
+                correct: 0
+            },
+            {
+                question: "Boron does not form B³⁺ ions due to its:",
+                options: ["Low electronegativity", "High ionization energy", "Large size", "Metallic character"],
+                correct: 1
+            },
+            {
+                question: "Aluminum chloride (AlCl₃) is:",
+                options: ["Ionic in solid state", "Covalent in vapor state", "Metallic", "Amphoteric"],
+                correct: 1
+            },
+            {
+                question: "Borax bead test is used to detect:",
+                options: ["Metal ions", "Non-metals", "Acids", "Bases"],
+                correct: 0
+            },
+            {
+                question: "The structure of diamond is:",
+                options: ["Planar", "Tetrahedral", "Linear", "Octahedral"],
+                correct: 1
+            },
+            {
+                question: "Carbon monoxide (CO) is toxic because it:",
+                options: ["Binds to hemoglobin", "Forms CO₂", "Is acidic", "Is insoluble in water"],
+                correct: 0
+            },
+            {
+                question: "Silicon is a key component in:",
+                options: ["Semiconductors", "Fertilizers", "Paper production", "Soap manufacturing"],
+                correct: 0
+            },
+            {
+                question: "The electronegativity of Group 13 elements _____ down the group.",
+                options: ["Increases", "Decreases", "Remains constant", "Varies irregularly"],
+                correct: 1
+            },
+            {
+                question: "Boric acid is a:",
+                options: ["Strong acid", "Weak acid", "Strong base", "Weak base"],
+                correct: 1
+            },
+            {
+                question: "The formula of sodium tetraborate is:",
+                options: ["Na₂B₄O₇", "NaBO₂", "Na₃BO₃", "NaB₂O₄"],
+                correct: 0
+            },
+            {
+                question: "Aluminum reacts with nitric acid to form:",
+                options: ["Al(NO₃)₃", "No reaction", "Al₂O₃", "AlCl₃"],
+                correct: 1
+            },
+            {
+                question: "The thermal stability of Group 14 oxides _____ down the group.",
+                options: ["Increases", "Decreases", "Remains constant", "Varies irregularly"],
+                correct: 0
+            },
+            {
+                question: "Fullerenes are allotropes of:",
+                options: ["Boron", "Carbon", "Silicon", "Aluminum"],
+                correct: 1
+            },
+            {
+                question: "Silicon dioxide (SiO₂) is used in the production of:",
+                options: ["Glass", "Fertilizers", "Batteries", "Plastics"],
+                correct: 0
+            },
+            {
+                question: "The chemical reactivity of Group 13 elements _____ down the group.",
+                options: ["Increases", "Decreases", "Remains constant", "Varies irregularly"],
+                correct: 0
+            },
+            {
+                question: "Boron hydrides are characterized by:",
+                options: ["Three-center two-electron bonds", "Ionic bonds", "Metallic bonds", "Single covalent bonds"],
+                correct: 0
+            },
+            {
+                question: "Aluminum is amphoteric, meaning it reacts with:",
+                options: ["Acids only", "Bases only", "Both acids and bases", "Neither acids nor bases"],
+                correct: 2
+            },
+            {
+                question: "Zeolites have a cage-like structure that allows them to act as:",
+                options: ["Molecular sieves", "Fuels", "Antiseptics", "Fertilizers"],
+                correct: 0
+            }
+        ];
+
+        let score = 0;
+
+        function loadQuiz() {
+            const quizContainer = document.getElementById('quiz');
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                questionDiv.innerHTML = `
+                    <p>${index + 1}. ${q.question}</p>
+                    <div class="options">
+                        ${q.options.map((option, i) => `
+                            <div class="option" onclick="checkAnswer(${index}, ${i}, this)">${option}</div>
+                        `).join('')}
+                    </div>
+                `;
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function checkAnswer(questionIndex, selectedIndex, element) {
+            const correctIndex = questions[questionIndex].correct;
+            const options = element.parentElement.querySelectorAll('.option');
+            options.forEach((opt, i) => {
+                opt.style.pointerEvents = 'none'; // Disable further clicks
+                if (i === correctIndex) {
+                    opt.classList.add('correct');
+                } else if (i === selectedIndex && i !== correctIndex) {
+                    opt.classList.add('incorrect');
+                }
+            });
+            if (selectedIndex === correctIndex) {
+                score++;
+                document.getElementById('score').innerText = `Score: ${score} / ${questions.length}`;
+            }
+        }
+
+        window.onload = loadQuiz;
+    </script>
+</body>
+</html>

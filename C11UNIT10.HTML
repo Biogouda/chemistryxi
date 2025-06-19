@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s-Block Elements MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+        .option {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #e0e0e0;
+        }
+        .correct {
+            background-color: #28a745;
+            color: white;
+        }
+        .incorrect {
+            background-color: #dc3545;
+            color: white;
+        }
+        #score {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>s-Block Elements MCQ Quiz</h1>
+    <div class="quiz-container" id="quiz">
+        <!-- Questions will be dynamically inserted here -->
+    </div>
+    <div id="score"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "Which groups in the periodic table are known as s-block elements?",
+                options: ["Group 1 and 2", "Group 3 and 4", "Group 13 and 14", "Group 17 and 18"],
+                correct: 0
+            },
+            {
+                question: "The general electronic configuration of Group 1 elements is:",
+                options: ["ns¹", "ns²", "ns²np¹", "ns²np²"],
+                correct: 0
+            },
+            {
+                question: "What is the electronic configuration of Group 2 elements?",
+                options: ["ns¹", "ns²", "ns²np¹", "ns²np²"],
+                correct: 1
+            },
+            {
+                question: "Alkali metals are primarily found in nature as:",
+                options: ["Free elements", "Compounds", "Gases", "Liquids"],
+                correct: 1
+            },
+            {
+                question: "The first element of Group 1, lithium, shows anomalous behavior due to its:",
+                options: ["High density", "Small size", "High ionization enthalpy", "Both small size and high ionization enthalpy"],
+                correct: 3
+            },
+            {
+                question: "The first element of Group 2, beryllium, differs from others due to:",
+                options: ["Large size", "High electronegativity", "Low melting point", "High reactivity"],
+                correct: 1
+            },
+            {
+                question: "The diagonal relationship exists between:",
+                options: ["Li and Mg", "Na and Ca", "K and Sr", "Rb and Ba"],
+                correct: 0
+            },
+            {
+                question: "Ionization enthalpy of s-block elements _____ down the group.",
+                options: ["Increases", "Decreases", "Remains constant", "Varies irregularly"],
+                correct: 1
+            },
+            {
+                question: "Atomic radii of s-block elements _____ down the group.",
+                options: ["Decreases", "Increases", "Remains constant", "Varies irregularly"],
+                correct: 1
+            },
+            {
+                question: "Ionic radii of s-block elements _____ compared to their atomic radii.",
+                options: ["Are larger", "Are smaller", "Are equal", "Vary irregularly"],
+                correct: 1
+            },
+            {
+                question: "Alkali metals react with oxygen to form:",
+                options: ["Oxides only", "Peroxides only", "Superoxides only", "Oxides, peroxides, or superoxides"],
+                correct: 3
+            },
+            {
+                question: "Which alkali metal forms a superoxide with oxygen?",
+                options: ["Lithium", "Sodium", "Potassium", "Beryllium"],
+                correct: 2
+            },
+            {
+                question: "Alkaline earth metals react with halogens to form:",
+                options: ["Covalent halides", "Ionic halides", "Metallic halides", "No halides"],
+                correct: 1
+            },
+            {
+                question: "The reactivity of s-block elements with water _____ down the group.",
+                options: ["Decreases", "Increases", "Remains constant", "Varies irregularly"],
+                correct: 1
+            },
+            {
+                question: "Which element is used in the manufacture of soap?",
+                options: ["Lithium", "Sodium", "Magnesium", "Calcium"],
+                correct: 1
+            },
+            {
+                question: "Sodium carbonate is commonly known as:",
+                options: ["Washing soda", "Baking soda", "Caustic soda", "Quicklime"],
+                correct: 0
+            },
+            {
+                question: "Sodium carbonate is prepared by the:",
+                options: ["Solvay process", "Haber process", "Contact process", "Ostwald process"],
+                correct: 0
+            },
+            {
+                question: "The chemical formula of sodium chloride is:",
+                options: ["NaCl", "Na₂CO₃", "NaOH", "NaHCO₃"],
+                correct: 0
+            },
+            {
+                question: "Sodium hydroxide is also called:",
+                options: ["Washing soda", "Caustic soda", "Baking soda", "Quicklime"],
+                correct: 1
+            },
+            {
+                question: "Sodium hydrogencarbonate is used in:",
+                options: ["Fire extinguishers", "Soap making", "Glass manufacturing", "Cement production"],
+                correct: 0
+            },
+            {
+                question: "The biological role of sodium includes:",
+                options: ["Bone formation", "Nerve impulse transmission", "Photosynthesis", "Oxygen transport"],
+                correct: 1
+            },
+            {
+                question: "Potassium is essential for:",
+                options: ["Muscle contraction", "Blood clotting", "Enzyme activation", "Both muscle contraction and enzyme activation"],
+                correct: 3
+            },
+            {
+                question: "Calcium oxide is commonly known as:",
+                options: ["Quicklime", "Slaked lime", "Limestone", "Gypsum"],
+                correct: 0
+            },
+            {
+                question: "Calcium carbonate is used in the production of:",
+                options: ["Cement", "Soap", "Fertilizers", "Batteries"],
+                correct: 0
+            },
+            {
+                question: "Magnesium is biologically important for:",
+                options: ["Chlorophyll formation", "Nerve transmission", "Bone strength", "Blood clotting"],
+                correct: 0
+            },
+            {
+                question: "Calcium is essential for:",
+                options: ["Bone and teeth formation", "Photosynthesis", "Nerve impulse transmission", "Enzyme inhibition"],
+                correct: 0
+            },
+            {
+                question: "Which s-block element is used in fireworks to produce red color?",
+                options: ["Lithium", "Strontium", "Magnesium", "Beryllium"],
+                correct: 1
+            },
+            {
+                question: "The melting points of alkali metals _____ down the group.",
+                options: ["Increase", "Decrease", "Remain constant", "Vary irregularly"],
+                correct: 1
+            },
+            {
+                question: "Which compound is used in the manufacture of glass?",
+                options: ["Sodium chloride", "Sodium carbonate", "Calcium oxide", "Sodium hydroxide"],
+                correct: 1
+            },
+            {
+                question: "Beryllium does not react with water because of:",
+                options: ["High reactivity", "Protective oxide layer", "Low ionization enthalpy", "Large size"],
+                correct: 1
+            },
+            {
+                question: "The chemical formula of calcium carbonate is:",
+                options: ["CaCO₃", "CaO", "Ca(OH)₂", "CaSO₄"],
+                correct: 0
+            },
+            {
+                question: "Sodium chloride is used in:",
+                options: ["Food seasoning", "Cement production", "Battery manufacturing", "Fertilizer production"],
+                correct: 0
+            },
+            {
+                question: "Which s-block element is used in lightweight alloys?",
+                options: ["Sodium", "Magnesium", "Potassium", "Calcium"],
+                correct: 1
+            },
+            {
+                question: "The hydration enthalpy of s-block ions _____ down the group.",
+                options: ["Increases", "Decreases", "Remains constant", "Varies irregularly"],
+                correct: 1
+            },
+            {
+                question: "Which compound is used to neutralize acidic soils?",
+                options: ["Sodium chloride", "Calcium carbonate", "Sodium hydroxide", "Sodium carbonate"],
+                correct: 1
+            },
+            {
+                question: "The anomalous behavior of lithium is similar to:",
+                options: ["Sodium", "Magnesium", "Potassium", "Calcium"],
+                correct: 1
+            },
+            {
+                question: "Alkaline earth metals form _____ oxides compared to alkali metals.",
+                options: ["More basic", "Less basic", "Neutral", "Amphoteric"],
+                correct: 1
+            },
+            {
+                question: "Which s-block element is used in the treatment of bipolar disorder?",
+                options: ["Lithium", "Sodium", "Magnesium", "Calcium"],
+                correct: 0
+            },
+            {
+                question: "The density of alkali metals generally _____ down the group.",
+                options: ["Increases", "Decreases", "Remains constant", "Varies irregularly"],
+                correct: 0
+            },
+            {
+                question: "Calcium oxide reacts with water to form:",
+                options: ["Quicklime", "Slaked lime", "Limestone", "Gypsum"],
+                correct: 1
+            }
+        ];
+
+        let score = 0;
+
+        function loadQuiz() {
+            const quizContainer = document.getElementById('quiz');
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                questionDiv.innerHTML = `
+                    <p>${index + 1}. ${q.question}</p>
+                    <div class="options">
+                        ${q.options.map((option, i) => `
+                            <div class="option" onclick="checkAnswer(${index}, ${i}, this)">${option}</div>
+                        `).join('')}
+                    </div>
+                `;
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function checkAnswer(questionIndex, selectedIndex, element) {
+            const correctIndex = questions[questionIndex].correct;
+            const options = element.parentElement.querySelectorAll('.option');
+            options.forEach((opt, i) => {
+                opt.style.pointerEvents = 'none'; // Disable further clicks
+                if (i === correctIndex) {
+                    opt.classList.add('correct');
+                } else if (i === selectedIndex && i !== correctIndex) {
+                    opt.classList.add('incorrect');
+                }
+            });
+            if (selectedIndex === correctIndex) {
+                score++;
+                document.getElementById('score').innerText = `Score: ${score} / ${questions.length}`;
+            }
+        }
+
+        window.onload = loadQuiz;
+    </script>
+</body>
+</html>

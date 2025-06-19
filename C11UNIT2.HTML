@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry MCQ Quiz: Structure of Atom & Periodic Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .instructions {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .option {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #d0d0d0;
+        }
+        .correct {
+            background-color: #4CAF50 !important;
+            color: white;
+        }
+        .incorrect {
+            background-color: #f44336 !important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chemistry MCQ Quiz: Structure of Atom & Periodic Table</h1>
+    <div class="instructions">
+        <p>Welcome to the Chemistry MCQ Quiz! This quiz contains 40 multiple-choice questions based on the Structure of Atom and Classification of Elements. Select an option for each question, and the correct answer will be highlighted in green.</p>
+    </div>
+    <div id="quiz-container"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "Who discovered the electron?",
+                options: ["J.J. Thomson", "Ernest Rutherford", "James Chadwick", "Niels Bohr"],
+                correct: 0
+            },
+            {
+                question: "The proton was discovered by:",
+                options: ["J.J. Thomson", "Ernest Rutherford", "James Chadwick", "John Dalton"],
+                correct: 1
+            },
+            {
+                question: "The neutron was discovered by:",
+                options: ["J.J. Thomson", "Ernest Rutherford", "James Chadwick", "Niels Bohr"],
+                correct: 2
+            },
+            {
+                question: "The atomic number of an element is equal to the number of:",
+                options: ["Protons", "Neutrons", "Electrons", "Nucleons"],
+                correct: 0
+            },
+            {
+                question: "Isotopes of an element have:",
+                options: ["Same number of protons, different neutrons", "Same number of neutrons, different protons", "Same atomic mass", "Different chemical properties"],
+                correct: 0
+            },
+            {
+                question: "Isobars are atoms with:",
+                options: ["Same mass number, different atomic number", "Same atomic number, different mass number", "Same number of protons", "Same number of electrons"],
+                correct: 0
+            },
+            {
+                question: "Thomson’s atomic model is also known as the:",
+                options: ["Plum pudding model", "Nuclear model", "Planetary model", "Quantum model"],
+                correct: 0
+            },
+            {
+                question: "A limitation of Thomson’s model is that it:",
+                options: ["Could not explain atomic stability", "Predicted a dense nucleus", "Described electron orbits", "Explained isotopes"],
+                correct: 0
+            },
+            {
+                question: "Rutherford’s model proposed that atoms have:",
+                options: ["A dense, positively charged nucleus", "Electrons embedded in a positive sphere", "Fixed electron orbits", "No nucleus"],
+                correct: 0
+            },
+            {
+                question: "A limitation of Rutherford’s model is that it:",
+                options: ["Could not explain electron stability", "Ignored the nucleus", "Predicted continuous energy emission", "Described quantum jumps"],
+                correct: 0
+            },
+            {
+                question: "Bohr’s model introduced the concept of:",
+                options: ["Quantized electron orbits", "A dense nucleus", "Wave-particle duality", "Subshells"],
+                correct: 0
+            },
+            {
+                question: "A limitation of Bohr’s model is that it:",
+                options: ["Applied only to hydrogen-like atoms", "Ignored electron spin", "Predicted continuous spectra", "Did not involve a nucleus"],
+                correct: 0
+            },
+            {
+                question: "The concept of shells refers to:",
+                options: ["Energy levels of electrons", "Regions of the nucleus", "Subatomic particles", "Atomic orbitals"],
+                correct: 0
+            },
+            {
+                question: "Subshells are designated as:",
+                options: ["s, p, d, f", "K, L, M, N", "1s, 2s, 2p", "n, l, m"],
+                correct: 0
+            },
+            {
+                question: "The dual nature of matter and light refers to:",
+                options: ["Wave-particle duality", "Electromagnetic radiation", "Quantum tunneling", "Photoelectric effect"],
+                correct: 0
+            },
+            {
+                question: "De Broglie’s relationship relates:",
+                options: ["Wavelength to momentum", "Energy to frequency", "Mass to velocity", "Position to uncertainty"],
+                correct: 0
+            },
+            {
+                question: "Heisenberg’s uncertainty principle states that:",
+                options: ["Position and momentum cannot be precisely measured simultaneously", "Energy and time are quantized", "Electrons have fixed orbits", "Light behaves only as a wave"],
+                correct: 0
+            },
+            {
+                question: "An orbital is a region where:",
+                options: ["An electron is most likely found", "The nucleus is located", "Protons are distributed", "Neutrons are stable"],
+                correct: 0
+            },
+            {
+                question: "The principal quantum number (n) describes:",
+                options: ["Energy level and size of the orbital", "Shape of the orbital", "Orientation of the orbital", "Spin of the electron"],
+                correct: 0
+            },
+            {
+                question: "The azimuthal quantum number (l) determines:",
+                options: ["Shape of the orbital", "Energy level", "Orientation of the orbital", "Spin of the electron"],
+                correct: 0
+            },
+            {
+                question: "The shape of an s orbital is:",
+                options: ["Spherical", "Dumbbell", "Double dumbbell", "Complex"],
+                correct: 0
+            },
+            {
+                question: "The p orbital has a ______ shape:",
+                options: ["Dumbbell", "Spherical", "Cloverleaf", "Toroidal"],
+                correct: 0
+            },
+            {
+                question: "The Aufbau principle states that electrons fill orbitals:",
+                options: ["In order of increasing energy", "Randomly", "In pairs first", "In higher shells first"],
+                correct: 0
+            },
+            {
+                question: "Pauli’s exclusion principle states that:",
+                options: ["No two electrons can have the same four quantum numbers", "Electrons fill degenerate orbitals singly", "Electrons occupy higher energy levels first", "Orbitals have fixed shapes"],
+                correct: 0
+            },
+            {
+                question: "Hund’s rule states that electrons in degenerate orbitals:",
+                options: ["Occupy orbitals singly before pairing", "Pair up immediately", "Fill higher energy orbitals first", "Have opposite spins"],
+                correct: 0
+            },
+            {
+                question: "The electron configuration of carbon (atomic number 6) is:",
+                options: ["1s² 2s² 2p²", "1s² 2s² 2p³", "1s² 2s¹ 2p³", "1s² 2s² 2p¹"],
+                correct: 0
+            },
+            {
+                question: "Half-filled orbitals are stable due to:",
+                options: ["Symmetry and exchange energy", "High ionization energy", "Low electronegativity", "Nuclear charge"],
+                correct: 0
+            },
+            {
+                question: "The significance of classifying elements is to:",
+                options: ["Organize elements by properties", "Increase atomic mass", "Reduce chemical reactions", "Simplify atomic structure"],
+                correct: 0
+            },
+            {
+                question: "The modern periodic law states that properties of elements are a periodic function of:",
+                options: ["Atomic number", "Atomic mass", "Number of neutrons", "Number of electrons"],
+                correct: 0
+            },
+            {
+                question: "The modern periodic table is arranged by:",
+                options: ["Increasing atomic number", "Increasing atomic mass", "Decreasing atomic number", "Chemical reactivity"],
+                correct: 0
+            },
+            {
+                question: "Atomic radius generally ______ across a period:",
+                options: ["Decreases", "Increases", "Remains constant", "Varies randomly"],
+                correct: 0
+            },
+            {
+                question: "Ionic radius of a cation is ______ than its parent atom:",
+                options: ["Smaller", "Larger", "The same", "Unpredictable"],
+                correct: 0
+            },
+            {
+                question: "Ionization enthalpy ______ across a period:",
+                options: ["Increases", "Decreases", "Remains constant", "Varies randomly"],
+                correct: 0
+            },
+            {
+                question: "Electron gain enthalpy is more negative for:",
+                options: ["Halogens", "Alkali metals", "Noble gases", "Alkaline earth metals"],
+                correct: 0
+            },
+            {
+                question: "Electronegativity ______ down a group:",
+                options: ["Decreases", "Increases", "Remains constant", "Varies randomly"],
+                correct: 0
+            },
+            {
+                question: "Valency of an element is related to:",
+                options: ["Number of valence electrons", "Atomic mass", "Number of neutrons", "Nuclear charge"],
+                correct: 0
+            },
+            {
+                question: "The oxidation state of an element depends on its:",
+                options: ["Ability to gain or lose electrons", "Atomic radius", "Nuclear mass", "Electron configuration only"],
+                correct: 0
+            },
+            {
+                question: "Elements with atomic number > 100 are named using:",
+                options: ["Numerical roots for digits", "Names of discoverers", "Chemical properties", "Atomic mass"],
+                correct: 0
+            },
+            {
+                question: "The element with atomic number 104 is named:",
+                options: ["Rutherfordium", "Nobelium", "Seaborgium", "Mendelevium"],
+                correct: 0
+            },
+            {
+                question: "Inert gas radii refer to the atomic radii of:",
+                options: ["Noble gases", "Halogens", "Alkali metals", "Transition metals"],
+                correct: 0
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz-container');
+
+        questions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.classList.add('question');
+            questionDiv.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+            
+            q.options.forEach((option, i) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.classList.add('option');
+                optionDiv.textContent = option;
+                optionDiv.addEventListener('click', () => {
+                    const options = questionDiv.querySelectorAll('.option');
+                    options.forEach((opt, j) => {
+                        if (j === q.correct) {
+                            opt.classList.add('correct');
+                        } else if (j === i && i !== q.correct) {
+                            opt.classList.add('incorrect');
+                        }
+                    });
+                });
+                questionDiv.appendChild(optionDiv);
+            });
+
+            quizContainer.appendChild(questionDiv);
+        });
+    </script>
+</body>
+</html>

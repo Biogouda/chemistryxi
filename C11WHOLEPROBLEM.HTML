@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Course MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+        .option {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #e0e0e0;
+        }
+        .correct {
+            background-color: #28a745;
+            color: white;
+        }
+        .incorrect {
+            background-color: #dc3545;
+            color: white;
+        }
+        #score {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chemistry Course MCQ Quiz</h1>
+    <div class="quiz-container" id="quiz">
+        <!-- Questions will be dynamically inserted here -->
+    </div>
+    <div id="score"></div>
+
+    <script>
+        const questions = [
+            // Unit I: Basic Concepts of Chemistry
+            {
+                question: "What is the mass percentage of oxygen in H2O (molar mass = 18 g/mol)?",
+                options: ["11.11%", "88.89%", "44.44%", "50%"],
+                correct: 0
+            },
+            {
+                question: "How many moles are in 44 g of CO2 (molar mass = 44 g/mol)?",
+                options: ["1 mole", "2 moles", "0.5 mole", "4 moles"],
+                correct: 0
+            },
+            {
+                question: "The empirical formula of a compound with 40% C, 6.67% H, 53.33% O is:",
+                options: ["CH2O", "C2H4O2", "CHO", "C3H6O3"],
+                correct: 0
+            },
+            {
+                question: "What is the limiting reagent if 4 g H2 reacts with 16 g O2 to form H2O?",
+                options: ["H2", "O2", "H2O", "None"],
+                correct: 1
+            },
+
+            // Unit II: Structure of Atom
+            {
+                question: "The number of electrons in an atom with atomic number 17 is:",
+                options: ["7", "17", "34", "10"],
+                correct: 1
+            },
+            {
+                question: "The wavelength of an electron is calculated using:",
+                options: ["Bohr’s model", "de Broglie equation", "Heisenberg principle", "Rydberg formula"],
+                correct: 1
+            },
+            {
+                question: "The maximum number of electrons in n=3 energy level is:",
+                options: ["6", "8", "18", "32"],
+                correct: 2
+            },
+            {
+                question: "The quantum numbers for the last electron of sodium (Z=11) are:",
+                options: ["n=3, l=0, m=0, s=+1/2", "n=2, l=1, m=0, s=-1/2", "n=3, l=1, m=1, s=+1/2", "n=4, l=0, m=0, s=+1/2"],
+                correct: 0
+            },
+
+            // Unit III: Classification of Elements & Periodicity in Properties
+            {
+                question: "Which element has the highest ionization energy in period 2?",
+                options: ["Li", "Be", "N", "Ne"],
+                correct: 3
+            },
+            {
+                question: "The atomic radius generally _____ down a group.",
+                options: ["Increases", "Decreases", "Remains constant", "Varies irregularly"],
+                correct: 0
+            },
+            {
+                question: "Which group contains only non-metals?",
+                options: ["Group 1", "Group 2", "Group 17", "Group 12"],
+                correct: 2
+            },
+            {
+                question: "The electronegativity of elements _____ across a period from left to right.",
+                options: ["Increases", "Decreases", "Remains constant", "Varies irregularly"],
+                correct: 0
+            },
+
+            // Unit IV: Chemical Bonding and Molecular Structure
+            {
+                question: "The bond angle in NH3 is approximately:",
+                options: ["90°", "109.5°", "107°", "120°"],
+                correct: 2
+            },
+            {
+                question: "Which molecule is polar?",
+                options: ["CO2", "CH4", "H2O", "CCl4"],
+                correct: 2
+            },
+            {
+                question: "The hybridization of carbon in CO2 is:",
+                options: ["sp", "sp2", "sp3", "dsp2"],
+                correct: 0
+            },
+            {
+                question: "The bond order of N2 is:",
+                options: ["1", "2", "3", "4"],
+                correct: 2
+            },
+
+            // Unit V: States of Matter: Gases and Liquids
+            {
+                question: "At STP, 22.4 L of a gas corresponds to:",
+                options: ["1 mole", "2 moles", "0.5 mole", "10 moles"],
+                correct: 0
+            },
+            {
+                question: "The pressure of a gas is doubled while volume is halved. The new pressure is:",
+                options: ["Same", "Doubled", "Quadrupled", "Halved"],
+                correct: 2
+            },
+            {
+                question: "The van der Waals equation corrects the ideal gas law for:",
+                options: ["Temperature", "Pressure and volume", "Mass", "Density"],
+                correct: 1
+            },
+            {
+                question: "The boiling point of a liquid increases with:",
+                options: ["Decreasing pressure", "Increasing pressure", "Decreasing temperature", "Decreasing volume"],
+                correct: 1
+            },
+
+            // Unit VI: Thermodynamics
+            {
+                question: "The first law of thermodynamics is a statement of:",
+                options: ["Conservation of energy", "Entropy", "Free energy", "Equilibrium"],
+                correct: 0
+            },
+            {
+                question: "For an exothermic reaction, ΔH is:",
+                options: ["Positive", "Negative", "Zero", "Variable"],
+                correct: 1
+            },
+            {
+                question: "The entropy of a system increases in a:",
+                options: ["Reversible process", "Spontaneous process", "Isolated process", "Adiabatic process"],
+                correct: 1
+            },
+            {
+                question: "Gibbs free energy (ΔG) is negative for a:",
+                options: ["Non-spontaneous reaction", "Spontaneous reaction", "Equilibrium reaction", "Endothermic reaction"],
+                correct: 1
+            },
+
+            // Unit VII: Equilibrium
+            {
+                question: "For the reaction N2 + 3H2 ⇌ 2NH3, the equilibrium constant Kc is expressed as:",
+                options: ["[NH3]^2 / [N2][H2]^3", "[N2][H2]^3 / [NH3]^2", "[NH3] / [N2][H2]", "[N2][H2] / [NH3]"],
+                correct: 0
+            },
+            {
+                question: "Le Chatelier’s principle predicts that increasing pressure favors the side with:",
+                options: ["More moles of gas", "Fewer moles of gas", "Equal moles", "No effect"],
+                correct: 1
+            },
+            {
+                question: "The pH of a 0.01 M HCl solution is:",
+                options: ["1", "2", "3", "4"],
+                correct: 1
+            },
+            {
+                question: "A buffer solution resists changes in:",
+                options: ["Temperature", "pH", "Volume", "Pressure"],
+                correct: 1
+            },
+
+            // Unit VIII: Redox Reactions
+            {
+                question: "In the reaction Zn + CuSO4 → ZnSO4 + Cu, the reducing agent is:",
+                options: ["Zn", "CuSO4", "ZnSO4", "Cu"],
+                correct: 0
+            },
+            {
+                question: "The oxidation number of S in SO4^2- is:",
+                options: ["+2", "+4", "+6", "+8"],
+                correct: 2
+            },
+            {
+                question: "In a redox reaction, oxidation involves:",
+                options: ["Gain of electrons", "Loss of electrons", "No electron transfer", "Proton transfer"],
+                correct: 1
+            },
+            {
+                question: "The balancing of redox reactions requires equalizing:",
+                options: ["Moles", "Electrons", "Protons", "Volumes"],
+                correct: 1
+            },
+
+            // Unit IX: Hydrogen
+            {
+                question: "The most abundant isotope of hydrogen is:",
+                options: ["Protium", "Deuterium", "Tritium", "Hydronium"],
+                correct: 0
+            },
+            {
+                question: "Hard water contains ions of:",
+                options: ["Na+ and K+", "Ca2+ and Mg2+", "Cl- and F-", "H+ and OH-"],
+                correct: 1
+            },
+            {
+                question: "Hydrogen peroxide (H2O2) acts as:",
+                options: ["Oxidizing agent only", "Reducing agent only", "Both oxidizing and reducing agent", "Neither"],
+                correct: 2
+            },
+            {
+                question: "The temporary hardness of water is removed by:",
+                options: ["Boiling", "Filtration", "Distillation", "Ion exchange"],
+                correct: 0
+            },
+
+            // Unit X: s-Block Elements
+            {
+                question: "The atomic radius of Na is _____ than that of K.",
+                options: ["Larger", "Smaller", "Equal", "Variable"],
+                correct: 1
+            },
+            {
+                question: "Which s-block element forms a superoxide?",
+                options: ["Li", "Na", "K", "Be"],
+                correct: 2
+            },
+            {
+                question: "The chemical formula of washing soda is:",
+                options: ["NaCl", "Na2CO3", "NaOH", "NaHCO3"],
+                correct: 1
+            },
+            {
+                question: "Calcium oxide reacts with water to form:",
+                options: ["CaCO3", "Ca(OH)2", "CaSO4", "CaCl2"],
+                correct: 1
+            },
+
+            // Unit XII: Organic Chemistry: Basic Principles & Techniques
+            {
+                question: "The IUPAC name of CH3CH2CHO is:",
+                options: ["Propanol", "Propanal", "Propanone", "Ethanal"],
+                correct: 1
+            },
+            {
+                question: "The +I effect is shown by:",
+                options: ["-NO2", "-Cl", "-CH3", "-CN"],
+                correct: 2
+            },
+            {
+                question: "Heterolytic fission produces:",
+                options: ["Free radicals", "Carbocations and carbanions", "Neutral atoms", "Protons"],
+                correct: 1
+            },
+            {
+                question: "An electrophile is:",
+                options: ["Electron-rich", "Electron-deficient", "Neutral", "Radical"],
+                correct: 1
+            },
+            {
+                question: "Which method estimates nitrogen in an organic compound?",
+                options: ["Liebig’s method", "Kjeldahl’s method", "Carius method", "Sublimation"],
+                correct: 1
+            },
+            {
+                question: "The hybridization of carbon in CH4 is:",
+                options: ["sp", "sp2", "sp3", "dsp2"],
+                correct: 2
+            },
+            {
+                question: "Resonance stabilizes molecules by:",
+                options: ["Breaking bonds", "Delocalizing electrons", "Increasing polarity", "Adding atoms"],
+                correct: 1
+            },
+            {
+                question: "The functional group in alcohols is:",
+                options: ["-OH", "-CHO", "-COOH", "-NH2"],
+                correct: 0
+            },
+
+            // Unit XIII: Hydrocarbons
+            {
+                question: "The IUPAC name of CH3CH=CH2 is:",
+                options: ["Ethene", "Propene", "Propyne", "Butene"],
+                correct: 1
+            },
+            {
+                question: "The product of combustion of CH4 is:",
+                options: ["CO2 and H2O", "CO and H2", "CO2 only", "H2O only"],
+                correct: 0
+            },
+            {
+                question: "Markownikoff’s rule applies to the addition of:",
+                options: ["H2", "HBr", "O3", "H2O"],
+                correct: 1
+            },
+            {
+                question: "The hybridization of carbon in ethyne is:",
+                options: ["sp3", "sp2", "sp", "dsp2"],
+                correct: 2
+            },
+            {
+                question: "Benzene undergoes:",
+                options: ["Electrophilic addition", "Electrophilic substitution", "Nucleophilic addition", "Free radical addition"],
+                correct: 1
+            },
+            {
+                question: "The directive influence of -NO2 in benzene is:",
+                options: ["Ortho-para directing", "Meta directing", "Activating", "No effect"],
+                correct: 1
+            },
+            {
+                question: "The product of ozonolysis of ethene is:",
+                options: ["Formaldehyde", "Acetaldehyde", "Formic acid", "Ethanol"],
+                correct: 0
+            },
+            {
+                question: "Alkanes undergo substitution with:",
+                options: ["Halogens", "Water", "Alcohols", "Acids"],
+                correct: 0
+            },
+
+            // Unit XIV: Environmental Chemistry
+            {
+                question: "Acid rain is caused by:",
+                options: ["CO2 and CO", "SO2 and NOx", "O3 and H2", "NH3 and H2O"],
+                correct: 1
+            },
+            {
+                question: "The ozone layer absorbs:",
+                options: ["Infrared radiation", "Ultraviolet radiation", "Visible light", "Microwaves"],
+                correct: 1
+            },
+            {
+                question: "The primary greenhouse gas is:",
+                options: ["Ozone", "Carbon dioxide", "Sulfur dioxide", "Nitrogen oxide"],
+                correct: 1
+            },
+            {
+                question: "Green chemistry aims to:",
+                options: ["Increase pollution", "Reduce pollution", "Study atmospheric reactions", "Promote waste"],
+                correct: 1
+            },
+            {
+                question: "Photochemical smog is caused by:",
+                options: ["SO2", "NOx and VOCs", "CO2", "O3"],
+                correct: 1
+            },
+            {
+                question: "Eutrophication is caused by excess:",
+                options: ["Nitrates and phosphates", "Carbon dioxide", "Oxygen", "Sulfur"],
+                correct: 0
+            },
+            {
+                question: "The Montreal Protocol protects the:",
+                options: ["Greenhouse effect", "Ozone layer", "Acid rain", "Smog"],
+                correct: 1
+            },
+            {
+                question: "A strategy to control water pollution is:",
+                options: ["Dumping sewage", "Effluent treatment", "Increasing discharge", "Using pesticides"],
+                correct: 1
+            },
+
+            // Additional Questions to Reach 100
+            {
+                question: "The molar mass of NaCl is:",
+                options: ["58.5 g/mol", "40 g/mol", "18 g/mol", "44 g/mol"],
+                correct: 0
+            },
+            {
+                question: "The azimuthal quantum number (l) determines:",
+                options: ["Energy level", "Subshell shape", "Electron spin", "Orbital orientation"],
+                correct: 1
+            },
+            {
+                question: "The element with the electron configuration 1s²2s²2p⁶3s¹ is:",
+                options: ["Ne", "Na", "Mg", "Al"],
+                correct: 1
+            },
+            {
+                question: "The shape of CH4 is:",
+                options: ["Linear", "Trigonal planar", "Tetrahedral", "Bent"],
+                correct: 2
+            },
+            {
+                question: "The ideal gas law is expressed as:",
+                options: ["PV = nRT", "P = nRT/V", "V = nRT/P", "All of the above"],
+                correct: 0
+            },
+            {
+                question: "For an endothermic reaction, ΔH is:",
+                options: ["Positive", "Negative", "Zero", "Variable"],
+                correct: 0
+            },
+            {
+                question: "The solubility product (Ksp) is used for:",
+                options: ["Soluble salts", "Insoluble salts", "Gases", "Liquids"],
+                correct: 1
+            },
+            {
+                question: "The oxidation number of Cl in ClO4^- is:",
+                options: ["+1", "+5", "+7", "-1"],
+                correct: 2
+            },
+            {
+                question: "Hydrogen bonds are strongest in:",
+                options: ["HF", "HCl", "HBr", "HI"],
+                correct: 0
+            },
+            {
+                question: "The s-block elements belong to:",
+                options: ["Groups 1 and 2", "Groups 3-12", "Groups 13-18", "Group 17"],
+                correct: 0
+            },
+            {
+                question: "The IUPAC name of CH3COOH is:",
+                options: ["Methanoic acid", "Ethanoic acid", "Propanoic acid", "Butanoic acid"],
+                correct: 1
+            },
+            {
+                question: "The product of Friedel-Crafts alkylation of benzene is:",
+                options: ["Alkylbenzene", "Ketone", "Nitrobenzene", "Sulphonic acid"],
+                correct: 0
+            },
+            {
+                question: "CFCs are responsible for:",
+                options: ["Global warming", "Ozone depletion", "Acid rain", "Smog"],
+                correct: 1
+            }
+        ];
+
+        let score = 0;
+
+        function loadQuiz() {
+            const quizContainer = document.getElementById('quiz');
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                questionDiv.innerHTML = `
+                    <p>${index + 1}. ${q.question}</p>
+                    <div class="options">
+                        ${q.options.map((option, i) => `
+                            <div class="option" onclick="checkAnswer(${index}, ${i}, this)">${option}</div>
+                        `).join('')}
+                    </div>
+                `;
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function checkAnswer(questionIndex, selectedIndex, element) {
+            const correctIndex = questions[questionIndex].correct;
+            const options = element.parentElement.querySelectorAll('.option');
+            options.forEach((opt, i) => {
+                opt.style.pointerEvents = 'none'; // Disable further clicks
+                if (i === correctIndex) {
+                    opt.classList.add('correct');
+                } else if (i === selectedIndex && i !== correctIndex) {
+                    opt.classList.add('incorrect');
+                }
+            });
+            if (selectedIndex === correctIndex) {
+                score++;
+                document.getElementById('score').innerText = `Score: ${score} / ${questions.length}`;
+            }
+        }
+
+        window.onload = loadQuiz;
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Course MCQ Quiz (Set 2)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+        .option {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #e0e0e0;
+        }
+        .correct {
+            background-color: #28a745;
+            color: white;
+        }
+        .incorrect {
+            background-color: #dc3545;
+            color: white;
+        }
+        #score {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chemistry Course MCQ Quiz (Set 2)</h1>
+    <div class="quiz-container" id="quiz">
+        <!-- Questions will be dynamically inserted here -->
+    </div>
+    <div id="score"></div>
+
+    <script>
+        const questions = [
+            // Unit I: Basic Concepts of Chemistry
+            {
+                question: "Calculate the number of molecules in 8 g of O2 (molar mass = 32 g/mol).",
+                options: ["1.5 × 10²³", "3.0 × 10²³", "6.0 × 10²³", "1.2 × 10²⁴"],
+                correct: 0
+            },
+            {
+                question: "What is the mole fraction of NaCl in a solution with 1 mol NaCl and 9 mol H2O?",
+                options: ["0.1", "0.2", "0.5", "0.9"],
+                correct: 0
+            },
+            {
+                question: "The molecular formula of a compound with empirical formula CH2 and molar mass 42 g/mol is:",
+                options: ["CH2", "C2H4", "C3H6", "C4H8"],
+                correct: 2
+            },
+            {
+                question: "How many grams of H2SO4 (molar mass = 98 g/mol) are in 0.5 mol?",
+                options: ["49 g", "98 g", "196 g", "24.5 g"],
+                correct: 0
+            },
+
+            // Unit II: Structure of Atom
+            {
+                question: "The energy of an electron in the first Bohr orbit of hydrogen is -13.6 eV. The energy in the second orbit is:",
+                options: ["-13.6 eV", "-6.8 eV", "-3.4 eV", "-27.2 eV"],
+                correct: 2
+            },
+            {
+                question: "The number of orbitals in the p subshell is:",
+                options: ["1", "3", "5", "7"],
+                correct: 1
+            },
+            {
+                question: "The electron configuration of Mg²⁺ (Z=12) is:",
+                options: ["1s²2s²2p⁶", "1s²2s²2p⁶3s²", "1s²2s²2p⁴", "1s²2s²2p⁶3s¹"],
+                correct: 0
+            },
+            {
+                question: "Heisenberg’s uncertainty principle states that we cannot simultaneously know the exact:",
+                options: ["Position and momentum", "Energy and time", "Spin and orbit", "Mass and velocity"],
+                correct: 0
+            },
+
+            // Unit III: Classification of Elements & Periodicity in Properties
+            {
+                question: "Which element in group 17 has the highest electronegativity?",
+                options: ["F", "Cl", "Br", "I"],
+                correct: 0
+            },
+            {
+                question: "The effective nuclear charge _____ across a period.",
+                options: ["Decreases", "Increases", "Remains constant", "Varies irregularly"],
+                correct: 1
+            },
+            {
+                question: "Which element in period 3 is a metalloid?",
+                options: ["Na", "Si", "S", "Cl"],
+                correct: 1
+            },
+            {
+                question: "The first ionization energy of Al is lower than Mg due to:",
+                options: ["Smaller size", "Electron in p-orbital", "Higher nuclear charge", "Stable configuration"],
+                correct: 1
+            },
+
+            // Unit IV: Chemical Bonding and Molecular Structure
+            {
+                question: "The bond angle in H2O is approximately:",
+                options: ["180°", "120°", "109.5°", "104.5°"],
+                correct: 3
+            },
+            {
+                question: "Which molecule has a zero dipole moment?",
+                options: ["NH3", "H2O", "BF3", "HCl"],
+                correct: 2
+            },
+            {
+                question: "The hybridization of N in NH3 is:",
+                options: ["sp", "sp2", "sp3", "dsp2"],
+                correct: 2
+            },
+            {
+                question: "The bond order of O2 is:",
+                options: ["1", "1.5", "2", "2.5"],
+                correct: 2
+            },
+
+            // Unit V: States of Matter: Gases and Liquids
+            {
+                question: "What is the volume of 2 moles of an ideal gas at STP?",
+                options: ["11.2 L", "22.4 L", "44.8 L", "33.6 L"],
+                correct: 2
+            },
+            {
+                question: "If temperature of a gas is doubled at constant volume, the pressure:",
+                options: ["Doubles", "Halves", "Quadruples", "Remains same"],
+                correct: 0
+            },
+            {
+                question: "The critical temperature of a gas is the temperature above which it:",
+                options: ["Cannot be liquefied", "Becomes solid", "Decomposes", "Becomes ideal"],
+                correct: 0
+            },
+            {
+                question: "Surface tension of a liquid decreases with:",
+                options: ["Increasing temperature", "Decreasing temperature", "Increasing pressure", "Decreasing volume"],
+                correct: 0
+            },
+
+            // Unit VI: Thermodynamics
+            {
+                question: "The enthalpy change for the reaction 2H2 + O2 → 2H2O is -572 kJ. The ΔH for forming 1 mole of H2O is:",
+                options: ["-572 kJ", "-286 kJ", "-143 kJ", "-1144 kJ"],
+                correct: 1
+            },
+            {
+                question: "A process with ΔS > 0 and ΔH < 0 is:",
+                options: ["Non-spontaneous", "Spontaneous", "At equilibrium", "Reversible"],
+                correct: 1
+            },
+            {
+                question: "The standard Gibbs free energy change (ΔG°) is zero at:",
+                options: ["0 K", "Equilibrium", "High pressure", "Low temperature"],
+                correct: 1
+            },
+            {
+                question: "The work done in an isothermal reversible expansion of an ideal gas is given by:",
+                options: ["nRT ln(V2/V1)", "nRT ln(V1/V2)", "-PΔV", "q + w"],
+                correct: 0
+            },
+
+            // Unit VII: Equilibrium
+            {
+                question: "For the reaction 2SO2 + O2 ⇌ 2SO3, Kc = [SO3]^2 / ([SO2]^2[O2]). Increasing [O2] shifts equilibrium to:",
+                options: ["Left", "Right", "No shift", "Decreases Kc"],
+                correct: 1
+            },
+            {
+                question: "The pOH of a 0.001 M NaOH solution is:",
+                options: ["1", "2", "3", "4"],
+                correct: 2
+            },
+            {
+                question: "A buffer is most effective when the ratio of [acid]/[base] is:",
+                options: ["1:10", "1:1", "10:1", "100:1"],
+                correct: 1
+            },
+            {
+                question: "The solubility of AgCl (Ksp = 1.8 × 10⁻¹⁰) in water is approximately:",
+                options: ["1.8 × 10⁻¹⁰ M", "1.34 × 10⁻⁵ M", "3.6 × 10⁻¹⁰ M", "9.0 × 10⁻¹¹ M"],
+                correct: 1
+            },
+
+            // Unit VIII: Redox Reactions
+            {
+                question: "In the reaction 2Fe³⁺ + 2I⁻ → 2Fe²⁺ + I2, the oxidizing agent is:",
+                options: ["Fe³⁺", "I⁻", "Fe²⁺", "I2"],
+                correct: 0
+            },
+            {
+                question: "The oxidation number of Mn in MnO4⁻ is:",
+                options: ["+5", "+6", "+7", "+8"],
+                correct: 2
+            },
+            {
+                question: "In the reaction Cu + 2AgNO3 → Cu(NO3)2 + 2Ag, how many electrons are transferred per Cu atom?",
+                options: ["1", "2", "3", "4"],
+                correct: 1
+            },
+            {
+                question: "The balanced equation for Cr2O7²⁻ + Fe²⁺ in acidic medium requires how many H⁺ ions?",
+                options: ["6", "8", "12", "14"],
+                correct: 3
+            },
+
+            // Unit IX: Hydrogen
+            {
+                question: "The atomic mass of deuterium is approximately:",
+                options: ["1 u", "2 u", "3 u", "4 u"],
+                correct: 1
+            },
+            {
+                question: "Permanent hardness of water is due to:",
+                options: ["Ca(HCO3)2", "MgSO4", "NaHCO3", "CaCO3"],
+                correct: 1
+            },
+            {
+                question: "H2O2 decomposes to form:",
+                options: ["H2 and O2", "H2O and O2", "H2 and H2O", "O2 only"],
+                correct: 1
+            },
+            {
+                question: "Hydrogen is used in the manufacture of:",
+                options: ["Ammonia", "Sugar", "Glass", "Cement"],
+                correct: 0
+            },
+
+            // Unit X: s-Block Elements
+            {
+                question: "The ionization energy of Li is higher than Na due to:",
+                options: ["Larger size", "Smaller size", "More electrons", "Lower nuclear charge"],
+                correct: 1
+            },
+            {
+                question: "The product of heating NaHCO3 is:",
+                options: ["Na2CO3, CO2, H2O", "NaOH, CO2", "NaCl, H2O", "Na2O, CO2"],
+                correct: 0
+            },
+            {
+                question: "Which s-block element is used in fireworks?",
+                options: ["Li", "Mg", "Na", "K"],
+                correct: 1
+            },
+            {
+                question: "The solubility of CaSO4 in water is:",
+                options: ["High", "Low", "Moderate", "Variable"],
+                correct: 1
+            },
+
+            // Unit XII: Organic Chemistry: Basic Principles & Techniques
+            {
+                question: "The IUPAC name of CH3CH2CH2NH2 is:",
+                options: ["Propan-1-amine", "Propan-2-amine", "Ethanamine", "Butanamine"],
+                correct: 0
+            },
+            {
+                question: "The -I effect is exhibited by:",
+                options: ["-CH3", "-OH", "-NO2", "-NH2"],
+                correct: 2
+            },
+            {
+                question: "The most stable carbocation is:",
+                options: ["Primary", "Secondary", "Tertiary", "Methyl"],
+                correct: 2
+            },
+            {
+                question: "Lassaigne’s test detects the presence of:",
+                options: ["Carbon", "Nitrogen", "Oxygen", "Hydrogen"],
+                correct: 1
+            },
+
+            // Unit XIII: Hydrocarbons
+            {
+                question: "The product of addition of HBr to CH3CH=CH2 in the presence of peroxide is:",
+                options: ["CH3CH2CH2Br", "CH3CHBrCH3", "CH2BrCH2CH3", "CH3CH2Br"],
+                correct: 0
+            },
+            {
+                question: "The number of pi bonds in ethyne is:",
+                options: ["1", "2", "3", "0"],
+                correct: 1
+            },
+            {
+                question: "The electrophile in Friedel-Crafts acylation is:",
+                options: ["RCO+", "R+", "NO2+", "SO3"],
+                correct: 0
+            },
+            {
+                question: "The directive influence of -OH in phenol is:",
+                options: ["Ortho-para directing", "Meta directing", "Deactivating", "No effect"],
+                correct: 0
+            },
+
+            // Unit XIV: Environmental Chemistry
+            {
+                question: "The main source of photochemical smog is:",
+                options: ["SO2", "NOx and VOCs", "CO2", "O3"],
+                correct: 1
+            },
+            {
+                question: "The greenhouse effect is intensified by increased levels of:",
+                options: ["O2", "CO2", "N2", "H2"],
+                correct: 1
+            }
+        ];
+
+        let score = 0;
+
+        function loadQuiz() {
+            const quizContainer = document.getElementById('quiz');
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                questionDiv.innerHTML = `
+                    <p>${index + 1}. ${q.question}</p>
+                    <div class="options">
+                        ${q.options.map((option, i) => `
+                            <div class="option" onclick="checkAnswer(${index}, ${i}, this)">${option}</div>
+                        `).join('')}
+                    </div>
+                `;
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function checkAnswer(questionIndex, selectedIndex, element) {
+            const correctIndex = questions[questionIndex].correct;
+            const options = element.parentElement.querySelectorAll('.option');
+            options.forEach((opt, i) => {
+                opt.style.pointerEvents = 'none'; // Disable further clicks
+                if (i === correctIndex) {
+                    opt.classList.add('correct');
+                } else if (i === selectedIndex && i !== correctIndex) {
+                    opt.classList.add('incorrect');
+                }
+            });
+            if (selectedIndex === correctIndex) {
+                score++;
+                document.getElementById('score').innerText = `Score: ${score} / ${questions.length}`;
+            }
+        }
+
+        window.onload = loadQuiz;
+    </script>
+</body>
+</html>

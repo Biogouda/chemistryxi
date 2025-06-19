@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .instructions {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .option {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #d0d0d0;
+        }
+        .correct {
+            background-color: #4CAF50 !important;
+            color: white;
+        }
+        .incorrect {
+            background-color: #f44336 !important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chemistry MCQ Quiz</h1>
+    <div class="instructions">
+        <p>Welcome to the Chemistry MCQ Quiz! This quiz contains 40 multiple-choice questions based on basic concepts of chemistry. Select an option for each question, and the correct answer will be highlighted in green.</p>
+    </div>
+    <div id="quiz-container"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is the primary focus of chemistry?",
+                options: [
+                    "Study of living organisms",
+                    "Study of matter and its properties",
+                    "Study of planetary motion",
+                    "Study of electrical circuits"
+                ],
+                correct: 1
+            },
+            {
+                question: "Which of the following is a scope of chemistry?",
+                options: [
+                    "Developing new materials",
+                    "Studying ancient history",
+                    "Analyzing economic trends",
+                    "Designing software"
+                ],
+                correct: 0
+            },
+            {
+                question: "Matter is defined as anything that has:",
+                options: [
+                    "Mass and volume",
+                    "Color and shape",
+                    "Energy and motion",
+                    "Sound and light"
+                ],
+                correct: 0
+            },
+            {
+                question: "Which state of matter has a definite shape and volume?",
+                options: [
+                    "Solid",
+                    "Liquid",
+                    "Gas",
+                    "Plasma"
+                ],
+                correct: 0
+            },
+            {
+                question: "The law of conservation of mass was proposed by:",
+                options: [
+                    "John Dalton",
+                    "Antoine Lavoisier",
+                    "Joseph Proust",
+                    "Robert Boyle"
+                ],
+                correct: 1
+            },
+            {
+                question: "The law of definite proportions states that:",
+                options: [
+                    "Mass is conserved in a chemical reaction",
+                    "A compound always contains elements in a fixed ratio",
+                    "Atoms combine in whole-number ratios",
+                    "Energy is neither created nor destroyed"
+                ],
+                correct: 1
+            },
+            {
+                question: "According to Dalton’s atomic theory, atoms are:",
+                options: [
+                    "Divisible into smaller particles",
+                    "Indivisible and indestructible",
+                    "Always in motion",
+                    "Charged particles"
+                ],
+                correct: 1
+            },
+            {
+                question: "In Dalton’s atomic theory, a molecule is:",
+                options: [
+                    "A single atom",
+                    "A combination of two or more atoms",
+                    "A charged particle",
+                    "A subatomic particle"
+                ],
+                correct: 1
+            },
+            {
+                question: "The atomic mass of an element is expressed in:",
+                options: [
+                    "Grams",
+                    "Atomic mass units (amu)",
+                    "Liters",
+                    "Joules"
+                ],
+                correct: 1
+            },
+            {
+                question: "The molecular mass of a compound is the sum of:",
+                options: [
+                    "Atomic masses of its atoms",
+                    "Masses of its electrons",
+                    "Masses of its protons",
+                    "Masses of its neutrons"
+                ],
+                correct: 0
+            },
+            {
+                question: "The equivalent mass of an element is calculated as:",
+                options: [
+                    "Atomic mass / Valency",
+                    "Atomic mass × Valency",
+                    "Molecular mass / Valency",
+                    "Molecular mass × Valency"
+                ],
+                correct: 0
+            },
+            {
+                question: "An acid is a substance that:",
+                options: [
+                    "Donates protons",
+                    "Accepts protons",
+                    "Donates electrons",
+                    "Accepts electrons"
+                ],
+                correct: 0
+            },
+            {
+                question: "A base is a substance that:",
+                options: [
+                    "Donates protons",
+                    "Accepts protons",
+                    "Donates electrons",
+                    "Accepts electrons"
+                ],
+                correct: 1
+            },
+            {
+                question: "A salt is formed by the reaction of:",
+                options: [
+                    "An acid and a base",
+                    "An acid and a metal",
+                    "A base and a metal",
+                    "Two acids"
+                ],
+                correct: 0
+            },
+            {
+                question: "An oxidant is a substance that:",
+                options: [
+                    "Gains electrons",
+                    "Loses electrons",
+                    "Donates protons",
+                    "Accepts protons"
+                ],
+                correct: 0
+            },
+            {
+                question: "A reductant is a substance that:",
+                options: [
+                    "Gains electrons",
+                    "Loses electrons",
+                    "Donates protons",
+                    "Accepts protons"
+                ],
+                correct: 1
+            },
+            {
+                question: "One mole of a substance contains:",
+                options: [
+                    "6.022 × 10^23 particles",
+                    "1.602 × 10^19 particles",
+                    "3.011 × 10^23 particles",
+                    "6.626 × 10^34 particles"
+                ],
+                correct: 0
+            },
+            {
+                question: "The molar mass of a substance is expressed in:",
+                options: [
+                    "Grams per mole",
+                    "Liters per mole",
+                    "Joules per mole",
+                    "Kilograms per mole"
+                ],
+                correct: 0
+            },
+            {
+                question: "The percentage composition of a compound shows:",
+                options: [
+                    "Mass of each element in the compound",
+                    "Volume of each element in the compound",
+                    "Number of atoms in the compound",
+                    "Energy of each element in the compound"
+                ],
+                correct: 0
+            },
+            {
+                question: "The empirical formula represents:",
+                options: [
+                    "The actual number of atoms in a molecule",
+                    "The simplest whole-number ratio of atoms",
+                    "The molecular mass of a compound",
+                    "The percentage composition of a compound"
+                ],
+                correct: 1
+            },
+            {
+                question: "The molecular formula of a compound is a multiple of its:",
+                options: [
+                    "Empirical formula",
+                    "Atomic mass",
+                    "Molar mass",
+                    "Equivalent mass"
+                ],
+                correct: 0
+            },
+            {
+                question: "A chemical reaction involves:",
+                options: [
+                    "Change in physical state only",
+                    "Formation of new substances",
+                    "Change in color only",
+                    "Change in volume only"
+                ],
+                correct: 1
+            },
+            {
+                question: "Stoichiometry deals with:",
+                options: [
+                    "Study of chemical bonding",
+                    "Calculations based on chemical equations",
+                    "Study of atomic structure",
+                    "Study of physical properties"
+                ],
+                correct: 1
+            },
+            {
+                question: "In a balanced chemical equation, the number of atoms of each element is:",
+                options: [
+                    "Equal on both sides",
+                    "Different on both sides",
+                    "Equal to the coefficients",
+                    "Equal to the subscripts"
+                ],
+                correct: 0
+            },
+            {
+                question: "The mole concept is used to calculate:",
+                options: [
+                    "Number of particles",
+                    "Color of a substance",
+                    "Shape of a molecule",
+                    "Temperature of a reaction"
+                ],
+                correct: 0
+            },
+            {
+                question: "The Avogadro number is:",
+                options: [
+                    "6.022 × 10^23",
+                    "6.626 × 10^34",
+                    "1.602 × 10^19",
+                    "3.141 × 10^7"
+                ],
+                correct: 0
+            },
+            {
+                question: "The law of multiple proportions was proposed by:",
+                options: [
+                    "John Dalton",
+                    "Antoine Lavoisier",
+                    "Joseph Proust",
+                    "Robert Boyle"
+                ],
+                correct: 0
+            },
+            {
+                question: "The equivalent mass of an acid depends on:",
+                options: [
+                    "Number of replaceable hydrogen ions",
+                    "Number of oxygen atoms",
+                    "Number of carbon atoms",
+                    "Molecular mass only"
+                ],
+                correct: 0
+            },
+            {
+                question: "The molecular mass of water (H₂O) is:",
+                options: [
+                    "18 amu",
+                    "16 amu",
+                    "20 amu",
+                    "22 amu"
+                ],
+                correct: 0
+            },
+            {
+                question: "The empirical formula of glucose (C₆H₁₂O₆) is:",
+                options: [
+                    "CH₂O",
+                    "C₆H₁₂O₆",
+                    "C₂H₄O₂",
+                    "CHO"
+                ],
+                correct: 0
+            },
+            {
+                question: "In a chemical reaction, the limiting reagent is:",
+                options: [
+                    "The reactant present in excess",
+                    "The reactant that is completely consumed",
+                    "The product formed in the reaction",
+                    "The catalyst used in the reaction"
+                ],
+                correct: 1
+            },
+            {
+                question: "The molar mass of carbon dioxide (CO₂) is:",
+                options: [
+                    "44 g/mol",
+                    "32 g/mol",
+                    "28 g/mol",
+                    "16 g/mol"
+                ],
+                correct: 0
+            },
+            {
+                question: "The percentage composition of oxygen in water (H₂O) is approximately:",
+                options: [
+                    "88.89%",
+                    "11.11%",
+                    "50%",
+                    "75%"
+                ],
+                correct: 0
+            },
+            {
+                question: "A balanced chemical equation follows the law of:",
+                options: [
+                    "Conservation of mass",
+                    "Constant composition",
+                    "Multiple proportions",
+                    "Reciprocal proportions"
+                ],
+                correct: 0
+            },
+            {
+                question: "The number of moles of a substance is calculated as:",
+                options: [
+                    "Mass / Molar mass",
+                    "Mass × Molar mass",
+                    "Volume / Molar mass",
+                    "Mass / Volume"
+                ],
+                correct: 0
+            },
+            {
+                question: "The molecular formula of a compound with empirical formula CH₂ and molar mass 42 g/mol is:",
+                options: [
+                    "C₃H₆",
+                    "C₂H₄",
+                    "CH₂",
+                    "C₄H₈"
+                ],
+                correct: 0
+            },
+            {
+                question: "In stoichiometry, the mole ratio is obtained from:",
+                options: [
+                    "The balanced chemical equation",
+                    "The atomic mass of elements",
+                    "The volume of reactants",
+                    "The temperature of the reaction"
+                ],
+                correct: 0
+            },
+            {
+                question: "The equivalent mass of a base depends on:",
+                options: [
+                    "Number of replaceable hydroxide ions",
+                    "Number of oxygen atoms",
+                    "Number of hydrogen atoms",
+                    "Molecular mass only"
+                ],
+                correct: 0
+            },
+            {
+                question: "The law of reciprocal proportions was proposed by:",
+                options: [
+                    "Richter",
+                    "Dalton",
+                    "Lavoisier",
+                    "Proust"
+                ],
+                correct: 0
+            },
+            {
+                question: "The number of molecules in 18 g of water is:",
+                options: [
+                    "6.022 × 10^23",
+                    "3.011 × 10^23",
+                    "1.204 × 10^24",
+                    "6.022 × 10^22"
+                ],
+                correct: 0
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz-container');
+
+        questions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.classList.add('question');
+            questionDiv.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+            
+            q.options.forEach((option, i) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.classList.add('option');
+                optionDiv.textContent = option;
+                optionDiv.addEventListener('click', () => {
+                    const options = questionDiv.querySelectorAll('.option');
+                    options.forEach((opt, j) => {
+                        if (j === q.correct) {
+                            opt.classList.add('correct');
+                        } else if (j === i && i !== q.correct) {
+                            opt.classList.add('incorrect');
+                        }
+                    });
+                });
+                questionDiv.appendChild(optionDiv);
+            });
+
+            quizContainer.appendChild(questionDiv);
+        });
+    </script>
+</body>
+</html>

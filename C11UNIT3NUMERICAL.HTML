@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Numerical MCQ Quiz: Chemical Bonding & Molecular Structure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .instructions {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .option {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #d0d0d0;
+        }
+        .correct {
+            background-color: #4CAF50 !important;
+            color: white;
+        }
+        .incorrect {
+            background-color: #f44336 !important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chemistry Numerical MCQ Quiz: Chemical Bonding & Molecular Structure</h1>
+    <div class="instructions">
+        <p>Welcome to the Chemistry Numerical MCQ Quiz! This quiz contains 40 multiple-choice questions based on numerical problems from Chemical Bonding and Molecular Structure. Select an option for each question, and the correct answer will be highlighted in green.</p>
+    </div>
+    <div id="quiz-container"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "How many valence electrons does oxygen (atomic number 8) have?",
+                options: ["4", "6", "8", "2"],
+                correct: 1
+            },
+            {
+                question: "Calculate the electronegativity difference between C (2.5) and O (3.5) in CO.",
+                options: ["1.0", "2.0", "0.5", "3.0"],
+                correct: 0
+            },
+            {
+                question: "What is the formal charge on nitrogen in NH₃?",
+                options: ["0", "+1", "-1", "+2"],
+                correct: 0
+            },
+            {
+                question: "How many sigma bonds are in ethane (C₂H₆)?",
+                options: ["6", "7", "8", "5"],
+                correct: 1
+            },
+            {
+                question: "What is the bond order of N₂ using molecular orbital theory?",
+                options: ["1", "2", "3", "4"],
+                correct: 2
+            },
+            {
+                question: "How many electron domains are around the central atom in CH₄?",
+                options: ["2", "3", "4", "5"],
+                correct: 2
+            },
+            {
+                question: "What is the bond angle in H₂O according to VSEPR theory?",
+                options: ["109.5°", "104.5°", "120°", "180°"],
+                correct: 1
+            },
+            {
+                question: "How many lone pairs are on the central atom in NH₃?",
+                options: ["0", "1", "2", "3"],
+                correct: 1
+            },
+            {
+                question: "What is the hybridization of the central atom in BF₃?",
+                options: ["sp", "sp²", "sp³", "sp³d"],
+                correct: 1
+            },
+            {
+                question: "How many resonance structures exist for the carbonate ion (CO₃²⁻)?",
+                options: ["1", "2", "3", "4"],
+                correct: 2
+            },
+            {
+                question: "How many pi bonds are in ethyne (C₂H₂)?",
+                options: ["1", "2", "3", "0"],
+                correct: 1
+            },
+            {
+                question: "What is the bond order of O₂⁻ using molecular orbital theory?",
+                options: ["1.0", "1.5", "2.0", "2.5"],
+                correct: 1
+            },
+            {
+                question: "How many sigma bonds are in benzene (C₆H₆)?",
+                options: ["6", "9", "12", "15"],
+                correct: 2
+            },
+            {
+                question: "What is the formal charge on sulfur in SO₄²⁻?",
+                options: ["0", "+1", "+2", "-1"],
+                correct: 2
+            },
+            {
+                question: "How many valence electrons are in the Lewis structure of CO₂?",
+                options: ["12", "16", "18", "20"],
+                correct: 1
+            },
+            {
+                question: "How many electron domains are around the central atom in PCl₅?",
+                options: ["3", "4", "5", "6"],
+                correct: 2
+            },
+            {
+                question: "What is the bond angle in BF₃?",
+                options: ["109.5°", "120°", "90°", "180°"],
+                correct: 1
+            },
+            {
+                question: "How many lone pairs are on the central atom in XeF₄?",
+                options: ["0", "1", "2", "3"],
+                correct: 2
+            },
+            {
+                question: "Calculate the electronegativity difference between N (3.0) and H (2.1) in NH₃.",
+                options: ["0.9", "1.2", "0.5", "2.1"],
+                correct: 0
+            },
+            {
+                question: "What is the hybridization of the central atom in SF₆?",
+                options: ["sp³", "sp³d", "sp³d²", "sp²"],
+                correct: 2
+            },
+            {
+                question: "How many pi bonds are in N₂?",
+                options: ["0", "1", "2", "3"],
+                correct: 2
+            },
+            {
+                question: "What is the bond order of F₂ using molecular orbital theory?",
+                options: ["0.5", "1.0", "1.5", "2.0"],
+                correct: 1
+            },
+            {
+                question: "How many sigma bonds are in HCN?",
+                options: ["1", "2", "3", "4"],
+                correct: 2
+            },
+            {
+                question: "What is the formal charge on nitrogen in NO₃⁻?",
+                options: ["0", "+1", "-1", "+2"],
+                correct: 1
+            },
+            {
+                question: "How many electron domains are around the central atom in SF₄?",
+                options: ["3", "4", "5", "6"],
+                correct: 2
+            },
+            {
+                question: "What is the bond angle in NH₃ according to VSEPR theory?",
+                options: ["109.5°", "107°", "120°", "90°"],
+                correct: 1
+            },
+            {
+                question: "How many resonance structures exist for the nitrite ion (NO₂⁻)?",
+                options: ["1", "2", "3", "4"],
+                correct: 1
+            },
+            {
+                question: "How many lone pairs are on the central atom in ICl₃?",
+                options: ["0", "1", "2", "3"],
+                correct: 2
+            },
+            {
+                question: "What is the hybridization of the central atom in CO?",
+                options: ["sp", "sp²", "sp³", "sp³d"],
+                correct: 0
+            },
+            {
+                question: "How many sigma bonds are in ethene (C₂H₄)?",
+                options: ["4", "5", "6", "3"],
+                correct: 1
+            },
+            {
+                question: "What is the bond order of O₂⁺ using molecular orbital theory?",
+                options: ["1.5", "2.0", "2.5", "3.0"],
+                correct: 2
+            },
+            {
+                question: "How many valence electrons are in the Lewis structure of NH₄⁺?",
+                options: ["6", "8", "10", "12"],
+                correct: 1
+            },
+            {
+                question: "What is the formal charge on carbon in CO?",
+                options: ["0", "-1", "+1", "-2"],
+                correct: 1
+            },
+            {
+                question: "How many electron domains are around the central atom in XeF₂?",
+                options: ["2", "3", "4", "5"],
+                correct: 2
+            },
+            {
+                question: "What is the bond angle in SO₂?",
+                options: ["109.5°", "120°", "90°", "180°"],
+                correct: 1
+            },
+            {
+                question: "How many pi bonds are in CO₂?",
+                options: ["0", "1", "2", "3"],
+                correct: 2
+            },
+            {
+                question: "What is the hybridization of the central atom in ClF₃?",
+                options: ["sp³", "sp³d", "sp³d²", "sp²"],
+                correct: 1
+            },
+            {
+                question: "How many lone pairs are on the central atom in SO₃?",
+                options: ["0", "1", "2", "3"],
+                correct: 0
+            },
+            {
+                question: "What is the bond order of N₂⁺ using molecular orbital theory?",
+                options: ["2.0", "2.5", "3.0", "1.5"],
+                correct: 1
+            },
+            {
+                question: "How many sigma bonds are in CH₃OH?",
+                options: ["3", "4", "5", "6"],
+                correct: 2
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz-container');
+
+        questions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.classList.add('question');
+            questionDiv.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+            
+            q.options.forEach((option, i) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.classList.add('option');
+                optionDiv.textContent = option;
+                optionDiv.addEventListener('click', () => {
+                    const options = questionDiv.querySelectorAll('.option');
+                    options.forEach((opt, j) => {
+                        if (j === q.correct) {
+                            opt.classList.add('correct');
+                        } else if (j === i && i !== q.correct) {
+                            opt.classList.add('incorrect');
+                        }
+                    });
+                });
+                questionDiv.appendChild(optionDiv);
+            });
+
+            quizContainer.appendChild(questionDiv);
+        });
+    </script>
+</body>
+</html>

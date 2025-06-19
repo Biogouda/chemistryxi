@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Numerical MCQ Quiz: States of Matter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .instructions {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .option {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #d0d0d0;
+        }
+        .correct {
+            background-color: #4CAF50 !important;
+            color: white;
+        }
+        .incorrect {
+            background-color: #f44336 !important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chemistry Numerical MCQ Quiz: States of Matter</h1>
+    <div class="instructions">
+        <p>Welcome to the Chemistry Numerical MCQ Quiz! This quiz contains 40 multiple-choice questions based on numerical problems from States of Matter: Gases and Liquids. Select an option for each question, and the correct answer will be highlighted in green.</p>
+    </div>
+    <div id="quiz-container"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "A gas occupies 2 L at 4 atm. What is its volume at 8 atm, assuming constant temperature? (Boyle’s Law)",
+                options: ["1 L", "2 L", "4 L", "0.5 L"],
+                correct: 0
+            },
+            {
+                question: "A gas has a volume of 3 L at 300 K. What is its volume at 600 K, assuming constant pressure? (Charles’s Law)",
+                options: ["1.5 L", "3 L", "6 L", "9 L"],
+                correct: 2
+            },
+            {
+                question: "A gas at 2 atm and 300 K is heated to 450 K at constant volume. What is the final pressure? (Gay-Lussac’s Law)",
+                options: ["1.33 atm", "2 atm", "3 atm", "4 atm"],
+                correct: 2
+            },
+            {
+                question: "How many moles of gas occupy 22.4 L at STP (1 atm, 273 K)?",
+                options: ["0.5 mol", "1 mol", "2 mol", "22.4 mol"],
+                correct: 1
+            },
+            {
+                question: "What is the pressure of 2 mol of an ideal gas in a 4 L container at 300 K? (R = 0.0821 L·atm/(mol·K))",
+                options: ["6.15 atm", "12.3 atm", "3.08 atm", "24.6 atm"],
+                correct: 1
+            },
+            {
+                question: "How many molecules are in 0.5 mol of CO₂? (Avogadro’s number = 6.022 × 10²³)",
+                options: ["3.011 × 10²³", "6.022 × 10²³", "1.505 × 10²³", "12.044 × 10²³"],
+                correct: 0
+            },
+            {
+                question: "A gas occupies 5 L with 1 mol. How many moles are needed for 10 L at the same P and T? (Avogadro’s Law)",
+                options: ["0.5 mol", "1 mol", "2 mol", "5 mol"],
+                correct: 2
+            },
+            {
+                question: "What is the volume of 0.25 mol of an ideal gas at 1 atm and 273 K? (R = 0.0821 L·atm/(mol·K))",
+                options: ["5.6 L", "11.2 L", "22.4 L", "2.8 L"],
+                correct: 0
+            },
+            {
+                question: "Calculate the temperature of 1 mol of gas in a 2 L container at 5 atm. (R = 0.0821 L·atm/(mol·K))",
+                options: ["243.6 K", "487.2 K", "121.8 K", "974.4 K"],
+                correct: 0
+            },
+            {
+                question: "What is the kinetic energy of 2 mol of an ideal gas at 300 K? (KE = (3/2)nRT, R = 8.314 J/(mol·K))",
+                options: ["7476.6 J", "4984.4 J", "9968.8 J", "2492.2 J"],
+                correct: 0
+            },
+            {
+                question: "What is the RMS speed of N₂ (M = 28 g/mol) at 300 K? (v_rms = √(3RT/M), R = 8.314 J/(mol·K))",
+                options: ["517 m/s", "258 m/s", "1034 m/s", "129 m/s"],
+                correct: 0
+            },
+            {
+                question: "A gas at 3 atm and 4 L is compressed to 2 L at constant T. What is the final pressure?",
+                options: ["1.5 atm", "3 atm", "6 atm", "9 atm"],
+                correct: 2
+            },
+            {
+                question: "A gas at 400 K and 5 L is cooled to 200 K at constant P. What is the final volume?",
+                options: ["2.5 L", "5 L", "10 L", "1.25 L"],
+                correct: 0
+            },
+            {
+                question: "What is the pressure of 0.5 mol of gas in a 1 L container at 600 K? (R = 0.0821 L·atm/(mol·K))",
+                options: ["24.63 atm", "12.32 atm", "49.26 atm", "6.16 atm"],
+                correct: 0
+            },
+            {
+                question: "How many molecules are in 44 g of CO₂? (M = 44 g/mol, Avogadro’s number = 6.022 × 10²³)",
+                options: ["3.011 × 10²³", "6.022 × 10²³", "1.505 × 10²³", "12.044 × 10²³"],
+                correct: 1
+            },
+            {
+                question: "A gas at 2 atm and 500 K is heated to 1000 K at constant V. What is the final pressure?",
+                options: ["1 atm", "2 atm", "4 atm", "8 atm"],
+                correct: 2
+            },
+            {
+                question: "What is the volume of 3 mol of an ideal gas at 2 atm and 400 K? (R = 0.0821 L·atm/(mol·K))",
+                options: ["49.26 L", "98.52 L", "24.63 L", "147.78 L"],
+                correct: 0
+            },
+            {
+                question: "How many moles are in 11.2 L of gas at STP (1 atm, 273 K)?",
+                options: ["0.25 mol", "0.5 mol", "1 mol", "2 mol"],
+                correct: 1
+            },
+            {
+                question: "What is the kinetic energy of 1 mol of gas at 400 K? (KE = (3/2)nRT, R = 8.314 J/(mol·K))",
+                options: ["4988.4 J", "3325.6 J", "9976.8 J", "1662.8 J"],
+                correct: 0
+            },
+            {
+                question: "What is the RMS speed of O₂ (M = 32 g/mol) at 300 K? (v_rms = √(3RT/M), R = 8.314 J/(mol·K))",
+                options: ["483 m/s", "241 m/s", "966 m/s", "120 m/s"],
+                correct: 0
+            },
+            {
+                question: "A gas occupies 6 L at 2 atm. What is its volume at 3 atm, assuming constant T?",
+                options: ["4 L", "6 L", "9 L", "2 L"],
+                correct: 0
+            },
+            {
+                question: "A gas at 3 L and 200 K is heated to 400 K at constant P. What is the final volume?",
+                options: ["1.5 L", "3 L", "6 L", "12 L"],
+                correct: 2
+            },
+            {
+                question: "What is the pressure of 1 mol of gas in a 5 L container at 300 K? (R = 0.0821 L·atm/(mol·K))",
+                options: ["4.93 atm", "2.46 atm", "9.86 atm", "1.23 atm"],
+                correct: 1
+            },
+            {
+                question: "How many molecules are in 16 g of CH₄? (M = 16 g/mol, Avogadro’s number = 6.022 × 10²³)",
+                options: ["3.011 × 10²³", "6.022 × 10²³", "1.505 × 10²³", "12.044 × 10²³"],
+                correct: 1
+            },
+            {
+                question: "A gas at 1 atm and 300 K is heated to 600 K at constant V. What is the final pressure?",
+                options: ["0.5 atm", "1 atm", "2 atm", "4 atm"],
+                correct: 2
+            },
+            {
+                question: "What is the volume of 0.1 mol of gas at 2 atm and 273 K? (R = 0.0821 L·atm/(mol·K))",
+                options: ["1.12 L", "2.24 L", "0.56 L", "4.48 L"],
+                correct: 0
+            },
+            {
+                question: "Calculate the temperature of 2 mol of gas in a 10 L container at 3 atm. (R = 0.0821 L·atm/(mol·K))",
+                options: ["182.7 K", "365.4 K", "91.3 K", "730.8 K"],
+                correct: 1
+            },
+            {
+                question: "What is the kinetic energy of 0.5 mol of gas at 600 K? (KE = (3/2)nRT, R = 8.314 J/(mol·K))",
+                options: ["7476.6 J", "3738.3 J", "14953.2 J", "1869.1 J"],
+                correct: 1
+            },
+            {
+                question: "What is the RMS speed of He (M = 4 g/mol) at 300 K? (v_rms = √(3RT/M), R = 8.314 J/(mol·K))",
+                options: ["1369 m/s", "684 m/s", "2738 m/s", "342 m/s"],
+                correct: 0
+            },
+            {
+                question: "A gas occupies 8 L at 5 atm. What is its volume at 10 atm, assuming constant T?",
+                options: ["4 L", "8 L", "16 L", "2 L"],
+                correct: 0
+            },
+            {
+                question: "A gas at 2 L and 500 K is cooled to 250 K at constant P. What is the final volume?",
+                options: ["1 L", "2 L", "4 L", "0.5 L"],
+                correct: 0
+            },
+            {
+                question: "What is the pressure of 3 mol of gas in a 6 L container at 400 K? (R = 0.0821 L·atm/(mol·K))",
+                options: ["16.42 atm", "32.84 atm", "8.21 atm", "65.68 atm"],
+                correct: 0
+            },
+            {
+                question: "How many molecules are in 28 g of N₂? (M = 28 g/mol, Avogadro’s number = 6.022 × 10²³)",
+                options: ["3.011 × 10²³", "6.022 × 10²³", "1.505 × 10²³", "12.044 × 10²³"],
+                correct: 1
+            },
+            {
+                question: "A gas at 4 atm and 400 K is heated to 800 K at constant V. What is the final pressure?",
+                options: ["2 atm", "4 atm", "8 atm", "16 atm"],
+                correct: 2
+            },
+            {
+                question: "What is the volume of 4 mol of gas at 1 atm and 546 K? (R = 0.0821 L·atm/(mol·K))",
+                options: ["179.2 L", "89.6 L", "358.4 L", "44.8 L"],
+                correct: 0
+            },
+            {
+                question: "How many moles are in 5.6 L of gas at STP (1 atm, 273 K)?",
+                options: ["0.25 mol", "0.5 mol", "1 mol", "2 mol"],
+                correct: 0
+            },
+            {
+                question: "What is the kinetic energy of 1 mol of gas at 200 K? (KE = (3/2)nRT, R = 8.314 J/(mol·K))",
+                options: ["2494.2 J", "1662.8 J", "4988.4 J", "831.4 J"],
+                correct: 0
+            },
+            {
+                question: "What is the RMS speed of CO₂ (M = 44 g/mol) at 300 K? (v_rms = √(3RT/M), R = 8.314 J/(mol·K))",
+                options: ["408 m/s", "204 m/s", "816 m/s", "102 m/s"],
+                correct: 0
+            },
+            {
+                question: "For CO₂, if a = 3.59 L²·atm/mol² and b = 0.0427 L/mol, what is the critical temperature? (T_c = 8a/(27Rb))",
+                options: ["304 K", "152 K", "608 K", "76 K"],
+                correct: 0
+            },
+            {
+                question: "What is the density of N₂ (M = 28 g/mol) at 1 atm and 273 K? (d = PM/(RT), R = 0.0821 L·atm/(mol·K))",
+                options: ["1.25 g/L", "0.625 g/L", "2.5 g/L", "0.312 g/L"],
+                correct: 0
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz-container');
+
+        questions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.classList.add('question');
+            questionDiv.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+            
+            q.options.forEach((option, i) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.classList.add('option');
+                optionDiv.textContent = option;
+                optionDiv.addEventListener('click', () => {
+                    const options = questionDiv.querySelectorAll('.option');
+                    options.forEach((opt, j) => {
+                        if (j === q.correct) {
+                            opt.classList.add('correct');
+                        } else if (j === i && i !== q.correct) {
+                            opt.classList.add('incorrect');
+                        }
+                    });
+                });
+                questionDiv.appendChild(optionDiv);
+            });
+
+            quizContainer.appendChild(questionDiv);
+        });
+    </script>
+</body>
+</html>

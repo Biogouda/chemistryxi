@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Chemistry MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+        .option {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #e0e0e0;
+        }
+        .correct {
+            background-color: #28a745;
+            color: white;
+        }
+        .incorrect {
+            background-color: #dc3545;
+            color: white;
+        }
+        #score {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Environmental Chemistry MCQ Quiz</h1>
+    <div class="quiz-container" id="quiz">
+        <!-- Questions will be dynamically inserted here -->
+    </div>
+    <div id="score"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "Environmental chemistry studies the chemical processes in:",
+                options: ["Laboratories", "Environment", "Industries", "Space"],
+                correct: 1
+            },
+            {
+                question: "Which type of pollution involves contamination of water bodies?",
+                options: ["Air pollution", "Water pollution", "Soil pollution", "Noise pollution"],
+                correct: 1
+            },
+            {
+                question: "Air pollution is caused by:",
+                options: ["Gaseous emissions", "Sound waves", "Light intensity", "Soil erosion"],
+                correct: 0
+            },
+            {
+                question: "Soil pollution is primarily due to:",
+                options: ["Pesticides and industrial waste", "Noise", "Air pollutants", "Waterlogging"],
+                correct: 0
+            },
+            {
+                question: "The chemical reaction responsible for smog formation involves:",
+                options: ["Photochemical reactions", "Neutralization", "Precipitation", "Decomposition"],
+                correct: 0
+            },
+            {
+                question: "Classical smog is also known as:",
+                options: ["Photochemical smog", "London-type smog", "Los Angeles smog", "Industrial smog"],
+                correct: 1
+            },
+            {
+                question: "Photochemical smog is caused by the interaction of sunlight with:",
+                options: ["SO2", "NOx and VOCs", "CO2", "O3"],
+                correct: 1
+            },
+            {
+                question: "A major atmospheric pollutant is:",
+                options: ["Carbon dioxide", "Nitrogen gas", "Oxygen gas", "Sulfur dioxide"],
+                correct: 3
+            },
+            {
+                question: "Acid rain is primarily caused by:",
+                options: ["CO and CO2", "SO2 and NOx", "O3 and H2O", "NH3 and H2"],
+                correct: 1
+            },
+            {
+                question: "The pH of acid rain is typically below:",
+                options: ["7.0", "5.6", "4.0", "8.0"],
+                correct: 1
+            },
+            {
+                question: "Ozone in the stratosphere protects Earth by absorbing:",
+                options: ["Infrared radiation", "Ultraviolet radiation", "Visible light", "Microwaves"],
+                correct: 1
+            },
+            {
+                question: "The chemical formula of ozone is:",
+                options: ["O2", "O3", "O4", "O"],
+                correct: 1
+            },
+            {
+                question: "Ozone depletion is primarily caused by:",
+                options: ["CO2", "CFCs", "SO2", "NOx"],
+                correct: 1
+            },
+            {
+                question: "The effect of ozone layer depletion includes increased:",
+                options: ["Global warming", "Skin cancer", "Acid rain", "Smog"],
+                correct: 1
+            },
+            {
+                question: "The greenhouse effect is caused by gases that trap:",
+                options: ["Ultraviolet radiation", "Infrared radiation", "Visible light", "X-rays"],
+                correct: 1
+            },
+            {
+                question: "The primary greenhouse gas is:",
+                options: ["Ozone", "Carbon dioxide", "Sulfur dioxide", "Nitrogen oxide"],
+                correct: 1
+            },
+            {
+                question: "Global warming is the increase in Earth’s average:",
+                options: ["Surface temperature", "Ocean depth", "Atmospheric pressure", "Humidity"],
+                correct: 0
+            },
+            {
+                question: "Industrial wastes contribute to pollution by releasing:",
+                options: ["Oxygen", "Toxic chemicals", "Nitrogen", "Water vapor"],
+                correct: 1
+            },
+            {
+                question: "Green chemistry aims to:",
+                options: ["Increase pollution", "Reduce pollution", "Study atmospheric reactions", "Promote industrial waste"],
+                correct: 1
+            },
+            {
+                question: "A principle of green chemistry is to use:",
+                options: ["Non-renewable resources", "Safer chemicals", "Hazardous solvents", "High-energy processes"],
+                correct: 1
+            },
+            {
+                question: "A strategy to control air pollution is:",
+                options: ["Deforestation", "Use of electrostatic precipitators", "Increasing vehicle emissions", "Burning waste"],
+                correct: 1
+            },
+            {
+                question: "Water pollution can be reduced by:",
+                options: ["Dumping untreated sewage", "Effluent treatment plants", "Increasing industrial discharge", "Using pesticides"],
+                correct: 1
+            },
+            {
+                question: "Soil pollution can be controlled by:",
+                options: ["Excessive pesticide use", "Bioremediation", "Landfilling", "Burning crops"],
+                correct: 1
+            },
+            {
+                question: "The major source of CO in the atmosphere is:",
+                options: ["Volcanic eruptions", "Vehicle exhausts", "Photosynthesis", "Ocean waves"],
+                correct: 1
+            },
+            {
+                question: "Particulate matter in air pollution includes:",
+                options: ["Dust and soot", "Water vapor", "Nitrogen gas", "Oxygen gas"],
+                correct: 0
+            },
+            {
+                question: "Acid rain damages:",
+                options: ["Buildings and ecosystems", "Ozone layer", "Greenhouse gases", "Atmospheric pressure"],
+                correct: 0
+            },
+            {
+                question: "The Montreal Protocol aims to protect the:",
+                options: ["Greenhouse effect", "Ozone layer", "Acid rain", "Smog"],
+                correct: 1
+            },
+            {
+                question: "CFCs are mainly released from:",
+                options: ["Refrigerators and aerosols", "Vehicles", "Factories", "Farms"],
+                correct: 0
+            },
+            {
+                question: "Methane is a greenhouse gas produced by:",
+                options: ["Industrial furnaces", "Landfills and cattle", "Oceans", "Volcanoes"],
+                correct: 1
+            },
+            {
+                question: "The Kyoto Protocol addresses:",
+                options: ["Ozone depletion", "Global warming", "Acid rain", "Smog"],
+                correct: 1
+            },
+            {
+                question: "Smog reduces visibility due to:",
+                options: ["Clear air", "Aerosols and pollutants", "High humidity", "Low temperature"],
+                correct: 1
+            },
+            {
+                question: "Ozone at ground level is:",
+                options: ["Beneficial", "Harmful", "Neutral", "Non-existent"],
+                correct: 1
+            },
+            {
+                question: "The main source of water pollution is:",
+                options: ["Rainwater", "Industrial effluents", "Distilled water", "Atmospheric gases"],
+                correct: 1
+            },
+            {
+                question: "Eutrophication in water bodies is caused by excess:",
+                options: ["Nitrates and phosphates", "Carbon dioxide", "Oxygen", "Sulfur"],
+                correct: 0
+            },
+            {
+                question: "Green chemistry promotes the use of:",
+                options: ["Toxic solvents", "Renewable feedstocks", "High-waste processes", "Non-biodegradable materials"],
+                correct: 1
+            },
+            {
+                question: "A method to control industrial pollution is:",
+                options: ["Waste recycling", "Open dumping", "Burning waste", "Untreated discharge"],
+                correct: 0
+            },
+            {
+                question: "The troposphere is the layer where most:",
+                options: ["Ozone is found", "Weather phenomena occur", "CFCs are produced", "Greenhouse gases are absent"],
+                correct: 1
+            },
+            {
+                question: "The depletion of the ozone layer increases the risk of:",
+                options: ["Global warming", "Cataracts", "Acid rain", "Eutrophication"],
+                correct: 1
+            },
+            {
+                question: "The greenhouse effect is essential for:",
+                options: ["Cooling the Earth", "Maintaining Earth’s temperature", "Causing acid rain", "Depleting ozone"],
+                correct: 1
+            },
+            {
+                question: "A secondary pollutant in the atmosphere is:",
+                options: ["SO2", "O3", "CO", "NO"],
+                correct: 1
+            }
+        ];
+
+        let score = 0;
+
+        function loadQuiz() {
+            const quizContainer = document.getElementById('quiz');
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                questionDiv.innerHTML = `
+                    <p>${index + 1}. ${q.question}</p>
+                    <div class="options">
+                        ${q.options.map((option, i) => `
+                            <div class="option" onclick="checkAnswer(${index}, ${i}, this)">${option}</div>
+                        `).join('')}
+                    </div>
+                `;
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function checkAnswer(questionIndex, selectedIndex, element) {
+            const correctIndex = questions[questionIndex].correct;
+            const options = element.parentElement.querySelectorAll('.option');
+            options.forEach((opt, i) => {
+                opt.style.pointerEvents = 'none'; // Disable further clicks
+                if (i === correctIndex) {
+                    opt.classList.add('correct');
+                } else if (i === selectedIndex && i !== correctIndex) {
+                    opt.classList.add('incorrect');
+                }
+            });
+            if (selectedIndex === correctIndex) {
+                score++;
+                document.getElementById('score').innerText = `Score: ${score} / ${questions.length}`;
+            }
+        }
+
+        window.onload = loadQuiz;
+    </script>
+</body>
+</html>
