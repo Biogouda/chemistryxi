@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymers - Classification, Polymerization, Important Polymers</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        .section-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .question-container {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .question {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .answer-container {
+            display: none;
+            margin-top: 5px;
+            color: green;
+            font-weight: bold;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        h3 {
+            margin-top: 15px;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Polymers - Classification, Polymerization, Important Polymers</h1>
+
+    <section>
+        <h2 class="section-title">Classification of Polymers</h2>
+
+        <div class="question-container">
+            <div class="question">1. Polymers are large molecules (macromolecules) composed of repeating structural units called __________, connected by covalent chemical bonds.</div>
+            <button onclick="showAnswer('answer1')">Show Answer</button>
+            <div class="answer-container" id="answer1">monomers</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">2. Based on their origin, polymers are classified into two main categories: __________ polymers and synthetic polymers.</div>
+            <button onclick="showAnswer('answer2')">Show Answer</button>
+            <div class="answer-container" id="answer2">natural</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">3. __________ polymers are obtained from natural sources, such as plants and animals. Examples include cellulose, starch, proteins, and natural rubber.</div>
+            <button onclick="showAnswer('answer3')">Show Answer</button>
+            <div class="answer-container" id="answer3">Natural</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">4. __________ polymers are man-made polymers synthesized in laboratories and industries. Examples include polythene, nylon, polyesters, and Bakelite.</div>
+            <button onclick="showAnswer('answer4')">Show Answer</button>
+            <div class="answer-container" id="answer4">Synthetic</div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Methods of Polymerization</h2>
+
+        <h3>Addition Polymerization</h3>
+        <div class="question-container">
+            <div class="question">5. Addition polymerization involves the joining of monomer units without the loss of any atoms. This type of polymerization usually occurs with monomers containing __________ bonds (typically double or triple bonds).</div>
+            <button onclick="showAnswer('answer5')">Show Answer</button>
+            <div class="answer-container" id="answer5">unsaturated</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">6. Polythene (polyethylene) is a common example of an __________ polymer formed by the addition polymerization of ethene (ethylene).</div>
+            <button onclick="showAnswer('answer6')">Show Answer</button>
+            <div class="answer-container" id="answer6">addition</div>
+        </div>
+
+        <h3>Condensation Polymerization</h3>
+        <div class="question-container">
+            <div class="question">7. Condensation polymerization involves the joining of monomer units with the loss of small molecules such as water, alcohol, or carbon dioxide. Monomers typically contain __________ functional groups.</div>
+            <button onclick="showAnswer('answer7')">Show Answer</button>
+            <div class="answer-container" id="answer7">reactive (e.g., hydroxyl, carboxyl, amino)</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">8. Nylon is a synthetic polyamide produced by __________ polymerization between diamines and dicarboxylic acids.</div>
+            <button onclick="showAnswer('answer8')">Show Answer</button>
+            <div class="answer-container" id="answer8">condensation</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">9. Polyesters, such as Terylene (Dacron), are formed by the condensation reaction between dicarboxylic acids and __________.</div>
+            <button onclick="showAnswer('answer9')">Show Answer</button>
+            <div class="answer-container" id="answer9">diols (glycols)</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">10. Bakelite is a thermosetting polymer formed by the condensation reaction between phenol and __________.</div>
+            <button onclick="showAnswer('answer10')">Show Answer</button>
+            <div class="answer-container" id="answer10">formaldehyde</div>
+        </div>
+
+        <h3>Copolymerization</h3>
+        <div class="question-container">
+            <div class="question">11. Copolymerization is a polymerization reaction in which two or more different monomer species are allowed to polymerize together to form a polymer called a __________.</div>
+            <button onclick="showAnswer('answer11')">Show Answer</button>
+            <div class="answer-container" id="answer11">copolymer</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">12. Buna-S rubber is a copolymer of 1,3-butadiene and __________.</div>
+            <button onclick="showAnswer('answer12')">Show Answer</button>
+            <div class="answer-container" id="answer12">styrene</div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Some Important Polymers</h2>
+
+        <h3>Natural Polymers</h3>
+        <ul>
+            <li><b>Natural Rubber:</b> A polymer of isoprene, known for its elasticity.</li>
+            <li><b>Cellulose:</b> A polymer of glucose, the main structural component of plant cell walls.</li>
+            <li><b>Starch:</b> A polymer of glucose, used as a storage polysaccharide in plants.</li>
+            <li><b>Proteins:</b> Polymers of amino acids, essential for various biological functions.</li>
+        </ul>
+
+        <h3>Synthetic Polymers</h3>
+        <ul>
+            <li><b>Polythene (Polyethylene):</b> A simple addition polymer of ethene, widely used in packaging and films.</li>
+            <li><b>Nylon:</b> A synthetic polyamide with high tensile strength, used in fibers and plastics.</li>
+            <li><b>Polyester (e.g., Terylene/Dacron):</b> Condensation polymers used in fabrics and bottles.</li>
+            <li><b>Bakelite:</b> A thermosetting polymer used in electrical switches and handles.</li>
+            <li><b>Rubber (Synthetic):</b> Various copolymers like Buna-S and Neoprene, with properties similar to or superior to natural rubber.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="section-title">Biodegradable and Non-Biodegradable Polymers</h2>
+
+        <div class="question-container">
+            <div class="question">13. __________ polymers can be broken down by microorganisms or natural processes into harmless substances. Examples include cellulose, starch, and some synthetic polymers like poly(lactic acid) (PLA) and poly($\beta$-hydroxybutyrate) (PHB).</div>
+            <button onclick="showAnswer('answer13')">Show Answer</button>
+            <div class="answer-container" id="answer13">Biodegradable</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">14. __________ polymers cannot be easily broken down by natural processes and persist in the environment, leading to pollution. Examples include polythene, nylon, polyesters, and PVC.</div>
+            <button onclick="showAnswer('answer14')">Show Answer</button>
+            <div class="answer-container" id="answer14">Non-biodegradable</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">15. The accumulation of __________ polymers in the environment poses a significant threat to ecosystems and human health.</div>
+            <button onclick="showAnswer('answer15')">Show Answer</button>
+            <div class="answer-container" id="answer15">non-biodegradable</div>
+        </div>
+    </section>
+
+    <script>
+        function showAnswer(answerId) {
+            const answerContainer = document.getElementById(answerId);
+            if (answerContainer.style.display === "none") {
+                answerContainer.style.display = "block";
+            } else {
+                answerContainer.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surface Chemistry - Chemistry Class 12 Quiz</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        .question-container {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .question {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .answer-container {
+            display: none;
+            margin-top: 5px;
+            color: green;
+            font-weight: bold;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Surface Chemistry - Chemistry Class 12 Quiz</h1>
+
+    <div class="question-container">
+        <div class="question">1. Surface chemistry deals with phenomena that occur at the __________ between two phases.</div>
+        <button onclick="showAnswer('answer1')">Show Answer</button>
+        <div class="answer-container" id="answer1">interfaces</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">2. The accumulation of molecular species at the surface rather than in the bulk of a solid or liquid is known as __________.</div>
+        <button onclick="showAnswer('answer2')">Show Answer</button>
+        <div class="answer-container" id="answer2">adsorption</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">3. The substance on whose surface adsorption occurs is called the __________.</div>
+        <button onclick="showAnswer('answer3')">Show Answer</button>
+        <div class="answer-container" id="answer3">adsorbent</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">4. The molecular species that gets adsorbed on the surface is called the __________.</div>
+        <button onclick="showAnswer('answer4')">Show Answer</button>
+        <div class="answer-container" id="answer4">adsorbate</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">5. The process of removing an adsorbed substance from the surface is called __________.</div>
+        <button onclick="showAnswer('answer5')">Show Answer</button>
+        <div class="answer-container" id="answer5">desorption</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">6. Adsorption in which the adsorbate is held to the surface by weak van der Waals forces is called __________.</div>
+        <button onclick="showAnswer('answer6')">Show Answer</button>
+        <div class="answer-container" id="answer6">physisorption or physical adsorption</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">7. Adsorption in which the adsorbate is held to the surface by strong chemical bonds is called __________.</div>
+        <button onclick="showAnswer('answer7')">Show Answer</button>
+        <div class="answer-container" id="answer7">chemisorption or chemical adsorption</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">8. Physisorption is generally __________ in nature.</div>
+        <button onclick="showAnswer('answer8')">Show Answer</button>
+        <div class="answer-container" id="answer8">reversible</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">9. Chemisorption is generally __________ in nature.</div>
+        <button onclick="showAnswer('answer9')">Show Answer</button>
+        <div class="answer-container" id="answer9">irreversible</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">10. The extent of physisorption decreases with an increase in __________.</div>
+        <button onclick="showAnswer('answer10')">Show Answer</button>
+        <div class="answer-container" id="answer10">temperature</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">11. The extent of adsorption of a gas on a solid surface is given by the adsorption __________.</div>
+        <button onclick="showAnswer('answer11')">Show Answer</button>
+        <div class="answer-container" id="answer11">isotherm</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">12. The Freundlich adsorption isotherm gives an empirical relationship between the quantity of gas adsorbed by unit mass of solid adsorbent and __________ at a particular temperature.</div>
+        <button onclick="showAnswer('answer12')">Show Answer</button>
+        <div class="answer-container" id="answer12">pressure</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">13. The Langmuir adsorption isotherm is based on the assumption that adsorption occurs in the form of a __________ layer.</div>
+        <button onclick="showAnswer('answer13')">Show Answer</button>
+        <div class="answer-container" id="answer13">monolayer</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">14. A __________ is a colloidal solution in which the dispersed phase is a liquid and the dispersion medium is a solid.</div>
+        <button onclick="showAnswer('answer14')">Show Answer</button>
+        <div class="answer-container" id="answer14">gel</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">15. Colloidal solutions are heterogeneous systems in which the particle size ranges from approximately __________ to __________ nanometers.</div>
+        <button onclick="showAnswer('answer15')">Show Answer</button>
+        <div class="answer-container" id="answer15">1, 1000</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">16. Colloidal solutions in which the dispersed phase and dispersion medium have strong affinity for each other are called __________ colloids.</div>
+        <button onclick="showAnswer('answer16')">Show Answer</button>
+        <div class="answer-container" id="answer16">lyophilic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">17. Colloidal solutions in which the dispersed phase and dispersion medium have little affinity for each other are called __________ colloids.</div>
+        <button onclick="showAnswer('answer17')">Show Answer</button>
+        <div class="answer-container" id="answer17">lyophobic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">18. The scattering of light by colloidal particles is known as the __________ effect.</div>
+        <button onclick="showAnswer('answer18')">Show Answer</button>
+        <div class="answer-container" id="answer18">Tyndall</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">19. The zigzag movement of colloidal particles in a dispersion medium is called __________ movement.</div>
+        <button onclick="showAnswer('answer19')">Show Answer</button>
+        <div class="answer-container" id="answer19">Brownian</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">20. The migration of colloidal particles under the influence of an electric field is called __________.</div>
+        <button onclick="showAnswer('answer20')">Show Answer</button>
+        <div class="answer-container" id="answer20">electrophoresis</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">21. The coagulation or precipitation of lyophobic colloids can be brought about by the addition of __________.</div>
+        <button onclick="showAnswer('answer21')">Show Answer</button>
+        <div class="answer-container" id="answer21">electrolytes</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">22. The minimum concentration of an electrolyte required to cause coagulation of a colloidal solution in two hours is called its __________ value.</div>
+        <button onclick="showAnswer('answer22')">Show Answer</button>
+        <div class="answer-container" id="answer22">coagulating or flocculating</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">23. Hardy-Schulze rule states that the coagulating power of an electrolyte is directly proportional to the __________ of the ions carrying the charge opposite to that of the colloidal particles.</div>
+        <button onclick="showAnswer('answer23')">Show Answer</button>
+        <div class="answer-container" id="answer23">valency</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">24. Lyophilic colloids are more stable than lyophobic colloids because they are extensively __________.</div>
+        <button onclick="showAnswer('answer24')">Show Answer</button>
+        <div class="answer-container" id="answer24">hydrated or solvated</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">25. The process of protecting a lyophobic colloid by the addition of a lyophilic colloid is called __________.</div>
+        <button onclick="showAnswer('answer25')">Show Answer</button>
+        <div class="answer-container" id="answer25">protection of colloids</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">26. The number of milligrams of a lyophilic colloid required to prevent the coagulation of 10 mL of a standard gold sol by the addition of 1 mL of a 10% NaCl solution is called its __________ number.</div>
+        <button onclick="showAnswer('answer26')">Show Answer</button>
+        <div class="answer-container" id="answer26">gold</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">27. Emulsions are colloidal solutions in which both the dispersed phase and the dispersion medium are __________.</div>
+        <button onclick="showAnswer('answer27')">Show Answer</button>
+        <div class="answer-container" id="answer27">liquids</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">28. An emulsion of oil in water (O/W) has __________ as the dispersed phase and __________ as the dispersion medium.</div>
+        <button onclick="showAnswer('answer28')">Show Answer</button>
+        <div class="answer-container" id="answer28">oil, water</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">29. An emulsion of water in oil (W/O) has __________ as the dispersed phase and __________ as the dispersion medium.</div>
+        <button onclick="showAnswer('answer29')">Show Answer</button>
+        <div class="answer-container" id="answer29">water, oil</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">30. Emulsions are generally unstable and tend to separate into two liquid layers. To stabilize them, an __________ is usually added.</div>
+        <button onclick="showAnswer('answer30')">Show Answer</button>
+        <div class="answer-container" id="answer30">emulsifier or emulsifying agent</div>
+    </div>
+
+    <script>
+        function showAnswer(answerId) {
+            const answerContainer = document.getElementById(answerId);
+            if (answerContainer.style.display === "none") {
+                answerContainer.style.display = "block";
+            } else {
+                answerContainer.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

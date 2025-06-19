@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteins - Chemistry Class 12 Quiz</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        .question-container {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .question {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .answer-container {
+            display: none;
+            margin-top: 5px;
+            color: green;
+            font-weight: bold;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Proteins - Chemistry Class 12 Quiz</h1>
+
+    <div class="question-container">
+        <div class="question">1. Proteins are complex organic macromolecules composed of long chains of __________ acids joined by peptide bonds.</div>
+        <button onclick="showAnswer('answer1')">Show Answer</button>
+        <div class="answer-container" id="answer1">amino</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">2. Amino acids contain an amino group (−NH_2), a carboxyl group (−COOH), a hydrogen atom, and a distinctive side chain (R group) all attached to a central __________ carbon atom.</div>
+        <button onclick="showAnswer('answer2')">Show Answer</button>
+        <div class="answer-container" id="answer2">alpha</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">3. There are about __________ standard amino acids that are commonly found in proteins.</div>
+        <button onclick="showAnswer('answer3')">Show Answer</button>
+        <div class="answer-container" id="answer3">20</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">4. Amino acids can be classified based on the nature of their side chains into groups such as nonpolar aliphatic, polar uncharged, aromatic, positively charged (basic), and __________ charged (acidic).</div>
+        <button onclick="showAnswer('answer4')">Show Answer</button>
+        <div class="answer-container" id="answer4">negatively</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">5. Amino acids exist as zwitterions in aqueous solution, where the carboxyl group loses a proton and the amino group gains a proton, resulting in a dipolar ion with both positive and negative charges.</div>
+        <button onclick="showAnswer('answer5')">Show Answer</button>
+        <div class="answer-container" id="answer5">true</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">6. The pH at which an amino acid exists predominantly in its zwitterionic form is called the __________ point (pI).</div>
+        <button onclick="showAnswer('answer6')">Show Answer</button>
+        <div class="answer-container" id="answer6">isoelectric</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">7. A peptide bond is an amide linkage formed between the carboxyl group of one amino acid and the amino group of another amino acid, with the elimination of a __________ molecule.</div>
+        <button onclick="showAnswer('answer7')">Show Answer</button>
+        <div class="answer-container" id="answer7">water</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">8. The primary structure of a protein refers to the linear sequence of __________ acids in the polypeptide chain.</div>
+        <button onclick="showAnswer('answer8')">Show Answer</button>
+        <div class="answer-container" id="answer8">amino</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">9. The secondary structure of a protein refers to the local folded structures formed within the polypeptide chain due to hydrogen bonding between the backbone atoms. The two main types are $\alpha$-helix and $\beta$-__________ sheet.</div>
+        <button onclick="showAnswer('answer9')">Show Answer</button>
+        <div class="answer-container" id="answer9">pleated</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">10. The $\alpha$-helix is a coiled structure stabilized by hydrogen bonds between the carbonyl oxygen of one amino acid residue and the amide hydrogen of an amino acid residue __________ residues away in the chain.</div>
+        <button onclick="showAnswer('answer10')">Show Answer</button>
+        <div class="answer-container" id="answer10">four</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">11. The $\beta$-pleated sheet consists of polypeptide chains arranged side by side, held together by hydrogen bonds between the backbone carbonyl and amide groups of adjacent chains. These chains can run parallel or __________.</div>
+        <button onclick="showAnswer('answer11')">Show Answer</button>
+        <div class="answer-container" id="answer11">antiparallel</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">12. The tertiary structure of a protein refers to the overall three-dimensional shape of a single polypeptide chain, resulting from interactions between the side chains ($R$ groups) of the amino acid residues. These interactions include hydrogen bonds, disulfide bridges, hydrophobic interactions, and __________ bonds.</div>
+        <button onclick="showAnswer('answer12')">Show Answer</button>
+        <div class="answer-container" id="answer12">ionic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">13. A disulfide bridge is a covalent bond formed between the thiol (−SH) groups of two __________ residues.</div>
+        <button onclick="showAnswer('answer13')">Show Answer</button>
+        <div class="answer-container" id="answer13">cysteine</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">14. The quaternary structure of a protein refers to the arrangement of multiple polypeptide chains (subunits) in a multi-subunit protein. These subunits are held together by noncovalent interactions and sometimes by __________ bonds.</div>
+        <button onclick="showAnswer('answer14')">Show Answer</button>
+        <div class="answer-container" id="answer14">disulfide</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">15. Denaturation of a protein involves the disruption of its native conformation (secondary, tertiary, and quaternary structures) by factors such as heat, changes in pH, organic solvents, or heavy metal ions. The primary structure usually remains __________.</div>
+        <button onclick="showAnswer('answer15')">Show Answer</button>
+        <div class="answer-container" id="answer15">intact</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">16. Enzymes are biological __________ that catalyze biochemical reactions by lowering the activation energy. They are mostly proteins.</div>
+        <button onclick="showAnswer('answer16')">Show Answer</button>
+        <div class="answer-container" id="answer16">catalysts</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">17. The specific region of an enzyme where the substrate binds and catalysis occurs is called the __________ site.</div>
+        <button onclick="showAnswer('answer17')">Show Answer</button>
+        <div class="answer-container" id="answer17">active</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">18. Proteins play diverse roles in biological systems, including catalysis (enzymes), structural support (collagen), transport (hemoglobin), defense (antibodies), movement (actin and myosin), and __________ (hormones).</div>
+        <button onclick="showAnswer('answer18')">Show Answer</button>
+        <div class="answer-container" id="answer18">regulation</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">19. The peptide bond has partial __________ bond character due to resonance, which restricts rotation around the $C-N$ bond.</div>
+        <button onclick="showAnswer('answer19')">Show Answer</button>
+        <div class="answer-container" id="answer19">double</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">20. Fibrous proteins are typically insoluble in water and have elongated structures, often playing structural roles (e.g., keratin in hair and nails, collagen in connective tissue). Globular proteins are generally soluble in water and have more compact, spherical shapes, often involved in functional roles (e.g., enzymes, antibodies).</div>
+        <button onclick="showAnswer('answer20')">Show Answer</button>
+        <div class="answer-container" id="answer20">true</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">21. The Edman degradation is a method used to determine the __________ sequence of amino acids in a polypeptide chain.</div>
+        <button onclick="showAnswer('answer21')">Show Answer</button>
+        <div class="answer-container" id="answer21">N-terminal</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">22. The Sanger sequencing method, using 1-fluoro-2,4-dinitrobenzene (FDNB), was one of the first methods used to determine the amino acid composition of proteins, specifically identifying the __________ amino acid.</div>
+        <button onclick="showAnswer('answer22')">Show Answer</button>
+        <div class="answer-container" id="answer22">N-terminal</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">23. Hydrolysis of proteins with strong acids or bases breaks the __________ bonds, yielding individual amino acids.</div>
+        <button onclick="showAnswer('answer23')">Show Answer</button>
+        <div class="answer-container" id="answer23">peptide</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">24. The biuret test is a chemical test used to detect the presence of peptide bonds. A positive test is indicated by a __________ color upon addition of copper(II) sulfate in alkaline solution.</div>
+        <button onclick="showAnswer('answer24')">Show Answer</button>
+        <div class="answer-container" id="answer24">violet or purple</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">25. Some proteins contain non-protein components called prosthetic groups. For example, hemoglobin contains __________ as a prosthetic group, which is essential for its oxygen-carrying capacity.</div>
+        <button onclick="showAnswer('answer25')">Show Answer</button>
+        <div class="answer-container" id="answer25">heme</div>
+    </div>
+
+    <script>
+        function showAnswer(answerId) {
+            const answerContainer = document.getElementById(answerId);
+            if (answerContainer.style.display === "none") {
+                answerContainer.style.display = "block";
+            } else {
+                answerContainer.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

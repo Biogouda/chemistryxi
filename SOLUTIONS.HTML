@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions - Chemistry Class 12 Quiz</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        .question-container {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .question {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .answer-container {
+            display: none;
+            margin-top: 5px;
+            color: green;
+            font-weight: bold;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Solutions - Chemistry Class 12 Quiz</h1>
+
+    <div class="question-container">
+        <div class="question">1. A solution with a relatively low concentration of solute is called a __________ solution.</div>
+        <button onclick="showAnswer('answer1')">Show Answer</button>
+        <div class="answer-container" id="answer1">dilute</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">2. The component of a solution that is present in a larger quantity is called the __________.</div>
+        <button onclick="showAnswer('answer2')">Show Answer</button>
+        <div class="answer-container" id="answer2">solvent</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">3. The component of a solution that is present in a smaller quantity is called the __________.</div>
+        <button onclick="showAnswer('answer3')">Show Answer</button>
+        <div class="answer-container" id="answer3">solute</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">4. The number of moles of solute dissolved in one liter of solution is called __________.</div>
+        <button onclick="showAnswer('answer4')">Show Answer</button>
+        <div class="answer-container" id="answer4">molarity</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">5. The number of moles of solute dissolved in one kilogram of solvent is called __________.</div>
+        <button onclick="showAnswer('answer5')">Show Answer</button>
+        <div class="answer-container" id="answer5">molality</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">6. The ratio of the number of moles of one component to the total number of moles of all components in a solution is called __________.</div>
+        <button onclick="showAnswer('answer6')">Show Answer</button>
+        <div class="answer-container" id="answer6">mole fraction</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">7. The mass percentage of a component in a solution is given by (mass of the component / total mass of solution) × __________.</div>
+        <button onclick="showAnswer('answer7')">Show Answer</button>
+        <div class="answer-container" id="answer7">100</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">8. Henry's law relates the solubility of a gas in a liquid to the __________ of the gas above the liquid.</div>
+        <button onclick="showAnswer('answer8')">Show Answer</button>
+        <div class="answer-container" id="answer8">partial pressure</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">9. Solutions that obey Raoult's law over the entire range of concentration are called __________ solutions.</div>
+        <button onclick="showAnswer('answer9')">Show Answer</button>
+        <div class="answer-container" id="answer9">ideal</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">10. Solutions that do not obey Raoult's law are called __________ solutions.</div>
+        <button onclick="showAnswer('answer10')">Show Answer</button>
+        <div class="answer-container" id="answer10">non-ideal</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">11. Non-ideal solutions showing positive deviations from Raoult's law have __________ intermolecular forces compared to the pure components.</div>
+        <button onclick="showAnswer('answer11')">Show Answer</button>
+        <div class="answer-container" id="answer11">weaker</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">12. Non-ideal solutions showing negative deviations from Raoult's law have __________ intermolecular forces compared to the pure components.</div>
+        <button onclick="showAnswer('answer12')">Show Answer</button>
+        <div class="answer-container" id="answer12">stronger</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">13. Azeotropes are binary solutions having the same composition in the liquid and __________ phase and boil at a constant temperature.</div>
+        <button onclick="showAnswer('answer13')">Show Answer</button>
+        <div class="answer-container" id="answer13">vapor</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">14. The colligative properties depend on the __________ of solute particles, not on their nature.</div>
+        <button onclick="showAnswer('answer14')">Show Answer</button>
+        <div class="answer-container" id="answer14">number</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">15. The four colligative properties are: relative lowering of vapor pressure, elevation of boiling point, depression of freezing point, and __________.</div>
+        <button onclick="showAnswer('answer15')">Show Answer</button>
+        <div class="answer-container" id="answer15">osmotic pressure</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">16. The relative lowering of vapor pressure of a solution containing a non-volatile solute is equal to the __________ of the solute.</div>
+        <button onclick="showAnswer('answer16')">Show Answer</button>
+        <div class="answer-container" id="answer16">mole fraction</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">17. The elevation of boiling point ($\Delta T_b$) is directly proportional to the __________ of the solute.</div>
+        <button onclick="showAnswer('answer17')">Show Answer</button>
+        <div class="answer-container" id="answer17">molality</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">18. The constant of proportionality in the elevation of boiling point equation ($\Delta T_b = K_b m$) is called the ebullioscopic constant or molal elevation constant of the __________.</div>
+        <button onclick="showAnswer('answer18')">Show Answer</button>
+        <div class="answer-container" id="answer18">solvent</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">19. The depression of freezing point ($\Delta T_f$) is directly proportional to the __________ of the solute.</div>
+        <button onclick="showAnswer('answer19')">Show Answer</button>
+        <div class="answer-container" id="answer19">molality</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">20. The constant of proportionality in the depression of freezing point equation ($\Delta T_f = K_f m$) is called the cryoscopic constant or molal depression constant of the __________.</div>
+        <button onclick="showAnswer('answer20')">Show Answer</button>
+        <div class="answer-container" id="answer20">solvent</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">21. Osmosis is the movement of solvent molecules from a region of __________ concentration of solute to a region of __________ concentration of solute through a semipermeable membrane.</div>
+        <button onclick="showAnswer('answer21')">Show Answer</button>
+        <div class="answer-container" id="answer21">lower, higher</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">22. The pressure required to prevent the flow of solvent into the solution through a semipermeable membrane is called __________ pressure ($\pi$).</div>
+        <button onclick="showAnswer('answer22')">Show Answer</button>
+        <div class="answer-container" id="answer22">osmotic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">23. For dilute solutions, the osmotic pressure is given by $\pi = CRT$, where C is the molarity, R is the gas constant, and T is the __________.</div>
+        <button onclick="showAnswer('answer23')">Show Answer</button>
+        <div class="answer-container" id="answer23">absolute temperature</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">24. Solutions having the same osmotic pressure at a given temperature are called __________ solutions.</div>
+        <button onclick="showAnswer('answer24')">Show Answer</button>
+        <div class="answer-container" id="answer24">isotonic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">25. If a solution has a higher osmotic pressure than another, it is called a __________ solution.</div>
+        <button onclick="showAnswer('answer25')">Show Answer</button>
+        <div class="answer-container" id="answer25">hypertonic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">26. If a solution has a lower osmotic pressure than another, it is called a __________ solution.</div>
+        <button onclick="showAnswer('answer26')">Show Answer</button>
+        <div class="answer-container" id="answer26">hypotonic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">27. The abnormal molar masses are obtained when the solute undergoes __________ or _________ in the solution.</div>
+        <button onclick="showAnswer('answer27')">Show Answer</button>
+        <div class="answer-container" id="answer27">association, dissociation</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">28. The van't Hoff factor (i) is the ratio of the __________ colligative property to the calculated colligative property assuming no association or dissociation.</div>
+        <button onclick="showAnswer('answer28')">Show Answer</button>
+        <div class="answer-container" id="answer28">observed</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">29. For a solute that dissociates in solution, the van't Hoff factor (i) is __________ than 1.</div>
+        <button onclick="showAnswer('answer29')">Show Answer</button>
+        <div class="answer-container" id="answer29">greater</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">30. For a solute that associates in solution, the van't Hoff factor (i) is __________ than 1.</div>
+        <button onclick="showAnswer('answer30')">Show Answer</button>
+        <div class="answer-container" id="answer30">less</div>
+    </div>
+
+    <script>
+        function showAnswer(answerId) {
+            const answerContainer = document.getElementById(answerId);
+            if (answerContainer.style.display === "none") {
+                answerContainer.style.display = "block";
+            } else {
+                answerContainer.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

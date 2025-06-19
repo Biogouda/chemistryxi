@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleansing Agents: Soap and Detergents</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        .section-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .question-container {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .question {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .answer-container {
+            display: none;
+            margin-top: 5px;
+            color: green;
+            font-weight: bold;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cleansing Agents: Soap and Detergents</h1>
+
+    <section>
+        <h2 class="section-title">Soaps</h2>
+
+        <div class="question-container">
+            <div class="question">1. Soaps are sodium or potassium salts of long-chain __________ acids (fatty acids).</div>
+            <button onclick="showAnswer('answer1')">Show Answer</button>
+            <div class="answer-container" id="answer1">carboxylic</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">2. Soaps are produced by the saponification process, which involves the hydrolysis of fats and oils with an __________.</div>
+            <button onclick="showAnswer('answer2')">Show Answer</button>
+            <div class="answer-container" id="answer2">alkali (like NaOH or KOH)</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">3. A soap molecule has two parts: a long hydrocarbon chain that is __________ (water-repelling) and an ionic carboxylate head that is __________ (water-attracting).</div>
+            <button onclick="showAnswer('answer3')">Show Answer</button>
+            <div class="answer-container" id="answer3">hydrophobic; hydrophilic</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">4. Soaps work as emulsifying agents because the hydrophobic tail dissolves in oil and grease, while the hydrophilic head interacts with __________.</div>
+            <button onclick="showAnswer('answer4')">Show Answer</button>
+            <div class="answer-container" id="answer4">water</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">5. Soaps form __________ in water, which are spherical clusters of soap molecules with the hydrophobic tails pointing inwards towards the oil/dirt and the hydrophilic heads pointing outwards towards the water.</div>
+            <button onclick="showAnswer('answer5')">Show Answer</button>
+            <div class="answer-container" id="answer5">micelles</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">6. Soaps are generally effective in __________ water but form scum (an insoluble precipitate) in hard water due to the presence of calcium and magnesium ions.</div>
+            <button onclick="showAnswer('answer6')">Show Answer</button>
+            <div class="answer-container" id="answer6">soft</div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Detergents</h2>
+
+        <div class="question-container">
+            <div class="question">7. Detergents are synthetic cleansing agents that have properties similar to soaps but do not form scum in __________ water.</div>
+            <button onclick="showAnswer('answer7')">Show Answer</button>
+            <div class="answer-container" id="answer7">hard</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">8. Anionic detergents are a common type of detergent and include sodium salts of long-chain benzene sulfonic acids or long-chain alkyl hydrogen __________.</div>
+            <button onclick="showAnswer('answer8')">Show Answer</button>
+            <div class="answer-container" id="answer8">sulfates</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">9. Like soaps, detergent molecules also have a __________ hydrophobic hydrocarbon tail and a hydrophilic ionic head (e.g., sulfonate or sulfate group).</div>
+            <button onclick="showAnswer('answer9')">Show Answer</button>
+            <div class="answer-container" id="answer9">long</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">10. Cationic detergents are quaternary ammonium salts with a long hydrocarbon chain and a positive charge on the nitrogen atom. They are often used as __________ and fabric softeners.</div>
+            <button onclick="showAnswer('answer10')">Show Answer</button>
+            <div class="answer-container" id="answer10">germicides</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">11. Non-ionic detergents do not contain any ions and are often esters of long-chain alcohols and polyethylene glycol. They are effective in removing __________ and grease.</div>
+            <button onclick="showAnswer('answer11')">Show Answer</button>
+            <div class="answer-container" id="answer11">oil</div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Cleansing Action of Soaps and Detergents</h2>
+
+        <div class="question-container">
+            <div class="question">12. The cleansing action of both soaps and detergents relies on their ability to lower the __________ tension of water, allowing it to spread and wet surfaces more effectively.</div>
+            <button onclick="showAnswer('answer12')">Show Answer</button>
+            <div class="answer-container" id="answer12">surface</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">13. When soap or detergent is added to water containing dirt (often oily or greasy), the __________ tails of the molecules dissolve in the dirt.</div>
+            <button onclick="showAnswer('answer13')">Show Answer</button>
+            <div class="answer-container" id="answer13">hydrophobic</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">14. The hydrophilic heads of the soap or detergent molecules remain attracted to the water molecules at the surface of the __________ formed around the dirt.</div>
+            <button onclick="showAnswer('answer14')">Show Answer</button>
+            <div class="answer-container" id="answer14">micelle</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">15. Agitation (like scrubbing or stirring) helps to dislodge the micelles containing the dirt from the surface. The dirt is then suspended in the water as a colloidal solution and can be __________ away.</div>
+            <button onclick="showAnswer('answer15')">Show Answer</button>
+            <div class="answer-container" id="answer15">rinsed</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">16. The negatively charged surfaces of the micelles (in the case of anionic soaps and detergents) prevent them from coming together and precipitating, thus keeping the dirt __________ in the water.</div>
+            <button onclick="showAnswer('answer16')">Show Answer</button>
+            <div class="answer-container" id="answer16">suspended</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">17. Detergents are considered better cleansing agents than soaps, especially in hard water, because their calcium and magnesium salts are __________ in water and do not form scum.</div>
+            <button onclick="showAnswer('answer17')">Show Answer</button>
+            <div class="answer-container" id="answer17">soluble</div>
+        </div>
+    </section>
+
+    <script>
+        function showAnswer(answerId) {
+            const answerContainer = document.getElementById(answerId);
+            if (answerContainer.style.display === "none") {
+                answerContainer.style.display = "block";
+            } else {
+                answerContainer.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

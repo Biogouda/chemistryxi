@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemical Kinetics - Chemistry Class 12 Quiz</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        .question-container {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .question {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .answer-container {
+            display: none;
+            margin-top: 5px;
+            color: green;
+            font-weight: bold;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Chemical Kinetics - Chemistry Class 12 Quiz</h1>
+
+    <div class="question-container">
+        <div class="question">1. Chemical kinetics is the branch of chemistry that deals with the __________ of chemical reactions and the factors affecting them.</div>
+        <button onclick="showAnswer('answer1')">Show Answer</button>
+        <div class="answer-container" id="answer1">rate</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">2. The rate of a chemical reaction is the change in the __________ of a reactant or a product per unit time.</div>
+        <button onclick="showAnswer('answer2')">Show Answer</button>
+        <div class="answer-container" id="answer2">concentration</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">3. For a reaction $aA + bB \rightarrow cC + dD$, the rate of reaction can be expressed as $-\frac{1}{a}\frac{d[A]}{dt} = -\frac{1}{b}\frac{d[B]}{dt} = +\frac{1}{c}\frac{d[C]}{dt} = +\frac{1}{d}\frac{d[D]}{dt}$. The negative sign indicates the __________ of reactants.</div>
+        <button onclick="showAnswer('answer3')">Show Answer</button>
+        <div class="answer-container" id="answer3">disappearance</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">4. The rate law expresses the rate of a reaction in terms of the __________ of the reactants raised to some powers.</div>
+        <button onclick="showAnswer('answer4')">Show Answer</button>
+        <div class="answer-container" id="answer4">concentrations</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">5. For a reaction $aA + bB \rightarrow products$, if the experimentally determined rate law is rate $= k[A]^x[B]^y$, then $x$ is the order of the reaction with respect to A, and $y$ is the order with respect to B. The overall order of the reaction is __________.</div>
+        <button onclick="showAnswer('answer5')">Show Answer</button>
+        <div class="answer-container" id="answer5">x + y</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">6. The sum of the powers of the concentration of the reactants in the rate law expression is called the __________ of the reaction.</div>
+        <button onclick="showAnswer('answer6')">Show Answer</button>
+        <div class="answer-container" id="answer6">order</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">7. A reaction whose rate is independent of the concentration of the reactant is called a __________ order reaction.</div>
+        <button onclick="showAnswer('answer7')">Show Answer</button>
+        <div class="answer-container" id="answer7">zero</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">8. The rate constant ($k$) of a reaction is a proportionality constant that relates the rate of the reaction to the __________ of the reactants.</div>
+        <button onclick="showAnswer('answer8')">Show Answer</button>
+        <div class="answer-container" id="answer8">concentrations</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">9. The integrated rate law for a zero-order reaction ($A \rightarrow products$) is $[A]_t = [A]_0 - __________.</div>
+        <button onclick="showAnswer('answer9')">Show Answer</button>
+        <div class="answer-container" id="answer9">kt</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">10. The integrated rate law for a first-order reaction ($A \rightarrow products$) is $\ln[A]_t = \ln[A]_0 - __________.</div>
+        <button onclick="showAnswer('answer10')">Show Answer</button>
+        <div class="answer-container" id="answer10">kt</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">11. The time required for half of the reactant to be converted into product is called the __________ of the reaction.</div>
+        <button onclick="showAnswer('answer11')">Show Answer</button>
+        <div class="answer-container" id="answer11">half-life</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">12. The half-life of a zero-order reaction is directly proportional to the initial concentration of the __________.</div>
+        <button onclick="showAnswer('answer12')">Show Answer</button>
+        <div class="answer-container" id="answer12">reactant</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">13. The half-life of a first-order reaction is __________ of the initial concentration of the reactant.</div>
+        <button onclick="showAnswer('answer13')">Show Answer</button>
+        <div class="answer-container" id="answer13">independent</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">14. The rate of a reaction generally __________ with an increase in temperature.</div>
+        <button onclick="showAnswer('answer14')">Show Answer</button>
+        <div class="answer-container" id="answer14">increases</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">15. According to the collision theory, the rate of a reaction depends on the frequency of effective __________.</div>
+        <button onclick="showAnswer('answer15')">Show Answer</button>
+        <div class="answer-container" id="answer15">collisions</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">16. For a collision to be effective, the colliding molecules must possess sufficient __________ energy and proper orientation.</div>
+        <button onclick="showAnswer('answer16')">Show Answer</button>
+        <div class="answer-container" id="answer16">kinetic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">17. The minimum energy that the reactant molecules must possess for a collision to result in a chemical reaction is called the __________ energy ($E_a$).</div>
+        <button onclick="showAnswer('answer17')">Show Answer</button>
+        <div class="answer-container" id="answer17">activation</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">18. The Arrhenius equation relates the rate constant ($k$) of a reaction to the activation energy ($E_a$) and temperature (T): $k = A e^{-E_a/RT}$, where A is the __________ factor.</div>
+        <button onclick="showAnswer('answer18')">Show Answer</button>
+        <div class="answer-container" id="answer18">frequency or pre-exponential</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">19. A __________ is a substance that increases the rate of a chemical reaction without itself undergoing any permanent chemical change.</div>
+        <button onclick="showAnswer('answer19')">Show Answer</button>
+        <div class="answer-container" id="answer19">catalyst</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">20. A catalyst provides an alternative reaction pathway with a __________ activation energy.</div>
+        <button onclick="showAnswer('answer20')">Show Answer</button>
+        <div class="answer-container" id="answer20">lower</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">21. Catalysts that are in the same phase as the reactants are called __________ catalysts.</div>
+        <button onclick="showAnswer('answer21')">Show Answer</button>
+        <div class="answer-container" id="answer21">homogeneous</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">22. Catalysts that are in a different phase from the reactants are called __________ catalysts.</div>
+        <button onclick="showAnswer('answer22')">Show Answer</button>
+        <div class="answer-container" id="answer22">heterogeneous</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">23. Enzymes are biological catalysts that are generally __________ in nature.</div>
+        <button onclick="showAnswer('answer23')">Show Answer</button>
+        <div class="answer-container" id="answer23">proteins</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">24. The mechanism of a reaction describes the sequence of elementary steps that make up the overall __________.</div>
+        <button onclick="showAnswer('answer24')">Show Answer</button>
+        <div class="answer-container" id="answer24">reaction</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">25. The slowest step in a reaction mechanism is called the __________ step, which determines the rate of the overall reaction.</div>
+        <button onclick="showAnswer('answer25')">Show Answer</button>
+        <div class="answer-container" id="answer25">rate-determining</div>
+    </div>
+
+    <script>
+        function showAnswer(answerId) {
+            const answerContainer = document.getElementById(answerId);
+            if (answerContainer.style.display === "none") {
+                answerContainer.style.display = "block";
+            } else {
+                answerContainer.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

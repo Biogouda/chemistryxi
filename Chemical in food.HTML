@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemicals in Food - Preservatives, Sweeteners, Antioxidants</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        .section-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .question-container {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .question {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .answer-container {
+            display: none;
+            margin-top: 5px;
+            color: green;
+            font-weight: bold;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Chemicals in Food - Preservatives, Sweeteners, Antioxidants</h1>
+
+    <section>
+        <h2 class="section-title">Food Preservatives</h2>
+
+        <div class="question-container">
+            <div class="question">1. __________ are chemical substances added to food to prevent spoilage caused by microbial growth (bacteria, yeasts, molds) and enzymatic action, thereby prolonging their shelf life.</div>
+            <button onclick="showAnswer('answer1')">Show Answer</button>
+            <div class="answer-container" id="answer1">Food preservatives</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">2. Common natural preservatives include __________ (used in jams and jellies), salt (used in pickles and cured meats), and vinegar (acetic acid, used in pickling).</div>
+            <button onclick="showAnswer('answer2')">Show Answer</button>
+            <div class="answer-container" id="answer2">sugar</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">3. Examples of chemical preservatives include sodium benzoate, potassium sorbate, and __________ (used in processed meats).</div>
+            <button onclick="showAnswer('answer3')">Show Answer</button>
+            <div class="answer-container" id="answer3">sulfur dioxide and sulfites</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">4. Benzoates and sorbates work by inhibiting the growth of __________ and molds.</div>
+            <button onclick="showAnswer('answer4')">Show Answer</button>
+            <div class="answer-container" id="answer4">yeasts</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">5. Sulfur dioxide and sulfites act as preservatives and also prevent __________ in some foods.</div>
+            <button onclick="showAnswer('answer5')">Show Answer</button>
+            <div class="answer-container" id="answer5">browning</div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Artificial Sweetening Agents</h2>
+
+        <div class="question-container">
+            <div class="question">6. __________ are chemical substances that provide a sweet taste to food and beverages but have significantly fewer calories than natural sugars like sucrose.</div>
+            <button onclick="showAnswer('answer6')">Show Answer</button>
+            <div class="answer-container" id="answer6">Artificial sweetening agents</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">7. Saccharin was one of the first artificial sweeteners discovered. It is much __________ than sucrose.</div>
+            <button onclick="showAnswer('answer7')">Show Answer</button>
+            <div class="answer-container" id="answer7">sweeter (around 550 times)</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">8. Aspartame is an artificial sweetener composed of two amino acids: aspartic acid and __________. It is approximately 100-200 times sweeter than sucrose.</div>
+            <button onclick="showAnswer('answer8')">Show Answer</button>
+            <div class="answer-container" id="answer8">phenylalanine</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">9. Sucralose is a trichlorinated derivative of sucrose and is about __________ times sweeter than sucrose. It is stable at high temperatures.</div>
+            <button onclick="showAnswer('answer9')">Show Answer</button>
+            <div class="answer-container" id="answer9">600</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">10. Alitame is another artificial sweetener that is even sweeter than aspartame, approximately __________ times sweeter than sucrose.</div>
+            <button onclick="showAnswer('answer10')">Show Answer</button>
+            <div class="answer-container" id="answer10">2000</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">11. Cyclamates are artificial sweeteners that are about __________ times sweeter than sucrose. Their use is restricted in some countries due to safety concerns.</div>
+            <button onclick="showAnswer('answer11')">Show Answer</button>
+            <div class="answer-container" id="answer11">30</div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Antioxidants</h2>
+
+        <div class="question-container">
+            <div class="question">12. __________ are substances that prevent or slow down oxidation of food components, thereby preventing rancidity in fats and oils and discoloration in fruits and vegetables.</div>
+            <button onclick="showAnswer('answer12')">Show Answer</button>
+            <div class="answer-container" id="answer12">Antioxidants</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">13. Oxidation in food can lead to the development of unpleasant odors and flavors, and also the loss of nutritional value. This process often involves the formation of __________ radicals.</div>
+            <button onclick="showAnswer('answer13')">Show Answer</button>
+            <div class="answer-container" id="answer13">free</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">14. Natural antioxidants found in foods include Vitamin C (ascorbic acid), Vitamin E (tocopherols), and __________.</div>
+            <button onclick="showAnswer('answer14')">Show Answer</button>
+            <div class="answer-container" id="answer14">beta-carotene</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">15. Synthetic antioxidants commonly used in food include butylated hydroxyanisole (BHA) and butylated hydroxytoluene (__________).</div>
+            <button onclick="showAnswer('answer15')">Show Answer</button>
+            <div class="answer-container" id="answer15">BHT</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">16. Antioxidants work by scavenging __________ radicals, thus inhibiting the chain reactions of oxidation.</div>
+            <button onclick="showAnswer('answer16')">Show Answer</button>
+            <div class="answer-container" id="answer16">free</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">17. The use of antioxidants helps to maintain the quality, flavor, color, and nutritional value of processed foods.</div>
+            <button onclick="showAnswer('answer17')">Show Answer</button>
+            <div class="answer-container" id="answer17">true</div>
+        </div>
+    </section>
+
+    <script>
+        function showAnswer(answerId) {
+            const answerContainer = document.getElementById(answerId);
+            if (answerContainer.style.display === "none") {
+                answerContainer.style.display = "block";
+            } else {
+                answerContainer.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solid State Chemistry Quiz</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        .question-container {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .question {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .answer-container {
+            display: none;
+            margin-top: 5px;
+            color: green;
+            font-weight: bold;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Solid State Chemistry Quiz</h1>
+
+    <div class="question-container">
+        <div class="question">1. Solids with a regular arrangement of constituent particles are called __________ solids.</div>
+        <button onclick="showAnswer('answer1')">Show Answer</button>
+        <div class="answer-container" id="answer1">crystalline</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">2. Solids lacking a long-range order of constituent particles are called __________ solids.</div>
+        <button onclick="showAnswer('answer2')">Show Answer</button>
+        <div class="answer-container" id="answer2">amorphous</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">3. The smallest repeating unit in a crystal lattice is called a __________.</div>
+        <button onclick="showAnswer('answer3')">Show Answer</button>
+        <div class="answer-container" id="answer3">unit cell</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">4. The number of atoms per unit cell in a simple cubic lattice is __________.</div>
+        <button onclick="showAnswer('answer4')">Show Answer</button>
+        <div class="answer-container" id="answer4">1</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">5. The number of atoms per unit cell in a body-centered cubic lattice is __________.</div>
+        <button onclick="showAnswer('answer5')">Show Answer</button>
+        <div class="answer-container" id="answer5">2</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">6. The number of atoms per unit cell in a face-centered cubic lattice is __________.</div>
+        <button onclick="showAnswer('answer6')">Show Answer</button>
+        <div class="answer-container" id="answer6">4</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">7. The fraction of the total volume occupied by the atoms in a simple cubic unit cell is __________.</div>
+        <button onclick="showAnswer('answer7')">Show Answer</button>
+        <div class="answer-container" id="answer7">$\frac{\pi}{6}$ or approximately 0.52</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">8. The fraction of the total volume occupied by the atoms in a body-centered cubic unit cell is __________.</div>
+        <button onclick="showAnswer('answer8')">Show Answer</button>
+        <div class="answer-container" id="answer8">$\frac{\sqrt{3}\pi}{8}$ or approximately 0.68</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">9. The fraction of the total volume occupied by the atoms in a face-centered cubic unit cell is __________.</div>
+        <button onclick="showAnswer('answer9')">Show Answer</button>
+        <div class="answer-container" id="answer9">$\frac{\sqrt{2}\pi}{6}$ or approximately 0.74</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">10. The coordination number of each sphere in a simple cubic packing is __________.</div>
+        <button onclick="showAnswer('answer10')">Show Answer</button>
+        <div class="answer-container" id="answer10">6</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">11. The coordination number of each sphere in a body-centered cubic packing is __________.</div>
+        <button onclick="showAnswer('answer11')">Show Answer</button>
+        <div class="answer-container" id="answer11">8</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">12. The coordination number of each sphere in a face-centered cubic packing is __________.</div>
+        <button onclick="showAnswer('answer12')">Show Answer</button>
+        <div class="answer-container" id="answer12">12</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">13. The most efficient packing of spheres in two dimensions is __________ packing.</div>
+        <button onclick="showAnswer('answer13')">Show Answer</button>
+        <div class="answer-container" id="answer13">hexagonal close</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">14. The two types of voids found in a close-packed structure are __________ and __________ voids.</div>
+        <button onclick="showAnswer('answer14')">Show Answer</button>
+        <div class="answer-container" id="answer14">tetrahedral, octahedral</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">15. The coordination number of a tetrahedral void is __________.</div>
+        <button onclick="showAnswer('answer15')">Show Answer</button>
+        <div class="answer-container" id="answer15">4</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">16. The coordination number of an octahedral void is __________.</div>
+        <button onclick="showAnswer('answer16')">Show Answer</button>
+        <div class="answer-container" id="answer16">6</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">17. If R is the radius of the anion and r is the radius of the cation, the radius ratio (r/R) for a tetrahedral void is in the range of __________.</div>
+        <button onclick="showAnswer('answer17')">Show Answer</button>
+        <div class="answer-container" id="answer17">0.225 - 0.414</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">18. If R is the radius of the anion and r is the radius of the cation, the radius ratio (r/R) for an octahedral void is in the range of __________.</div>
+        <button onclick="showAnswer('answer18')">Show Answer</button>
+        <div class="answer-container" id="answer18">0.414 - 0.732</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">19. A solid in which constituent particles are held together by metallic bonds is called a __________ solid.</div>
+        <button onclick="showAnswer('answer19')">Show Answer</button>
+        <div class="answer-container" id="answer19">metallic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">20. A solid in which constituent particles are held together by ionic bonds is called an __________ solid.</div>
+        <button onclick="showAnswer('answer20')">Show Answer</button>
+        <div class="answer-container" id="answer20">ionic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">21. A solid in which constituent particles are held together by covalent bonds is called a __________ solid.</div>
+        <button onclick="showAnswer('answer21')">Show Answer</button>
+        <div class="answer-container" id="answer21">covalent or network</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">22. A solid in which constituent particles are held together by weak van der Waals forces is called a __________ solid.</div>
+        <button onclick="showAnswer('answer22')">Show Answer</button>
+        <div class="answer-container" id="answer22">molecular</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">23. Schottky defects arise due to the absence of __________ and __________ from their lattice sites.</div>
+        <button onclick="showAnswer('answer23')">Show Answer</button>
+        <div class="answer-container" id="answer23">cations, anions</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">24. Frenkel defects arise when an ion leaves its lattice site and occupies an __________ site.</div>
+        <button onclick="showAnswer('answer24')">Show Answer</button>
+        <div class="answer-container" id="answer24">interstitial</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">25. Schottky defects are commonly observed in ionic compounds with a small difference in the size of __________ and __________.</div>
+        <button onclick="showAnswer('answer25')">Show Answer</button>
+        <div class="answer-container" id="answer25">cation, anion</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">26. Frenkel defects are commonly observed in ionic compounds with a large difference in the size of __________ and __________.</div>
+        <button onclick="showAnswer('answer26')">Show Answer</button>
+        <div class="answer-container" id="answer26">cation, anion</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">27. Metal deficiency defects can arise due to the absence of __________ or the presence of extra __________ occupying interstitial sites.</div>
+        <button onclick="showAnswer('answer27')">Show Answer</button>
+        <div class="answer-container" id="answer27">metal cations, extra anions</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">28. Metal excess defects can arise due to anionic __________ or the presence of extra __________ occupying interstitial sites.</div>
+        <button onclick="showAnswer('answer28')">Show Answer</button>
+        <div class="answer-container" id="answer28">vacancies, extra cations</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">29. F-centers are anionic vacancies occupied by __________.</div>
+        <button onclick="showAnswer('answer29')">Show Answer</button>
+        <div class="answer-container" id="answer29">electrons</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">30. Substances that show magnetism due to unpaired electrons are called __________ substances.</div>
+        <button onclick="showAnswer('answer30')">Show Answer</button>
+        <div class="answer-container" id="answer30">paramagnetic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">31. Substances that are weakly repelled by a magnetic field are called __________ substances.</div>
+        <button onclick="showAnswer('answer31')">Show Answer</button>
+        <div class="answer-container" id="answer31">diamagnetic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">32. Substances that are weakly attracted by a magnetic field are called __________ substances.</div>
+        <button onclick="showAnswer('answer32')">Show Answer</button>
+        <div class="answer-container" id="answer32">paramagnetic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">33. Substances that show permanent magnetism even in the absence of a magnetic field are called __________ substances.</div>
+        <button onclick="showAnswer('answer33')">Show Answer</button>
+        <div class="answer-container" id="answer33">ferromagnetic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">34. In ferromagnetic substances, the magnetic domains are __________ oriented.</div>
+        <button onclick="showAnswer('answer34')">Show Answer</button>
+        <div class="answer-container" id="answer34">spontaneously and parallelly</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">35. In antiferromagnetic substances, the magnetic domains are aligned in __________ directions and cancel out each other's magnetic moment.</div>
+        <button onclick="showAnswer('answer35')">Show Answer</button>
+        <div class="answer-container" id="answer35">opposite</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">36. In ferrimagnetic substances, the magnetic domains are aligned in __________ directions with unequal magnetic moments, resulting in a net magnetic moment.</div>
+        <button onclick="showAnswer('answer36')">Show Answer</button>
+        <div class="answer-container" id="answer36">parallel and anti-parallel</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">37. The temperature above which a ferromagnetic substance becomes paramagnetic is called the __________ temperature.</div>
+        <button onclick="showAnswer('answer37')">Show Answer</button>
+        <div class="answer-container" id="answer37">Curie</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">38. The temperature below which an antiferromagnetic substance becomes paramagnetic is called the __________ temperature or Néel temperature.</div>
+        <button onclick="showAnswer('answer38')">Show Answer</button>
+        <div class="answer-container" id="answer38">Néel</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">39. Solids that can conduct electricity are called __________.</div>
+        <button onclick="showAnswer('answer39')">Show Answer</button>
+        <div class="answer-container" id="answer39">conductors</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">40. Solids that do not conduct electricity are called __________.</div>
+        <button onclick="showAnswer('answer40')">Show Answer</button>
+        <div class="answer-container" id="answer40">insulators</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">41. Solids with conductivity between that of conductors and insulators are called __________.</div>
+        <button onclick="showAnswer('answer41')">Show Answer</button>
+        <div class="answer-container" id="answer41">semiconductors</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">42. In metals, the conductivity __________ with an increase in temperature.</div>
+        <button onclick="showAnswer('answer42')">Show Answer</button>
+        <div class="answer-container" id="answer42">decreases</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">43. In semiconductors, the conductivity generally __________ with an increase in temperature.</div>
+        <button onclick="showAnswer('answer43')">Show Answer</button>
+        <div class="answer-container" id="answer43">increases</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">44. Semiconductors whose conductivity is due to the presence of impurities are called __________ semiconductors.</div>
+        <button onclick="showAnswer('answer44')">Show Answer</button>
+        <div class="answer-container" id="answer44">extrinsic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">45. Semiconductors in which the increased conductivity is due to their intrinsic electronic structure are called __________ semiconductors.</div>
+        <button onclick="showAnswer('answer45')">Show Answer</button>
+        <div class="answer-container" id="answer45">intrinsic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">46. An n-type semiconductor is formed when silicon is doped with a __________ group element.</div>
+        <button onclick="showAnswer('answer46')">Show Answer</button>
+        <div class="answer-container" id="answer46">group 15</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">47. A p-type semiconductor is formed when silicon is doped with a __________ group element.</div>
+        <button onclick="showAnswer('answer47')">Show Answer</button>
+        <div class="answer-container" id="answer47">group 13</div></div>
+
+    <div class="question-container">
+        <div class="question">48. In an n-type semiconductor, the majority charge carriers are __________.</div>
+        <button onclick="showAnswer('answer48')">Show Answer</button>
+        <div class="answer-container" id="answer48">electrons</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">49. In a p-type semiconductor, the majority charge carriers are __________.</div>
+        <button onclick="showAnswer('answer49')">Show Answer</button>
+        <div class="answer-container" id="answer49">holes</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">50. A p-n junction diode allows current to flow easily in the __________ bias.</div>
+        <button onclick="showAnswer('answer50')">Show Answer</button>
+        <div class="answer-container" id="answer50">forward</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">51. A __________ cell converts solar energy directly into electrical energy.</div>
+        <button onclick="showAnswer('answer51')">Show Answer</button>
+        <div class="answer-container" id="answer51">photovoltaic or solar</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">52. Certain solids exhibit the property of generating electricity when subjected to mechanical stress or pressure; this phenomenon is called __________.</div>
+        <button onclick="showAnswer('answer52')">Show Answer</button>
+        <div class="answer-container" id="answer52">piezoelectricity</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">53. Some crystalline solids exhibit different physical properties in different directions; this phenomenon is called __________.</div>
+        <button onclick="showAnswer('answer53')">Show Answer</button>
+        <div class="answer-container" id="answer53">anisotropy</div>
+    </div>
+
+    <script>
+        function showAnswer(answerId) {
+            const answerContainer = document.getElementById(answerId);
+            if (answerContainer.style.display === "none") {
+                answerContainer.style.display = "block";
+            } else {
+                answerContainer.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

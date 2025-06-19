@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amines - Chemistry Class 12 Quiz</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        .question-container {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .question {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .answer-container {
+            display: none;
+            margin-top: 5px;
+            color: green;
+            font-weight: bold;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Amines - Chemistry Class 12 Quiz</h1>
+
+    <div class="question-container">
+        <div class="question">1. Amines are organic compounds derived from ammonia ($NH_3$) by the replacement of one, two, or all three hydrogen atoms by __________ or aryl groups.</div>
+        <button onclick="showAnswer('answer1')">Show Answer</button>
+        <div class="answer-container" id="answer1">alkyl</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">2. Amines are classified as primary ($1^\circ$), secondary ($2^\circ$), or tertiary ($3^\circ$) based on the number of alkyl or aryl groups attached to the __________ atom.</div>
+        <button onclick="showAnswer('answer2')">Show Answer</button>
+        <div class="answer-container" id="answer2">nitrogen</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">3. The nitrogen atom in amines has one lone pair of electrons and is __________ hybridized, resulting in a pyramidal geometry.</div>
+        <button onclick="showAnswer('answer3')">Show Answer</button>
+        <div class="answer-container" id="answer3">$sp^3$</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">4. Amines have __________ boiling points than alkanes of similar molecular mass due to intermolecular hydrogen bonding (except for tertiary amines). However, their boiling points are __________ than those of alcohols due to weaker hydrogen bonding.</div>
+        <button onclick="showAnswer('answer4')">Show Answer</button>
+        <div class="answer-container" id="answer4">higher; lower</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">5. Lower aliphatic amines are soluble in water due to the formation of __________ bonds with water molecules. Solubility decreases with increasing molecular mass.</div>
+        <button onclick="showAnswer('answer5')">Show Answer</button>
+        <div class="answer-container" id="answer5">hydrogen</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">6. Amines are basic in nature due to the presence of a lone pair of electrons on the nitrogen atom, which they can donate to a __________ ion.</div>
+        <button onclick="showAnswer('answer6')">Show Answer</button>
+        <div class="answer-container" id="answer6">proton ($H^+$)</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">7. The basicity of amines depends on factors such as the availability of the lone pair of electrons, steric hindrance, and __________ of the conjugate acid.</div>
+        <button onclick="showAnswer('answer7')">Show Answer</button>
+        <div class="answer-container" id="answer7">stability</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">8. Aliphatic amines are generally __________ basic than ammonia. Electron-donating alkyl groups increase the electron density on the nitrogen atom.</div>
+        <button onclick="showAnswer('answer8')">Show Answer</button>
+        <div class="answer-container" id="answer8">more</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">9. Aromatic amines, like aniline, are __________ basic than aliphatic amines and ammonia due to the delocalization of the lone pair of electrons into the benzene ring through resonance.</div>
+        <button onclick="showAnswer('answer9')">Show Answer</button>
+        <div class="answer-container" id="answer9">less</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">10. Amines react with acids to form __________.</div>
+        <button onclick="showAnswer('answer10')">Show Answer</button>
+        <div class="answer-container" id="answer10">salts</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">11. Amines react with acyl chlorides and acid anhydrides to form __________ or substituted amides.</div>
+        <button onclick="showAnswer('answer11')">Show Answer</button>
+        <div class="answer-container" id="answer11">amides</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">12. Primary aliphatic amines react with nitrous acid ($HNO_2$) to form unstable diazonium salts, which decompose to give alcohols, nitrogen gas, and other products. Primary aromatic amines react with $HNO_2$ at low temperatures to form stable aromatic __________ salts.</div>
+        <button onclick="showAnswer('answer12')">Show Answer</button>
+        <div class="answer-container" id="answer12">diazonium</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">13. Secondary amines react with nitrous acid to form __________ compounds.</div>
+        <button onclick="showAnswer('answer13')">Show Answer</button>
+        <div class="answer-container" id="answer13">N-nitroso</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">14. Tertiary amines react with nitrous acid to form __________ salts.</div>
+        <button onclick="showAnswer('answer14')">Show Answer</button>
+        <div class="answer-container" id="answer14">nitrite</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">15. The reaction of primary amines with chloroform in the presence of alcoholic potassium hydroxide ($KOH$) is known as __________ test, which is used to detect the presence of primary amines. A foul-smelling isocyanide is formed.</div>
+        <button onclick="showAnswer('answer15')">Show Answer</button>
+        <div class="answer-container" id="answer15">carbylamine</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">16. Primary amines undergo alkylation on reaction with alkyl halides to form secondary and tertiary amines, and finally __________ salts.</div>
+        <button onclick="showAnswer('answer16')">Show Answer</button>
+        <div class="answer-container" id="answer16">quaternary ammonium</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">17. Reduction of nitro compounds ($RNO_2$ or $ArNO_2$) with metal/acid (like $Sn/HCl$ or $Fe/HCl$) or catalytic hydrogenation ($H_2/Ni, Pt, Pd$) yields primary __________.</div>
+        <button onclick="showAnswer('answer17')">Show Answer</button>
+        <div class="answer-container" id="answer17">amines</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">18. Reduction of amides ($RCONH_2$) with lithium aluminum hydride ($LiAlH_4$) yields __________.</div>
+        <button onclick="showAnswer('answer18')">Show Answer</button>
+        <div class="answer-container" id="answer18">amines</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">19. The Gabriel phthalimide synthesis is used for the preparation of primary __________ without the formation of secondary or tertiary amines.</div>
+        <button onclick="showAnswer('answer19')">Show Answer</button>
+        <div class="answer-container" id="answer19">aliphatic amines</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">20. Hofmann bromamide degradation reaction involves the treatment of an amide with bromine in an aqueous or alcoholic solution of sodium hydroxide to yield a primary amine with one carbon atom __________ than the original amide.</div>
+        <button onclick="showAnswer('answer20')">Show Answer</button>
+        <div class="answer-container" id="answer20">less</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">21. Aniline ($C_6H_5NH_2$) undergoes electrophilic substitution reactions on the benzene ring. The $-NH_2$ group is strongly __________ and ortho, para directing.</div>
+        <button onclick="showAnswer('answer21')">Show Answer</button>
+        <div class="answer-container" id="answer21">activating</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">22. In the nitration of aniline, protection of the amino group by __________ is necessary to control the reaction and obtain the para isomer as the major product.</div>
+        <button onclick="showAnswer('answer22')">Show Answer</button>
+        <div class="answer-container" id="answer22">acetylation</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">23. Aniline reacts with bromine water to give a white precipitate of 2,4,6-__________ aniline.</div>
+        <button onclick="showAnswer('answer23')">Show Answer</button>
+        <div class="answer-container" id="answer23">tribromo</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">24. Diazonium salts are very versatile and can be used to synthesize a variety of aromatic compounds through __________ reactions.</div>
+        <button onclick="showAnswer('answer24')">Show Answer</button>
+        <div class="answer-container" id="answer24">replacement or substitution</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">25. The Hinsberg's test is used to distinguish between primary, secondary, and tertiary amines using benzenesulfonyl chloride ($C_6H_5SO_2Cl$). Primary amines form an N-alkylbenzenesulfonamide that is soluble in alkali. Secondary amines form an N,N-dialkylbenzenesulfonamide that is insoluble in alkali. Tertiary amines do not react.</div>
+        <button onclick="showAnswer('answer25')">Show Answer</button>
+        <div class="answer-container" id="answer25">true</div>
+    </div>
+
+    <script>
+        function showAnswer(answerId) {
+            const answerContainer = document.getElementById(answerId);
+            if (answerContainer.style.display === "none") {
+                answerContainer.style.display = "block";
+            } else {
+                answerContainer.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

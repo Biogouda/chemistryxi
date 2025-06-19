@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrochemistry - Chemistry Class 12 Quiz</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        .question-container {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .question {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .answer-container {
+            display: none;
+            margin-top: 5px;
+            color: green;
+            font-weight: bold;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Electrochemistry - Chemistry Class 12 Quiz</h1>
+
+    <div class="question-container">
+        <div class="question">1. The branch of chemistry that deals with the relationship between electrical energy and chemical reactions is called __________.</div>
+        <button onclick="showAnswer('answer1')">Show Answer</button>
+        <div class="answer-container" id="answer1">electrochemistry</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">2. A device that converts chemical energy into electrical energy is called a __________ cell or voltaic cell.</div>
+        <button onclick="showAnswer('answer2')">Show Answer</button>
+        <div class="answer-container" id="answer2">galvanic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">3. A device that uses electrical energy to carry out non-spontaneous chemical reactions is called an __________ cell.</div>
+        <button onclick="showAnswer('answer3')">Show Answer</button>
+        <div class="answer-container" id="answer3">electrolytic</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">4. Oxidation is the __________ of electrons, and reduction is the __________ of electrons.</div>
+        <button onclick="showAnswer('answer4')">Show Answer</button>
+        <div class="answer-container" id="answer4">loss, gain</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">5. In a galvanic cell, oxidation occurs at the __________ (negative electrode), and reduction occurs at the __________ (positive electrode).</div>
+        <button onclick="showAnswer('answer5')">Show Answer</button>
+        <div class="answer-container" id="answer5">anode, cathode</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">6. In an electrolytic cell, oxidation occurs at the __________ (positive electrode), and reduction occurs at the __________ (negative electrode).</div>
+        <button onclick="showAnswer('answer6')">Show Answer</button>
+        <div class="answer-container" id="answer6">anode, cathode</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">7. The difference in electric potential between the two electrodes of a galvanic cell is called the cell potential or __________.</div>
+        <button onclick="showAnswer('answer7')">Show Answer</button>
+        <div class="answer-container" id="answer7">electromotive force (EMF)</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">8. The standard electrode potential ($E^\ominus$) is the potential of an electrode measured under standard conditions: 298 K, 1 atm pressure for gases, and __________ M concentration for solutions.</div>
+        <button onclick="showAnswer('answer8')">Show Answer</button>
+        <div class="answer-container" id="answer8">1</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">9. The standard hydrogen electrode (SHE) has an arbitrarily assigned standard electrode potential of __________ volts.</div>
+        <button onclick="showAnswer('answer9')">Show Answer</button>
+        <div class="answer-container" id="answer9">0.00</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">10. The cell potential ($E_{cell}$) can be calculated using the standard electrode potentials of the cathode and anode as $E_{cell}^\ominus = E_{cathode}^\ominus - E_{anode}^\ominus$. Here, both potentials are __________ potentials.</div>
+        <button onclick="showAnswer('answer10')">Show Answer</button>
+        <div class="answer-container" id="answer10">reduction</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">11. The Nernst equation relates the electrode potential to the standard electrode potential and the __________ of the species involved in the electrochemical reaction.</div>
+        <button onclick="showAnswer('answer11')">Show Answer</button>
+        <div class="answer-container" id="answer11">concentrations</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">12. For a general reaction $aA + bB \rightarrow cC + dD$, the Nernst equation for the cell potential is $E_{cell} = E_{cell}^\ominus - \frac{RT}{nF} \ln Q$, where Q is the __________.</div>
+        <button onclick="showAnswer('answer12')">Show Answer</button>
+        <div class="answer-container" id="answer12">reaction quotient</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">13. At equilibrium, the cell potential ($E_{cell}$) is __________, and the reaction quotient (Q) is equal to the equilibrium constant ($K_c$).</div>
+        <button onclick="showAnswer('answer13')">Show Answer</button>
+        <div class="answer-container" id="answer13">zero</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">14. The relationship between the standard cell potential ($E_{cell}^\ominus$) and the equilibrium constant ($K_c$) is given by $\ln K_c = \frac{nFE_{cell}^\ominus}{RT}$. Here, R is the gas constant, T is the temperature, n is the number of moles of electrons transferred, and F is the __________ constant.</div>
+        <button onclick="showAnswer('answer14')">Show Answer</button>
+        <div class="answer-container" id="answer14">Faraday</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">15. The amount of substance deposited or liberated at an electrode during electrolysis is directly proportional to the quantity of __________ passed through the electrolytic solution (Faraday's first law).</div>
+        <button onclick="showAnswer('answer15')">Show Answer</button>
+        <div class="answer-container" id="answer15">electricity</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">16. One Faraday (F) is equal to the charge of one mole of electrons, which is approximately __________ Coulombs.</div>
+        <button onclick="showAnswer('answer16')">Show Answer</button>
+        <div class="answer-container" id="answer16">96500</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">17. The mass of a substance deposited or liberated at an electrode by one Coulomb of charge is called its __________.</div>
+        <button onclick="showAnswer('answer17')">Show Answer</button>
+        <div class="answer-container" id="answer17">electrochemical equivalent</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">18. Primary batteries are those that cannot be __________ after they have been used.</div>
+        <button onclick="showAnswer('answer18')">Show Answer</button>
+        <div class="answer-container" id="answer18">recharged</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">19. Secondary batteries are those that can be __________ by passing current through them in the opposite direction.</div>
+        <button onclick="showAnswer('answer19')">Show Answer</button>
+        <div class="answer-container" id="answer19">recharged</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">20. The lead storage battery is a common example of a __________ battery.</div>
+        <button onclick="showAnswer('answer20')">Show Answer</button>
+        <div class="answer-container" id="answer20">secondary</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">21. Fuel cells are galvanic cells that are designed to continuously convert the chemical energy of a fuel like hydrogen and an oxidant like oxygen into __________.</div>
+        <button onclick="showAnswer('answer21')">Show Answer</button>
+        <div class="answer-container" id="answer21">electrical energy</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">22. Corrosion is the process of slow deterioration of metals due to their reaction with air and __________.</div>
+        <button onclick="showAnswer('answer22')">Show Answer</button>
+        <div class="answer-container" id="answer22">water</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">23. Rusting of iron involves the formation of hydrated iron(III) oxide, whose chemical formula is typically represented as $Fe_2O_3 \cdot xH_2O$. This is an example of __________.</div>
+        <button onclick="showAnswer('answer23')">Show Answer</button>
+        <div class="answer-container" id="answer23">corrosion</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">24. One method to prevent corrosion is by coating the metal surface with paint or __________.</div>
+        <button onclick="showAnswer('answer24')">Show Answer</button>
+        <div class="answer-container" id="answer24">grease</div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">25. Galvanization is a method of protecting iron from rusting by coating it with a layer of __________.</div>
+        <button onclick="showAnswer('answer25')">Show Answer</button>
+        <div class="answer-container" id="answer25">zinc</div>
+    </div>
+
+    <script>
+        function showAnswer(answerId) {
+            const answerContainer = document.getElementById(answerId);
+            if (answerContainer.style.display === "none") {
+                answerContainer.style.display = "block";
+            } else {
+                answerContainer.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
